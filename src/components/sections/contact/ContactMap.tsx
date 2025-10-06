@@ -50,10 +50,10 @@ const ContactMap = () => {
               <div className="text-center text-white">
                 <MapPin className="w-16 h-16 mx-auto mb-4" />
                 <h3 className="text-2xl font-elegant font-semibold mb-2">
-                  Rozi's Luxury Dog Hotel
+                  <span className="font-latin">Rozi's</span> Luxury Dog Hotel
                 </h3>
                 <p className="text-lg opacity-90 mb-4">
-                  София, България
+                  Сапарева баня, България
                 </p>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -92,9 +92,9 @@ const ContactMap = () => {
                 Адрес
               </h3>
               <div className="space-y-2 text-gray-600">
-                <p className="font-medium">Rozi's Luxury Dog Hotel</p>
+                <p className="font-medium"><span className="font-latin">Rozi's</span> Luxury Dog Hotel</p>
                 <p>ул. "Любов към животните" 123</p>
-                <p>1000 София, България</p>
+                <p>2650 Сапарева баня, България</p>
               </div>
             </div>
 
@@ -148,9 +148,9 @@ const ContactMap = () => {
                 Как да стигнете до нас
               </h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• С кола: 15 мин от центъра на София</li>
+                <li>• С кола: 5 мин от центъра на Сапарева баня</li>
                 <li>• С градски транспорт: автобус 123, спирка "Любов към животните"</li>
-                <li>• С такси: около 15-20 лв от центъра</li>
+                <li>• С такси: около 5-10 лв от центъра</li>
                 <li>• Безплатно паркиране на територията</li>
               </ul>
             </div>
@@ -168,7 +168,7 @@ const ContactMap = () => {
             🚗 Удобен достъп и паркиране
           </h3>
           <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto mb-6">
-            Нашият хотел е лесно достъпен с кола, градски транспорт или такси. 
+            Нашият хотел в Сапарева баня е лесно достъпен с кола, градски транспорт или такси. 
             Предлагаме безплатно паркиране на територията и можем да организираме 
             транспорт до и от хотела при нужда.
           </p>

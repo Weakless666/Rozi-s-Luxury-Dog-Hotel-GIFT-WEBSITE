@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Heart, PawPrint, Phone, Mail, MapPin, Instagram, Facebook } from 'lucide-react'
+import { Heart, PawPrint, Phone, Mail, MapPin, Instagram, Facebook, MessageCircle } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -21,7 +21,8 @@ const Footer = () => {
     contact: [
       { name: 'Телефон', value: '+359 888 123 456', icon: Phone },
       { name: 'Имейл', value: 'info@rozis-dog-hotel.com', icon: Mail },
-      { name: 'Адрес', value: 'София, България', icon: MapPin }
+      { name: 'Viber', value: '+359 888 123 456', icon: MessageCircle },
+      { name: 'Адрес', value: 'Сапарева баня, България', icon: MapPin }
     ]
   }
 
@@ -73,7 +74,9 @@ const Footer = () => {
                 </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.1, rotate: -5 }}
-                  href="#"
+                  href="https://www.facebook.com/profile.php?id=100058613121575"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
                 >
                   <Facebook className="w-5 h-5" />
@@ -160,12 +163,17 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-white/80 text-sm">
-              © {currentYear} Rozi's Luxury Dog Hotel. Всички права запазени.
+              © {currentYear} <span className="font-latin">Rozi's</span> Luxury Dog Hotel. Всички права запазени.
             </p>
-            <div className="flex items-center space-x-2 text-white/80 text-sm">
-              <span>Направено с</span>
-              <Heart className="w-4 h-4 text-soft-pink animate-pulse" />
-              <span>за нашите четирикраки приятели</span>
+            <div className="flex flex-col items-center space-y-2 text-white/80 text-sm">
+              <div className="flex items-center space-x-2">
+                <span>Направено с</span>
+                <Heart className="w-4 h-4 text-soft-pink animate-pulse" />
+                <span>за нашите четирикраки приятели</span>
+              </div>
+              <div className="text-xs text-white/60">
+                Made By: <span className="font-semibold text-soft-pink">Weakless666</span>
+              </div>
             </div>
           </div>
         </motion.div>

@@ -64,7 +64,7 @@ const StorySection = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Историята на Rozi's Luxury Dog Hotel е история за страст, преданост и 
+            Историята на <span className="font-latin">Rozi's</span> Luxury Dog Hotel е история за страст, преданост и 
             безгранична любов към животните. Ето как всичко започна...
           </p>
         </motion.div>

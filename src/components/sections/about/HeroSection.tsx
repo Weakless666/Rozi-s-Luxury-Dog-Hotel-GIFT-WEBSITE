@@ -52,7 +52,7 @@ const HeroSection = () => {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
           >
-            Познайте историята зад <span className="text-luxury-purple font-semibold">Rozi's Luxury Dog Hotel</span> - 
+            Познайте историята зад <span className="text-luxury-purple font-semibold"><span className="font-latin">Rozi's</span> Luxury Dog Hotel</span> - 
             място, където любовта към животните се среща с професионализъм и лукс.
           </motion.p>
 

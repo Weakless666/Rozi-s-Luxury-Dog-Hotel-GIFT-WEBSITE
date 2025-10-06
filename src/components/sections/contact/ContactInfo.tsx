@@ -1,6 +1,13 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Phone, Mail, Clock, MessageCircle, Calendar, Star, Heart } from 'lucide-react'
+import { Phone, Mail, Clock, MessageCircle, Calendar, Star, Heart, Facebook } from 'lucide-react'
+
+// Viber icon component
+const ViberIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M11.398.005C5.231.005.005 5.231.005 11.398c0 2.209.646 4.262 1.755 5.979L.005 24l6.623-1.76c1.717 1.109 3.77 1.755 5.979 1.755 6.167 0 11.393-5.226 11.393-11.393C24.001 5.231 18.775.005 11.398.005zm5.231 16.225c-.372.372-.984.372-1.356 0l-1.356-1.356c-.372-.372-.372-.984 0-1.356s.984-.372 1.356 0l1.356 1.356c.372.372.372.984 0 1.356zm-3.408-3.408c-.372.372-.984.372-1.356 0l-1.356-1.356c-.372-.372-.372-.984 0-1.356s.984-.372 1.356 0l1.356 1.356c.372.372.372.984 0 1.356zm-3.408-3.408c-.372.372-.984.372-1.356 0L6.5 6.647c-.372-.372-.372-.984 0-1.356s.984-.372 1.356 0l1.356 1.356c.372.372.372.984 0 1.356z"/>
+  </svg>
+)
 
 const ContactInfo = () => {
   const [ref, inView] = useInView({
@@ -28,12 +35,12 @@ const ContactInfo = () => {
       available: '24/7'
     },
     {
-      icon: MessageCircle,
-      title: 'WhatsApp',
+      icon: ViberIcon,
+      title: 'Viber',
       value: '+359 888 123 456',
       description: 'Бързо съобщение за резервации',
-      action: 'https://wa.me/359888123456',
-      color: 'from-premium-gold to-soft-pink',
+      action: 'viber://chat?number=+359888123456',
+      color: 'from-purple-500 to-purple-600',
       available: '8:00 - 20:00'
     },
     {
@@ -43,6 +50,15 @@ const ContactInfo = () => {
       description: 'Попълнете формата за лесна резервация',
       action: '#contact-form',
       color: 'from-soft-pink to-luxury-purple',
+      available: '24/7'
+    },
+    {
+      icon: Facebook,
+      title: 'Facebook',
+      value: 'Следвайте ни',
+      description: 'Най-новите снимки и новини',
+      action: 'https://www.facebook.com/profile.php?id=100058613121575',
+      color: 'from-blue-500 to-blue-600',
       available: '24/7'
     }
   ]

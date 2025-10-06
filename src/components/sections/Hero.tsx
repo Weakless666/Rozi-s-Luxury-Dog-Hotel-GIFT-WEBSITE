@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Heart, PawPrint, Star, ArrowRight, Play } from 'lucide-react'
+import BookingModal from '../../components/BookingModal'
+import { useState } from 'react'
 
 const Hero = () => {
+  const [isBookingOpen, setIsBookingOpen] = useState(false)
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with gradient and decorations */}
@@ -40,7 +44,7 @@ const Hero = () => {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-5xl md:text-6xl lg:text-7xl font-handwriting font-bold mb-6"
             >
-              <span className="text-gradient">Rozi's Luxury</span>
+              <span className="text-gradient font-latin">Rozi's Luxury</span>
               <br />
               <span className="text-luxury-purple">Dog Hotel</span>
             </motion.h1>
@@ -67,10 +71,13 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link to="/contact" className="btn-primary inline-flex items-center space-x-2">
+                <button 
+                  onClick={() => setIsBookingOpen(true)}
+                  className="btn-primary inline-flex items-center space-x-2"
+                >
                   <span>Резервирай сега</span>
                   <ArrowRight className="w-5 h-5" />
-                </Link>
+                </button>
               </motion.div>
               
               <motion.div
@@ -178,6 +185,12 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Booking Modal */}
+      <BookingModal 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
+      />
     </section>
   )
 }

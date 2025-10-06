@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Link } from 'react-router-dom'
 import { Phone, Mail, Calendar, ArrowRight, Heart, PawPrint } from 'lucide-react'
+import BookingModal from '../../components/BookingModal'
+import { useState } from 'react'
 
 const CTA = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   })
+  const [isBookingOpen, setIsBookingOpen] = useState(false)
 
   const ctaOptions = [
     {
@@ -81,14 +83,14 @@ const CTA = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link 
-                to="/contact" 
+              <button 
+                onClick={() => setIsBookingOpen(true)}
                 className="bg-white text-luxury-purple px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 ease-in-out inline-flex items-center space-x-2"
               >
                 <PawPrint className="w-6 h-6" />
                 <span>Резервирай сега</span>
                 <ArrowRight className="w-5 h-5" />
-              </Link>
+              </button>
             </motion.div>
             
             <motion.div
@@ -167,16 +169,22 @@ const CTA = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Link 
-              to="/contact" 
+            <button 
+              onClick={() => setIsBookingOpen(true)}
               className="bg-white text-luxury-purple px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out inline-flex items-center space-x-2"
             >
               <span>Възползвайте се сега</span>
               <ArrowRight className="w-5 h-5" />
-            </Link>
+            </button>
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Booking Modal */}
+      <BookingModal 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
+      />
     </section>
   )
 }

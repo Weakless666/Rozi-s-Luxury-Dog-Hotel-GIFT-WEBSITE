@@ -11,7 +11,7 @@ const PricingSection = () => {
   const pricingPlans = [
     {
       name: 'Базов пакет',
-      price: '50',
+      price: '100',
       period: 'ден',
       description: 'Идеален за кратки престои',
       color: 'from-soft-pink to-luxury-purple',
@@ -26,7 +26,7 @@ const PricingSection = () => {
     },
     {
       name: 'Луксозен пакет',
-      price: '80',
+      price: '120',
       period: 'ден',
       description: 'Най-популярният избор',
       color: 'from-luxury-purple to-premium-gold',
@@ -43,7 +43,7 @@ const PricingSection = () => {
     },
     {
       name: 'Премиум пакет',
-      price: '120',
+      price: '150',
       period: 'ден',
       description: 'За най-взискателните',
       color: 'from-premium-gold to-soft-pink',

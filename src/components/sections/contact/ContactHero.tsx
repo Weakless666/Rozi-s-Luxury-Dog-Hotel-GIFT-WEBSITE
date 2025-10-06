@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react'
 
 const ContactHero = () => {
   const [ref, inView] = useInView({
@@ -64,10 +64,11 @@ const ContactHero = () => {
             className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12"
           >
             {[
-              { icon: Phone, label: 'Телефон', value: '+359 888 123 456', color: 'from-soft-pink to-luxury-purple' },
-              { icon: Mail, label: 'Имейл', value: 'info@rozis-dog-hotel.com', color: 'from-luxury-purple to-premium-gold' },
-              { icon: MapPin, label: 'Адрес', value: 'София, България', color: 'from-premium-gold to-soft-pink' },
-              { icon: Clock, label: 'Работно време', value: '8:00 - 20:00', color: 'from-soft-pink to-luxury-purple' }
+            { icon: Phone, label: 'Телефон', value: '+359 888 123 456', color: 'from-soft-pink to-luxury-purple' },
+            { icon: Mail, label: 'Имейл', value: 'info@rozis-dog-hotel.com', color: 'from-luxury-purple to-premium-gold' },
+            { icon: MessageCircle, label: 'Viber', value: '+359 888 123 456', color: 'from-purple-500 to-purple-600' },
+            { icon: MapPin, label: 'Адрес', value: 'Сапарева баня, България', color: 'from-premium-gold to-soft-pink' },
+            { icon: Clock, label: 'Работно време', value: '8:00 - 20:00', color: 'from-soft-pink to-luxury-purple' }
             ].map((contact, index) => {
               const Icon = contact.icon
               return (

@@ -20,7 +20,7 @@ const ServicesList = () => {
         'Регулярни разходки и игри',
         'Персонализирано меню'
       ],
-      price: 'от 50лв/ден',
+      price: '100лв/ден',
       color: 'from-soft-pink to-luxury-purple',
       popular: true
     },

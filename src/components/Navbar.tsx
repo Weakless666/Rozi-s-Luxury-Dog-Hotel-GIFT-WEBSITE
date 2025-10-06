@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Heart, PawPrint } from 'lucide-react'
+import BookingModal from './BookingModal'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [isBookingOpen, setIsBookingOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -50,7 +52,7 @@ const Navbar = () => {
             </motion.div>
             <div className="hidden sm:block">
               <h1 className="text-2xl font-handwriting font-bold text-gradient">
-                Rozi's Luxury
+                <span className="font-latin">Rozi's</span> Luxury
               </h1>
               <p className="text-sm text-luxury-purple font-medium">
                 Dog Hotel
@@ -80,6 +82,7 @@ const Navbar = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => setIsBookingOpen(true)}
               className="btn-primary"
             >
               Резервация
@@ -132,7 +135,13 @@ const Navbar = () => {
                   transition={{ delay: 0.5 }}
                   className="pt-4"
                 >
-                  <button className="btn-primary w-full">
+                  <button 
+                    onClick={() => {
+                      setIsBookingOpen(true)
+                      setIsOpen(false)
+                    }}
+                    className="btn-primary w-full"
+                  >
                     Резервация
                   </button>
                 </motion.div>
@@ -141,6 +150,12 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Booking Modal */}
+      <BookingModal 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
+      />
     </motion.nav>
   )
 }
