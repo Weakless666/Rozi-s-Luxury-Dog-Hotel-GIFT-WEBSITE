@@ -51,10 +51,10 @@ const Navbar = () => {
               <Heart className="w-4 h-4 text-soft-pink absolute -top-1 -right-1 animate-pulse" />
             </motion.div>
             <div className="hidden sm:block">
-              <h1 className="text-2xl font-handwriting font-bold text-gradient">
+              <h1 className="text-lg sm:text-xl md:text-2xl font-handwriting font-bold text-gradient">
                 <span className="font-latin">Rozi's</span> Luxury
               </h1>
-              <p className="text-sm text-luxury-purple font-medium">
+              <p className="text-xs sm:text-sm text-luxury-purple font-medium">
                 Dog Hotel
               </p>
             </div>

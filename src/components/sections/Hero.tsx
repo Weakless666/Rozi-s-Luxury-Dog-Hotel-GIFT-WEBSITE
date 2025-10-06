@@ -42,7 +42,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-handwriting font-bold mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-handwriting font-bold mb-6"
             >
               <span className="text-gradient font-latin">Rozi's Luxury</span>
               <br />
@@ -53,7 +53,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed"
+              className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed px-4 sm:px-0"
             >
               Място, където вашите четирикраки приятели получават 
               <span className="text-luxury-purple font-semibold"> най-добрата грижа</span>, 
@@ -65,7 +65,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start px-4 sm:px-0"
             >
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -73,7 +73,7 @@ const Hero = () => {
               >
                 <button 
                   onClick={() => setIsBookingOpen(true)}
-                  className="btn-primary inline-flex items-center space-x-2"
+                  className="btn-primary inline-flex items-center space-x-2 text-sm sm:text-base px-4 sm:px-6 py-3 sm:py-4"
                 >
                   <span>Резервирай сега</span>
                   <ArrowRight className="w-5 h-5" />
@@ -84,7 +84,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link to="/gallery" className="btn-secondary inline-flex items-center space-x-2">
+                <Link to="/gallery" className="btn-secondary inline-flex items-center space-x-2 text-sm sm:text-base px-4 sm:px-6 py-3 sm:py-4">
                   <Play className="w-5 h-5" />
                   <span>Виж галерията</span>
                 </Link>

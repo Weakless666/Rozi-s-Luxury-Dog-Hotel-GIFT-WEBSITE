@@ -162,7 +162,7 @@ const LoadingScreen = ({ isLoading, onComplete }: LoadingScreenProps) => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-4xl md:text-5xl font-handwriting font-bold mb-2"
+              className="text-3xl sm:text-4xl md:text-5xl font-handwriting font-bold mb-2"
             >
               <span className="text-gradient font-latin">Rozi's</span> Luxury
             </motion.h1>
@@ -171,7 +171,7 @@ const LoadingScreen = ({ isLoading, onComplete }: LoadingScreenProps) => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-xl md:text-2xl text-luxury-purple font-medium"
+              className="text-lg sm:text-xl md:text-2xl text-luxury-purple font-medium"
             >
               Dog Hotel
             </motion.p>
@@ -192,7 +192,7 @@ const LoadingScreen = ({ isLoading, onComplete }: LoadingScreenProps) => {
           </motion.div>
 
           {/* Progress bar */}
-          <div className="w-80 max-w-full mx-auto mb-8">
+          <div className="w-80 max-w-full mx-auto mb-8 px-4">
             <div className="bg-white/30 backdrop-blur-sm rounded-full h-3 overflow-hidden shadow-inner">
               <motion.div
                 className="h-full bg-gradient-to-r from-soft-pink via-luxury-purple to-premium-gold rounded-full relative"

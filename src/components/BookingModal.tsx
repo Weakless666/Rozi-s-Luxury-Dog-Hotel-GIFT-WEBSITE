@@ -146,11 +146,11 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.8, opacity: 0 }}
-          className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+          className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl mx-2 sm:mx-4"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-soft-pink to-luxury-purple p-6 text-white relative">
+          <div className="bg-gradient-to-r from-soft-pink to-luxury-purple p-4 sm:p-6 text-white relative">
             <button
               onClick={onClose}
               className="absolute top-4 right-4 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
@@ -163,7 +163,7 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
                 {getStepIcon()}
               </div>
               <div>
-                <h2 className="text-2xl font-handwriting font-bold">
+                <h2 className="text-xl sm:text-2xl font-handwriting font-bold">
                   {getStepTitle()}
                 </h2>
                 <p className="text-white/90">
@@ -182,7 +182,7 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
           </div>
 
           {/* Content */}
-          <div className="p-6 max-h-[60vh] overflow-y-auto">
+          <div className="p-4 sm:p-6 max-h-[60vh] overflow-y-auto">
             {isSuccess ? (
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
