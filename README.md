@@ -1,0 +1,160 @@
+# Rozi's Luxury Dog Hotel - Луксозен хотел за кучета
+
+Модерен React сайт за луксозен хотел за кучета, създаден с Vite, TypeScript, Tailwind CSS и Framer Motion.
+
+## 🎨 Визуална идентичност
+
+- **Меко розово** (#FFC0CB) - основен цвят за нежност и грижа
+- **Лилаво** (#8B5FBF) - за лукс и спокойствие  
+- **Златисто** (#FFD700) - за премиум усещане
+- **Бяло** (#FFF8F0) - за чистота и уют
+
+## ✨ Функционалности
+
+- 🏠 **Начална страница** с hero секция, галерия и отзиви
+- 👥 **За нас** - история, екип, ценности и мисия
+- 🛎️ **Услуги** - пълен списък с цени и пакети
+- 📸 **Галерия** - интерактивна галерия с категории
+- 📞 **Контакти** - форма за резервация и контактна информация
+- 📱 **Респонсив дизайн** - оптимизиран за всички устройства
+- 🎭 **Анимации** - плавни анимации с Framer Motion
+- 🎨 **Модерен UI** - красиви градиенти и ефекти
+
+## 🚀 Стартиране на проекта
+
+### Предварителни изисквания
+
+- Node.js (версия 16 или по-нова)
+- npm или yarn
+
+### Инсталация
+
+1. Клонирайте репозиторията:
+```bash
+git clone <repository-url>
+cd rozis-luxury-dog-hotel
+```
+
+2. Инсталирайте зависимостите:
+```bash
+npm install
+# или
+yarn install
+```
+
+3. Стартирайте development сървъра:
+```bash
+npm run dev
+# или
+yarn dev
+```
+
+4. Отворете браузъра на `http://localhost:3000`
+
+### Строене за production
+
+```bash
+npm run build
+# или
+yarn build
+```
+
+## 🛠️ Технологии
+
+- **React 18** - UI библиотека
+- **TypeScript** - типизиран JavaScript
+- **Vite** - бърз build tool
+- **Tailwind CSS** - utility-first CSS framework
+- **Framer Motion** - анимации
+- **React Router** - маршрутизиране
+- **Lucide React** - икони
+- **React Hook Form** - управление на форми
+
+## 📁 Структура на проекта
+
+```
+src/
+├── components/
+│   ├── sections/
+│   │   ├── about/
+│   │   ├── contact/
+│   │   ├── gallery/
+│   │   └── services/
+│   ├── Navbar.tsx
+│   └── Footer.tsx
+├── pages/
+│   ├── Home.tsx
+│   ├── About.tsx
+│   ├── Services.tsx
+│   ├── Gallery.tsx
+│   └── Contact.tsx
+├── App.tsx
+├── main.tsx
+└── index.css
+```
+
+## 🎨 Дизайн система
+
+### Цветове
+- `soft-pink` - #FFC0CB
+- `luxury-purple` - #8B5FBF  
+- `premium-gold` - #FFD700
+- `warm-white` - #FFF8F0
+
+### Шрифтове
+- `font-handwriting` - Dancing Script (заглавия)
+- `font-elegant` - Playfair Display (подзаглавия)
+- `font-sans` - Inter (основен текст)
+
+### Компоненти
+- `.btn-primary` - основен бутон
+- `.btn-secondary` - вторичен бутон
+- `.card-hover` - hover ефект за карти
+- `.text-gradient` - градиентен текст
+
+## 📱 Респонсив дизайн
+
+Сайтът е оптимизиран за:
+- 📱 Мобилни устройства (320px+)
+- 📱 Таблети (768px+)
+- 💻 Десктопи (1024px+)
+- 🖥️ Големи екрани (1280px+)
+
+## 🎭 Анимации
+
+Използваме Framer Motion за:
+- Плавни преходи между страници
+- Hover ефекти
+- Scroll-triggered анимации
+- Loading анимации
+- Floating елементи
+
+## 🔧 Конфигурация
+
+### Tailwind CSS
+Конфигурацията се намира в `tailwind.config.js` с:
+- Персонализирани цветове
+- Шрифтове
+- Анимации
+- Градиенти
+
+### Vite
+Конфигурацията се намира в `vite.config.ts` с:
+- React plugin
+- Development сървър на порт 3000
+- Автоматично отваряне на браузъра
+
+## 📞 Контакт
+
+За въпроси или поддръжка:
+- 📧 Email: info@rozis-dog-hotel.com
+- 📱 Телефон: +359 888 123 456
+- 🌐 Instagram: @rozis_luxury_dog_hotel
+
+## 📄 Лиценз
+
+Този проект е създаден за Rozi's Luxury Dog Hotel. Всички права запазени.
+
+---
+
+Създадено с ❤️ за нашите четирикраки приятели 🐕
