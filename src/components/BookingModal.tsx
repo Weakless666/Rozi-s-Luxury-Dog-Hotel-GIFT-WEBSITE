@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Calendar, User, Heart, PawPrint, CheckCircle } from 'lucide-react'
+import { createPortal } from 'react-dom'
 
 interface BookingModalProps {
   isOpen: boolean
@@ -81,13 +82,27 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate booking submission
-    setTimeout(() => {
-      setIsSubmitting(false)
+    try {
+      const total = calculateTotal()
+      const res = await fetch('/api/bookings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ownerName: bookingData.ownerName,
+          email: bookingData.email,
+          phone: bookingData.phone,
+          dogName: bookingData.dogName,
+          dogBreed: bookingData.dogBreed,
+          dogAge: bookingData.dogAge,
+          checkIn: bookingData.checkIn,
+          checkOut: bookingData.checkOut,
+          services: bookingData.services,
+          total,
+        }),
+      })
+      if (!res.ok) throw new Error('Request failed')
       setIsSuccess(true)
-      
-      // Reset form after 3 seconds
+      setIsSubmitting(false)
       setTimeout(() => {
         setIsSuccess(false)
         setCurrentStep(1)
@@ -104,8 +119,11 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
           specialRequests: ''
         })
         onClose()
-      }, 3000)
-    }, 2000)
+      }, 2500)
+    } catch (err) {
+      setIsSubmitting(false)
+      alert('Възникна грешка при изпращането. Моля, опитайте отново.')
+    }
   }
 
   const nextStep = () => setCurrentStep(prev => prev + 1)
@@ -131,9 +149,33 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
     }
   }
 
+  // Lock body scroll when modal is open to prevent layout jumping
+  useEffect(() => {
+    if (!isOpen) return
+    const scrollY = window.scrollY
+    const originalStyle = {
+      position: document.body.style.position,
+      top: document.body.style.top,
+      width: document.body.style.width,
+      overflow: document.body.style.overflow,
+    }
+    document.body.style.position = 'fixed'
+    document.body.style.top = `-${scrollY}px`
+    document.body.style.width = '100%'
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      document.body.style.position = originalStyle.position
+      document.body.style.top = originalStyle.top
+      document.body.style.width = originalStyle.width
+      document.body.style.overflow = originalStyle.overflow
+      window.scrollTo(0, scrollY)
+    }
+  }, [isOpen])
+
   if (!isOpen) return null
 
-  return (
+  const modalContent = (
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
@@ -561,6 +603,9 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
       </motion.div>
     </AnimatePresence>
   )
+
+  // Render modal in a portal to avoid inherited transforms affecting centering
+  return createPortal(modalContent, document.body)
 }
 
 export default BookingModal
