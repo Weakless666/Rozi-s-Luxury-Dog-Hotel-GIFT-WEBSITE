@@ -58,7 +58,7 @@ const Hero = () => {
               Място, където вашите четирикраки приятели получават 
               <span className="text-luxury-purple font-semibold"> най-добрата грижа</span>, 
               <span className="text-soft-pink font-semibold"> любов</span> и 
-              <span className="text-premium-gold font-semibold"> внимание</span>
+              <span className="text-gentle-rose font-semibold"> внимание</span>
             </motion.p>
 
             <motion.div
