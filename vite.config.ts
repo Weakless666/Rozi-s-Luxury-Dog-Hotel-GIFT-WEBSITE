@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react-swc'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,20 +17,17 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    rollupOptions: {
-      input: {
-        main: './index.html'
-      }
-    },
-    // Fix for Vercel deployment
+    // Use esbuild instead of rollup for better Vercel compatibility
     target: 'esnext',
-    minify: 'esbuild'
+    minify: 'esbuild',
+    // Disable rollup to avoid platform issues
+    rollupOptions: undefined
   },
   define: {
     global: 'globalThis'
   },
-  // Fix for Rollup platform issues
-  optimizeDeps: {
-    exclude: ['@rollup/rollup-linux-x64-gnu']
+  // Use esbuild for everything
+  esbuild: {
+    target: 'esnext'
   }
 })
