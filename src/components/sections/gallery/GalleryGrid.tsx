@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useState, useEffect } from 'react'
-import { Heart, Play, Download, Share2, X } from 'lucide-react'
+import { Heart, Play, Download, X } from 'lucide-react'
 
 const GalleryGrid = () => {
   const [ref, inView] = useInView({

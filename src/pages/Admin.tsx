@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from 'react'
 import { motion } from 'framer-motion'
-import { Upload, X, Image, CheckCircle, AlertCircle } from 'lucide-react'
+import { Upload, X } from 'lucide-react'
 
 type Booking = {
   id: number
@@ -126,7 +126,7 @@ export default function Admin() {
       const formData = new FormData()
       
       // Add all files and their metadata
-      uploadedFiles.forEach((fileData, index) => {
+      uploadedFiles.forEach((fileData) => {
         formData.append('file', fileData.file)
         formData.append('category', fileData.category)
         formData.append('title', fileData.title)
@@ -243,7 +243,7 @@ export default function Admin() {
     
     // Update localStorage for uploaded images
     const uploadedImages = JSON.parse(localStorage.getItem('galleryImages') || '[]')
-    const filteredUploaded = uploadedImages.filter(img => !selectedImages.has(img.id))
+    const filteredUploaded = uploadedImages.filter((img: any) => !selectedImages.has(img.id))
     localStorage.setItem('galleryImages', JSON.stringify(filteredUploaded))
     
     setSelectedImages(new Set())
@@ -261,7 +261,7 @@ export default function Admin() {
     
     // Update localStorage for uploaded images
     const uploadedImages = JSON.parse(localStorage.getItem('galleryImages') || '[]')
-    const updatedUploaded = uploadedImages.map(img => 
+    const updatedUploaded = uploadedImages.map((img: any) => 
       selectedImages.has(img.id) ? { ...img, category: newCategory } : img
     )
     localStorage.setItem('galleryImages', JSON.stringify(updatedUploaded))
