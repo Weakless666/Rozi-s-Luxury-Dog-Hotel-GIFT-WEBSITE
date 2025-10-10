@@ -4,16 +4,24 @@ import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
+<<<<<<< HEAD
 import CookieConsent from './components/CookieConsent'
+=======
+>>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
+<<<<<<< HEAD
 import Adopt from './pages/Adopt'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 import CookiePolicy from './pages/CookiePolicy'
+=======
+import Admin from './pages/Admin'
+import Adopt from './pages/Adopt'
+>>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -53,6 +61,7 @@ function App() {
                 <Route path="/services" element={<Services />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/contact" element={<Contact />} />
+<<<<<<< HEAD
                 <Route path="/adopt" element={<Adopt />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-of-service" element={<TermsOfService />} />
@@ -65,6 +74,13 @@ function App() {
               onReject={() => console.log('Cookies rejected')}
               onCustomize={() => console.log('Cookies customized')}
             />
+=======
+                <Route path="/admin" element={<Admin />} />
+                <Route path="/adopt" element={<Adopt />} />
+              </Routes>
+            </motion.main>
+            <Footer />
+>>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
           </>
         )}
       </div>

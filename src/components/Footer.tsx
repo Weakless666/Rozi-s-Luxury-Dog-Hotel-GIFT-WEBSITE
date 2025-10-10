@@ -163,6 +163,7 @@ const Footer = () => {
           className="border-t border-white/20 py-6"
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+<<<<<<< HEAD
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
               <p className="text-white/80 text-sm">
                 © {currentYear} <span className="font-latin">Rozi's</span> Luxury Dog Hotel. Всички права запазени.
@@ -179,6 +180,11 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
+=======
+            <p className="text-white/80 text-sm">
+              © {currentYear} <span className="font-latin">Rozi's</span> Luxury Dog Hotel. Всички права запазени.
+            </p>
+>>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
             <div className="flex flex-col items-center space-y-2 text-white/80 text-sm">
               <div className="flex items-center space-x-2">
                 <span>Направено с</span>
