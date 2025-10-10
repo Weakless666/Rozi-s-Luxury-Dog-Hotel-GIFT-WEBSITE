@@ -6,7 +6,12 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
 
   try {
     // Connect to NeonDB
-    const sql = neon(process.env.database_url!)
+    const databaseUrl = process.env.database_url || process.env.DATABASE_URL
+    if (!databaseUrl) {
+      console.error('No database URL found in environment variables')
+      return res.status(500).json({ error: 'Database configuration missing' })
+    }
+    const sql = neon(databaseUrl)
 
     // Initialize database table
     await sql`

@@ -17,7 +17,12 @@ app.use(express.static('public'))
 // API Routes
 app.post('/api/bookings', async (req, res) => {
   try {
-    const sql = neon(process.env.database_url!)
+    const databaseUrl = process.env.database_url || process.env.DATABASE_URL
+    if (!databaseUrl) {
+      console.error('No database URL found in environment variables')
+      return res.status(500).json({ error: 'Database configuration missing' })
+    }
+    const sql = neon(databaseUrl)
     
     if (!sql) {
       return res.status(500).json({ error: 'Database connection failed' })
@@ -157,7 +162,12 @@ app.post('/api/send-email', async (req, res) => {
 // Adopt endpoints
 app.get('/api/adopt', async (req, res) => {
   try {
-    const sql = neon(process.env.database_url!)
+    const databaseUrl = process.env.database_url || process.env.DATABASE_URL
+    if (!databaseUrl) {
+      console.error('No database URL found in environment variables')
+      return res.status(500).json({ error: 'Database configuration missing' })
+    }
+    const sql = neon(databaseUrl)
     
     if (!sql) {
       return res.status(500).json({ error: 'Database connection failed' })
@@ -178,7 +188,12 @@ app.get('/api/adopt', async (req, res) => {
 
 app.post('/api/adopt', async (req, res) => {
   try {
-    const sql = neon(process.env.database_url!)
+    const databaseUrl = process.env.database_url || process.env.DATABASE_URL
+    if (!databaseUrl) {
+      console.error('No database URL found in environment variables')
+      return res.status(500).json({ error: 'Database configuration missing' })
+    }
+    const sql = neon(databaseUrl)
     
     if (!sql) {
       return res.status(500).json({ error: 'Database connection failed' })
