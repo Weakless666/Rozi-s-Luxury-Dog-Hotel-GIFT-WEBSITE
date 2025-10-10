@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-<<<<<<< HEAD
 import { Heart, Phone, Mail, MapPin } from 'lucide-react'
-=======
-import { Heart, Phone, Mail, MapPin, Upload } from 'lucide-react'
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
 
 interface AdoptDog {
   id: number
@@ -28,102 +24,17 @@ interface AdoptDog {
 
 const Adopt = () => {
   const [dogs, setDogs] = useState<AdoptDog[]>([])
-<<<<<<< HEAD
   const [selectedDog, setSelectedDog] = useState<AdoptDog | null>(null)
-=======
-  const [filteredDogs, setFilteredDogs] = useState<AdoptDog[]>([])
-  const [selectedDog, setSelectedDog] = useState<AdoptDog | null>(null)
-  const [filters, setFilters] = useState({
-    breed: '',
-    age: '',
-    size: '',
-    gender: ''
-  })
-  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false)
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
 
   // Sample data - в реалността това ще идва от API
   useEffect(() => {
     const sampleDogs: AdoptDog[] = [
-<<<<<<< HEAD
       // В момента нямаме кучета за осиновяване
       // Когато има такива, ще бъдат добавени тук
     ]
     setDogs(sampleDogs)
   }, [])
 
-=======
-      {
-        id: 1,
-        name: "Боби",
-        breed: "Смесена порода",
-        age: "2 години",
-        gender: "Мъжки",
-        size: "Среден",
-        description: "Боби е много дружелюбен и игрив кученце. Обича да играе с топка и да ходи на разходки. Перфектен за семейства с деца.",
-        medicalInfo: "Ваксиниран, стерилизиран, здрав",
-        personality: ["Дружелюбен", "Игрив", "Интелигентен", "Лоялен"],
-        images: ["/images/dog1.jpg", "/images/dog2.jpg"],
-        contactInfo: {
-          phone: "+359 888 123 456",
-          email: "adopt@rozis-dog-hotel.com",
-          location: "Сапарева баня"
-        },
-        dateAdded: "2024-01-15",
-        isAdopted: false
-      },
-      {
-        id: 2,
-        name: "Луна",
-        breed: "Лабрадор микс",
-        age: "1 година",
-        gender: "Женски",
-        size: "Голям",
-        description: "Луна е много спокойна и любяща. Обича да се гушка и да играе с други кучета. Идеална за първи собственици.",
-        medicalInfo: "Ваксинирана, стерилизирана, здрав",
-        personality: ["Спокойна", "Любяща", "Търпелива", "Социална"],
-        images: ["/images/dog3.jpg", "/images/dog4.jpg"],
-        contactInfo: {
-          phone: "+359 888 123 456",
-          email: "adopt@rozis-dog-hotel.com",
-          location: "Сапарева баня"
-        },
-        dateAdded: "2024-01-10",
-        isAdopted: false
-      }
-    ]
-    setDogs(sampleDogs)
-    setFilteredDogs(sampleDogs)
-  }, [])
-
-  const handleFilterChange = (key: string, value: string) => {
-    const newFilters = { ...filters, [key]: value }
-    setFilters(newFilters)
-    
-    let filtered = dogs.filter(dog => !dog.isAdopted)
-    
-    if (newFilters.breed) {
-      filtered = filtered.filter(dog => dog.breed.toLowerCase().includes(newFilters.breed.toLowerCase()))
-    }
-    if (newFilters.age) {
-      filtered = filtered.filter(dog => dog.age.includes(newFilters.age))
-    }
-    if (newFilters.size) {
-      filtered = filtered.filter(dog => dog.size === newFilters.size)
-    }
-    if (newFilters.gender) {
-      filtered = filtered.filter(dog => dog.gender === newFilters.gender)
-    }
-    
-    setFilteredDogs(filtered)
-  }
-
-  const clearFilters = () => {
-    setFilters({ breed: '', age: '', size: '', gender: '' })
-    setFilteredDogs(dogs.filter(dog => !dog.isAdopted))
-  }
-
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
   return (
     <div className="min-h-screen bg-gradient-to-br from-warm-white via-soft-lavender to-light-peach">
       {/* Hero Section */}
@@ -142,7 +53,6 @@ const Adopt = () => {
               Осиновете Любов
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
-<<<<<<< HEAD
               Всеки кученце заслужава любящ дом и семейство. В момента нямаме кучета за осиновяване, 
               но когато има такива, те ще намерят тук своята надежда за нов живот, пълна с любов и грижа.
             </p>
@@ -170,30 +80,11 @@ const Adopt = () => {
               </div>
             </div>
             <div className="flex justify-center">
-=======
-              Всеки кученце заслужава любящ дом. Разгледайте нашите бездомни приятели, 
-              които чакат да намерят своето семейство.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIsUploadModalOpen(true)}
-                className="btn-primary inline-flex items-center space-x-2"
-              >
-                <Upload className="w-5 h-5" />
-                <span>Добавете кученце</span>
-              </motion.button>
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('dogs-grid')?.scrollIntoView({ behavior: 'smooth' })}
-<<<<<<< HEAD
                 className="btn-primary inline-flex items-center space-x-2"
-=======
-                className="btn-secondary inline-flex items-center space-x-2"
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
               >
                 <Heart className="w-5 h-5" />
                 <span>Вижте кучетата</span>
@@ -208,13 +99,8 @@ const Adopt = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-<<<<<<< HEAD
               { number: '100+', label: 'Осиновени кучета', icon: '🐕' },
               { number: '0', label: 'Чакат дом в момента', icon: '❤️' },
-=======
-              { number: '50+', label: 'Осиновени кучета', icon: '🐕' },
-              { number: '25+', label: 'Чакат дом', icon: '❤️' },
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
               { number: '100%', label: 'Безплатно осиновяване', icon: '🏠' },
               { number: '24/7', label: 'Поддръжка', icon: '📞' }
             ].map((stat, index) => (
@@ -234,89 +120,10 @@ const Adopt = () => {
         </div>
       </section>
 
-<<<<<<< HEAD
-=======
-      {/* Filters Section */}
-      <section className="py-12 bg-gradient-to-r from-soft-pink/10 to-luxury-purple/10">
-        <div className="container mx-auto px-4 lg:px-8">
-          <h2 className="text-3xl font-elegant font-bold text-center text-gray-800 mb-8">
-            Намерете своя перфектен приятел
-          </h2>
-          
-          <div className="bg-white rounded-2xl p-6 shadow-lg max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Порода</label>
-                <input
-                  type="text"
-                  placeholder="Търсете порода..."
-                  value={filters.breed}
-                  onChange={(e) => handleFilterChange('breed', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-soft-pink focus:border-transparent"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Възраст</label>
-                <select
-                  value={filters.age}
-                  onChange={(e) => handleFilterChange('age', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-soft-pink focus:border-transparent"
-                >
-                  <option value="">Всички възрасти</option>
-                  <option value="до 1 година">До 1 година</option>
-                  <option value="1-3 години">1-3 години</option>
-                  <option value="3-5 години">3-5 години</option>
-                  <option value="над 5 години">Над 5 години</option>
-                </select>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Размер</label>
-                <select
-                  value={filters.size}
-                  onChange={(e) => handleFilterChange('size', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-soft-pink focus:border-transparent"
-                >
-                  <option value="">Всички размери</option>
-                  <option value="Малък">Малък</option>
-                  <option value="Среден">Среден</option>
-                  <option value="Голям">Голям</option>
-                </select>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Пол</label>
-                <select
-                  value={filters.gender}
-                  onChange={(e) => handleFilterChange('gender', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-soft-pink focus:border-transparent"
-                >
-                  <option value="">Всички</option>
-                  <option value="Мъжки">Мъжки</option>
-                  <option value="Женски">Женски</option>
-                </select>
-              </div>
-            </div>
-            
-            <div className="flex justify-center mt-4">
-              <button
-                onClick={clearFilters}
-                className="px-6 py-2 text-gray-600 hover:text-gray-800 transition-colors"
-              >
-                Изчисти филтрите
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
       {/* Dogs Grid */}
       <section id="dogs-grid" className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <h2 className="text-3xl font-elegant font-bold text-center text-gray-800 mb-12">
-<<<<<<< HEAD
             Кучета за осиновяване
           </h2>
           
@@ -363,24 +170,6 @@ const Adopt = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {dogs.filter(dog => !dog.isAdopted).map((dog, index) => (
-=======
-            Нашите кучета за осиновяване
-          </h2>
-          
-          {filteredDogs.length === 0 ? (
-            <div className="text-center py-12">
-              <div className="text-6xl mb-4">🐕</div>
-              <h3 className="text-2xl font-elegant font-semibold text-gray-700 mb-2">
-                Няма намерени кучета
-              </h3>
-              <p className="text-gray-600">
-                Опитайте с различни филтри или се върнете по-късно за нови кученца.
-              </p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredDogs.map((dog, index) => (
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
                 <motion.div
                   key={dog.id}
                   initial={{ opacity: 0, y: 50 }}
@@ -391,11 +180,7 @@ const Adopt = () => {
                 >
                   <div className="relative">
                     <img
-<<<<<<< HEAD
                       src={dog.images[0] || '/images/dog1.png'}
-=======
-                      src={dog.images[0] || '/images/dog1.jpg'}
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
                       alt={dog.name}
                       className="w-full h-64 object-cover"
                     />
@@ -502,11 +287,7 @@ const Adopt = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
                   <img
-<<<<<<< HEAD
                     src={selectedDog.images[0] || '/images/dog1.png'}
-=======
-                    src={selectedDog.images[0] || '/images/dog1.jpg'}
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
                     alt={selectedDog.name}
                     className="w-full h-64 object-cover rounded-2xl mb-4"
                   />
@@ -612,48 +393,6 @@ const Adopt = () => {
           </motion.div>
         </div>
       )}
-<<<<<<< HEAD
-=======
-
-      {/* Upload Modal - Placeholder */}
-      {isUploadModalOpen && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            className="bg-white rounded-3xl max-w-2xl w-full p-6 shadow-2xl"
-          >
-            <div className="text-center">
-              <h2 className="text-2xl font-elegant font-bold text-gray-800 mb-4">
-                Добавете кученце за осиновяване
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Функционалността за качване ще бъде добавена скоро. 
-                Засега можете да се свържете с нас директно.
-              </p>
-              <div className="flex gap-4 justify-center">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setIsUploadModalOpen(false)}
-                  className="btn-primary"
-                >
-                  Разбрах
-                </motion.button>
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="tel:+359888123456"
-                  className="btn-secondary"
-                >
-                  Обадете се
-                </motion.a>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      )}
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
     </div>
   )
 }

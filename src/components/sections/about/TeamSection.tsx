@@ -10,7 +10,6 @@ const TeamSection = () => {
 
   const teamMembers = [
     {
-<<<<<<< HEAD
       name: 'Роза Иванова',
       position: 'Собственик',
       experience: '10+ години опит',
@@ -18,42 +17,6 @@ const TeamSection = () => {
       description: 'Роза е основателката на хотела и води всички операции с безгранична страст към животните. Тя е посветена на осигуряване на най-добрата грижа за всеки гост.',
       image: '👩‍💼',
       color: 'from-soft-pink to-luxury-purple'
-=======
-      name: 'Рози Петрова',
-      position: 'Собственик и главен мениджър',
-      experience: '5+ години опит',
-      specialty: 'Грижа за кучета и управление',
-      description: 'Рози е основателката на хотела и води всички операции с безгранична страст към животните.',
-      image: '👩‍💼',
-      color: 'from-soft-pink to-luxury-purple'
-    },
-    {
-      name: 'Д-р Мария Димитрова',
-      position: 'Главен ветеринар',
-      experience: '8+ години опит',
-      specialty: 'Ветеринарна медицина',
-      description: 'Д-р Мария осигурява медицинската грижа за всички наши гости с най-високи професионални стандарти.',
-      image: '👩‍⚕️',
-      color: 'from-luxury-purple to-premium-gold'
-    },
-    {
-      name: 'Иван Стоянов',
-      position: 'Специалист по груминг',
-      experience: '6+ години опит',
-      specialty: 'Груминг и козметика',
-      description: 'Иван е майстор в своята работа и прави всяко куче да изглежда и се чувства невероятно.',
-      image: '👨‍🎨',
-      color: 'from-premium-gold to-soft-pink'
-    },
-    {
-      name: 'Елена Георгиева',
-      position: 'Специалист по тренировки',
-      experience: '4+ години опит',
-      specialty: 'Дресировка и игри',
-      description: 'Елена организира забавни и полезни активности за нашите гости, като поддържа тяхното здраве и щастие.',
-      image: '👩‍🏫',
-      color: 'from-soft-pink to-luxury-purple'
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
     }
   ]
 
@@ -78,7 +41,6 @@ const TeamSection = () => {
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-handwriting font-bold text-gray-800 mb-6">
-<<<<<<< HEAD
             Нашият <span className="text-gradient">професионален екип</span>
           </h2>
 
@@ -167,57 +129,6 @@ const TeamSection = () => {
               </motion.div>
             ))}
           </div>
-=======
-            Познайте <span className="text-gradient">нашия екип</span>
-          </h2>
-
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Нашият професионален екип се състои от опитни специалисти, които споделят 
-            нашата страст към животните и са посветени на осигуряване на най-добрата грижа.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamMembers.map((member, index) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 50 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 card-hover group text-center"
-            >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className={`w-24 h-24 bg-gradient-to-br ${member.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-all duration-300`}
-              >
-                <span className="text-4xl">{member.image}</span>
-              </motion.div>
-              
-              <h3 className="text-xl font-elegant font-semibold text-gray-800 mb-2">
-                {member.name}
-              </h3>
-              
-              <p className="text-luxury-purple font-medium mb-2">
-                {member.position}
-              </p>
-              
-              <div className="space-y-2 mb-4">
-                <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
-                  <Award className="w-4 h-4 text-premium-gold" />
-                  <span>{member.experience}</span>
-                </div>
-                <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
-                  <GraduationCap className="w-4 h-4 text-soft-pink" />
-                  <span>{member.specialty}</span>
-                </div>
-              </div>
-              
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {member.description}
-              </p>
-            </motion.div>
-          ))}
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
         </div>
 
         {/* Team stats */}
@@ -229,17 +140,10 @@ const TeamSection = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             {[
-<<<<<<< HEAD
               { icon: Heart, number: '15+', label: 'Професионалисти в екипа', color: 'text-soft-pink' },
               { icon: Award, number: '100%', label: 'Сертифицирани специалисти', color: 'text-luxury-purple' },
               { icon: Stethoscope, number: '24/7', label: 'Медицинска грижа', color: 'text-premium-gold' },
               { icon: GraduationCap, number: '1000+', label: 'Доволни клиенти', color: 'text-soft-pink' }
-=======
-              { icon: Heart, number: '15+', label: 'Години общ опит', color: 'text-soft-pink' },
-              { icon: Award, number: '100%', label: 'Сертифицирани специалисти', color: 'text-luxury-purple' },
-              { icon: Stethoscope, number: '24/7', label: 'Ветеринарна грижа', color: 'text-premium-gold' },
-              { icon: GraduationCap, number: '50+', label: 'Обучения годишно', color: 'text-soft-pink' }
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
             ].map((stat, index) => {
               const Icon = stat.icon
               return (

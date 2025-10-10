@@ -1,10 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-<<<<<<< HEAD
 import { useState } from 'react'
-=======
-import { useState, useEffect } from 'react'
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
 import { Heart, Play, Download, X } from 'lucide-react'
 
 const GalleryGrid = () => {
@@ -429,28 +425,7 @@ const GalleryGrid = () => {
     return [...staticImages, ...uploadedImages]
   }
 
-<<<<<<< HEAD
-  const galleryImages = getGalleryImages()
-=======
-  const [galleryImages, setGalleryImages] = useState(getGalleryImages())
-
-  // Load images from server on component mount
-  useEffect(() => {
-    const loadServerImages = async () => {
-      try {
-        const response = await fetch('/api/gallery')
-        if (response.ok) {
-          const serverImages = await response.json()
-          setGalleryImages([...getGalleryImages(), ...serverImages])
-        }
-      } catch (error) {
-        console.log('Using local images only')
-      }
-    }
-    
-    loadServerImages()
-  }, [])
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
+  const [galleryImages] = useState(getGalleryImages())
 
   const openModal = (image: any) => {
     setSelectedImage(image)
@@ -490,11 +465,7 @@ const GalleryGrid = () => {
               onClick={() => openModal(image)}
             >
               {/* Real image with fallback */}
-<<<<<<< HEAD
               <div className="relative overflow-hidden" style={{ height: '300px' }}>
-=======
-              <div className="aspect-square relative overflow-hidden">
->>>>>>> 9812799a3cfe24098af19246d2f330883e3f6c13
                 <img
                   src={image.imageUrl}
                   alt={image.title}
