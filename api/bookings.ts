@@ -6,7 +6,7 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
 
   try {
     // Connect to NeonDB
-    const databaseUrl = process.env.database_url || process.env.DATABASE_URL
+    const databaseUrl = process.env.DATABASE_URL || process.env.database_url
     if (!databaseUrl) {
       console.error('No database URL found in environment variables')
       return res.status(500).json({ error: 'Database configuration missing' })

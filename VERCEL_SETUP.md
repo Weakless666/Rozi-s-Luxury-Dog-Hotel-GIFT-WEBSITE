@@ -2,10 +2,10 @@
 
 ## Required Environment Variables:
 
-### Database
-database_url=postgresql://username:password@hostname:port/database
+### Database (Required)
+DATABASE_URL=postgresql://username:password@hostname:port/database
 
-### Email Configuration
+### Email Configuration (Optional - can be added later)
 EMAIL_USER=your_gmail@gmail.com
 EMAIL_PASS=your_gmail_app_password
 
@@ -13,12 +13,12 @@ EMAIL_PASS=your_gmail_app_password
 
 1. Go to your project in Vercel Dashboard
 2. Click "Settings" → "Environment Variables"
-3. Add each variable:
-   - Name: database_url
+3. Add DATABASE_URL:
+   - Name: DATABASE_URL
    - Value: Your NeonDB connection string
    - Environment: Production, Preview, Development
 4. Click "Save"
-5. Repeat for EMAIL_USER and EMAIL_PASS
+5. (Optional) Add EMAIL_USER and EMAIL_PASS later when you have email setup
 6. Go to "Deployments" and click "Redeploy"
 
 ## NeonDB Connection String Format:

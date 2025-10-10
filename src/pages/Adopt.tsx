@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { Heart, PawPrint, Phone, Mail, Calendar, MapPin, Camera, Upload, User, Info } from 'lucide-react'
+import { Heart, Phone, Mail, MapPin, Upload } from 'lucide-react'
 
 interface AdoptDog {
   id: number
