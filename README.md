@@ -30,7 +30,7 @@
 - **Анимации**: Framer Motion
 - **Икони**: Lucide React
 - **Backend**: Vercel Serverless Functions
-- **База данни**: NeonDB (PostgreSQL)
+- **База данни**: NeonDB (PostgreSQL) с @neondatabase/serverless
 - **Email**: Nodemailer
 - **File Upload**: Formidable
 
@@ -59,7 +59,7 @@ npm run dev
 Създай `.env.local` файл в root директорията:
 
 ```env
-# Database (NeonDB)
+# Database (NeonDB) - Използва @neondatabase/serverless
 DATABASE_URL=postgresql://username:password@host:port/database?sslmode=require
 
 # Email (SMTP)
@@ -72,6 +72,8 @@ SMTP_PASS=your-app-password
 # App Settings
 NODE_ENV=production
 ```
+
+**Важно**: Използваме `@neondatabase/serverless` пакета за по-добра производителност на Vercel!
 
 ### Vercel Environment Variables
 
