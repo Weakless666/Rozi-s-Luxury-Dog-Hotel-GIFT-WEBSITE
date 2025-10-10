@@ -133,17 +133,17 @@ const GalleryPreview = () => {
               {/* Close button */}
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
               >
-                <X className="w-6 h-6 text-white" />
+                <X className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
               </button>
 
               {/* Modal content - just the image */}
-              <div className="flex items-center justify-center w-full h-full p-12">
+              <div className="flex items-center justify-center w-full h-full p-4 sm:p-8 lg:p-12">
                 <img
                   src={selectedImage.imageUrl}
                   alt={selectedImage.title}
-                  className="max-w-[80%] max-h-[80%] object-contain"
+                  className="max-w-[95%] max-h-[90%] sm:max-w-[85%] sm:max-h-[85%] lg:max-w-[80%] lg:max-h-[80%] object-contain"
                   onError={(e) => {
                     // Fallback to gradient placeholder if image fails to load
                     const target = e.target as HTMLImageElement;

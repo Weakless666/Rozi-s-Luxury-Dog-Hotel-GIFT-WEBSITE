@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
 import CookieConsent from './components/CookieConsent'
+import ChatBot from './components/ChatBot'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
@@ -60,6 +61,7 @@ function App() {
               onReject={() => {}}
               onCustomize={() => {}}
             />
+            <ChatBot />
           </>
         )}
       </div>
