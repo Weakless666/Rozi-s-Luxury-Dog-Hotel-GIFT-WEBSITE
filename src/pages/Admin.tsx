@@ -56,12 +56,43 @@ export default function Admin() {
   }
 
   const updateStatus = async (id: number, status: string) => {
-    await fetch('/api/bookings', {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id, status }),
-    })
-    await fetchBookings()
+    try {
+      const response = await fetch('/api/bookings', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, status }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to update booking status')
+      }
+
+      const result = await response.json()
+      
+      // Send status update email
+      try {
+        await fetch('/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            to: result.booking.email,
+            subject: `Обновление на статус - Rozi's Luxury Dog Hotel`,
+            bookingData: result.booking,
+            type: 'status_update'
+          }),
+        });
+      } catch (emailError) {
+        console.log('Email sending failed, but status was updated:', emailError);
+      }
+
+      await fetchBookings()
+      alert(`Статусът е обновен на "${status}"!`)
+    } catch (error) {
+      console.error('Error updating booking status:', error)
+      alert('Грешка при обновяване на статуса')
+    }
   }
 
   // Gallery upload functions

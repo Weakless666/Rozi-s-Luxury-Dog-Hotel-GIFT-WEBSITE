@@ -1,183 +1,220 @@
-# Rozi's Luxury Dog Hotel - Луксозен хотел за кучета
+# Rozi's Luxury Dog Hotel - Website
 
-Модерен React сайт за луксозен хотел за кучета, създаден с Vite, TypeScript, Tailwind CSS и Framer Motion.
+Красив и модерен уебсайт за луксозен хотел за кучета, изграден с React, TypeScript и Vite.
 
-## 🎨 Визуална идентичност
+## 🚀 Функционалности
 
-- **Меко розово** (#FFC0CB) - основен цвят за нежност и грижа
-- **Лилаво** (#8B5FBF) - за лукс и спокойствие  
-- **Златисто** (#FFD700) - за премиум усещане
-- **Бяло** (#FFF8F0) - за чистота и уют
+### ✨ Основни функции
+- **Красив дизайн** с розово-лилави градиенти и елегантна типография
+- **Адаптивен дизайн** за всички устройства
+- **Анимации** с Framer Motion
+- **Интерактивна галерия** с модали за преглед на снимки
+- **Система за резервации** с 4-стъпкова форма
 
-## ✨ Функционалности
+### 📧 Резервационна система
+- **Автоматично запазване** в NeonDB (PostgreSQL)
+- **Email потвърждения** с Nodemailer
+- **Админ панел** за управление на резервации
+- **Статуси на резервации** (pending, confirmed, cancelled)
 
-- 🏠 **Начална страница** с hero секция, галерия и отзиви
-- 👥 **За нас** - история, екип, ценности и мисия
-- 🛎️ **Услуги** - пълен списък с цени и пакети (100лв/ден основна цена)
-- 📸 **Галерия** - интерактивна галерия с категории
-- 📞 **Контакти** - форма за резервация и контактна информация (Сапарева баня)
-- 🎯 **Booking система** - 4-стъпкова модална система за резервация
-- 🐕 **Loading Screen** - красива кучешка кащурка с анимации
-- 📱 **Респонсив дизайн** - оптимизиран за всички устройства
-- 🎭 **Анимации** - плавни анимации с Framer Motion
-- 🎨 **Модерен UI** - красиви градиенти и ефекти
+### 🖼️ Галерия
+- **Качване на снимки** директно на Vercel сървъра
+- **Управление на галерията** (триене, преместване по категории)
+- **Директно снимане** с камерата на мобилни устройства
+- **Drag & drop** функционалност
 
-## 🚀 Стартиране на проекта
+## 🛠️ Технологии
 
-### Предварителни изисквания
+- **Frontend**: React 18, TypeScript, Vite
+- **Стилизиране**: Tailwind CSS
+- **Анимации**: Framer Motion
+- **Икони**: Lucide React
+- **Backend**: Vercel Serverless Functions
+- **База данни**: NeonDB (PostgreSQL)
+- **Email**: Nodemailer
+- **File Upload**: Formidable
 
-- Node.js (версия 16 или по-нова)
-- npm или yarn
+## 📦 Инсталация
 
-### Инсталация
-
-1. Клонирайте репозиторията:
+1. **Клонирай репозиторията**
 ```bash
 git clone <repository-url>
 cd rozis-luxury-dog-hotel
 ```
 
-2. Инсталирайте зависимостите:
+2. **Инсталирай зависимостите**
 ```bash
 npm install
-# или
-yarn install
 ```
 
-3. Стартирайте development сървъра:
+3. **Стартирай development сървъра**
 ```bash
 npm run dev
-# или
-yarn dev
 ```
-
-4. Отворете браузъра на `http://localhost:3000`
-
-### Строене за production
-
-```bash
-npm run build
-# или
-yarn build
-```
-
-## 🛠️ Технологии
-
-- **React 18** - UI библиотека
-- **TypeScript** - типизиран JavaScript
-- **Vite** - бърз build tool
-- **Tailwind CSS** - utility-first CSS framework
-- **Framer Motion** - анимации
-- **React Router** - маршрутизиране
-- **Lucide React** - икони
-- **React Hook Form** - управление на форми
-
-## 📁 Структура на проекта
-
-```
-src/
-├── components/
-│   ├── sections/
-│   │   ├── about/
-│   │   ├── contact/
-│   │   ├── gallery/
-│   │   └── services/
-│   ├── Navbar.tsx
-│   └── Footer.tsx
-├── pages/
-│   ├── Home.tsx
-│   ├── About.tsx
-│   ├── Services.tsx
-│   ├── Gallery.tsx
-│   └── Contact.tsx
-├── App.tsx
-├── main.tsx
-└── index.css
-```
-
-## 🎨 Дизайн система
-
-### Цветове
-- `soft-pink` - #FFC0CB
-- `luxury-purple` - #8B5FBF  
-- `premium-gold` - #FFD700
-- `warm-white` - #FFF8F0
-
-### Шрифтове
-- `font-handwriting` - Dancing Script (заглавия)
-- `font-elegant` - Playfair Display (подзаглавия)
-- `font-sans` - Inter (основен текст)
-
-### Компоненти
-- `.btn-primary` - основен бутон
-- `.btn-secondary` - вторичен бутон
-- `.card-hover` - hover ефект за карти
-- `.text-gradient` - градиентен текст
-
-## 📱 Респонсив дизайн
-
-Сайтът е оптимизиран за:
-- 📱 Мобилни устройства (320px+)
-- 📱 Таблети (768px+)
-- 💻 Десктопи (1024px+)
-- 🖥️ Големи екрани (1280px+)
-
-## 🎭 Анимации
-
-Използваме Framer Motion за:
-- Плавни преходи между страници
-- Hover ефекти
-- Scroll-triggered анимации
-- Loading анимации
-- Floating елементи
 
 ## 🔧 Конфигурация
 
-### Tailwind CSS
-Конфигурацията се намира в `tailwind.config.js` с:
-- Персонализирани цветове
-- Шрифтове
-- Анимации
-- Градиенти
+### Environment Variables
 
-### Vite
-Конфигурацията се намира в `vite.config.ts` с:
-- React plugin
-- Development сървър на порт 3000
-- Автоматично отваряне на браузъра
+Създай `.env.local` файл в root директорията:
 
-## 📞 Контакт
+```env
+# Database (NeonDB)
+DATABASE_URL=postgresql://username:password@host:port/database?sslmode=require
 
-За въпроси или поддръжка:
-- 📧 Email: info@rozis-dog-hotel.com
-- 📱 Телефон: +359 888 123 456
-- 💜 Viber: +359 888 123 456
-- 🌐 Instagram: @rozis_luxury_dog_hotel
-- 📘 Facebook: [Rozi's Luxury Dog Hotel](https://www.facebook.com/profile.php?id=100058613121575)
-- 📍 Адрес: Сапарева баня, България
+# Email (SMTP)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-password
 
-## 🐕 Loading Screen
+# App Settings
+NODE_ENV=production
+```
 
-Сайтът включва красива loading screen с кучешка тематика:
+### Vercel Environment Variables
 
-- **Анимиран лого** с PawPrint икона
-- **Прогрес бар** с градиентни цветове
-- **Плаващи елементи** - кучета, сърчица, цветя
-- **Динамични съобщения** които се сменят
-- **Кучешки следи** с анимации
-- **Летащи сърчица** в фона
-- **3 секунди** зареждане за по-добро потребителско изживяване
+В Vercel dashboard, добави следните environment variables:
 
-### Цветова схема на Loading Screen:
-- Същите цветове като основната тема
-- Меки градиенти и анимации
-- Кучешки елементи и емоции
-- Професионален и привлекателен дизайн
+```
+DATABASE_URL=postgresql://username:password@host:port/database?sslmode=require
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-password
+NODE_ENV=production
+```
+
+## 🗄️ База данни
+
+### NeonDB Setup
+
+1. Създай акаунт в [NeonDB](https://neon.tech/)
+2. Създай нов проект
+3. Копирай connection string
+4. Добави го като `DATABASE_URL` environment variable
+
+### Таблица за резервации
+
+Базата данни ще се създаде автоматично при първото използване:
+
+```sql
+CREATE TABLE bookings (
+  id SERIAL PRIMARY KEY,
+  owner_name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  phone VARCHAR(50) NOT NULL,
+  dog_name VARCHAR(255),
+  dog_breed VARCHAR(255),
+  dog_age VARCHAR(50),
+  check_in DATE,
+  check_out DATE,
+  services JSONB DEFAULT '[]',
+  special_requests TEXT,
+  total_price DECIMAL(10,2) NOT NULL,
+  number_of_days INTEGER NOT NULL,
+  status VARCHAR(50) DEFAULT 'pending',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+## 📧 Email настройка
+
+### Gmail SMTP
+
+1. Отиди в Google Account Settings
+2. Включи 2-Factor Authentication
+3. Създай App Password
+4. Използвай App Password като `SMTP_PASS`
+
+### Други SMTP провайдери
+
+```env
+# Outlook/Hotmail
+SMTP_HOST=smtp-mail.outlook.com
+SMTP_PORT=587
+
+# Yahoo
+SMTP_HOST=smtp.mail.yahoo.com
+SMTP_PORT=587
+
+# Custom SMTP
+SMTP_HOST=your-smtp-server.com
+SMTP_PORT=587
+```
+
+## 🚀 Deployment
+
+### Vercel (Препоръчвано)
+
+1. **Инсталирай Vercel CLI**
+```bash
+npm i -g vercel
+```
+
+2. **Deploy**
+```bash
+vercel
+```
+
+3. **Добави environment variables** в Vercel dashboard
+
+4. **Redeploy** за да активираш промените
+
+### Други платформи
+
+- **Netlify**: Използвай `npm run build` и deploy `dist` папката
+- **Railway**: Поддържа Vercel serverless functions
+- **Heroku**: Добави buildpack за Node.js
+
+## 📱 Админ панел
+
+Достъп: `/admin`
+
+### Функции:
+- **Преглед на резервации** с филтри и търсене
+- **Управление на статуси** (pending, confirmed, cancelled)
+- **Качване на снимки** в галерията
+- **Управление на галерията** (триене, преместване)
+
+### Email уведомления:
+- **Потвърждение** при нова резервация
+- **Обновление на статус** при промяна
+- **Отмяна** при отказване
+
+## 🎨 Персонализиране
+
+### Цветове (Tailwind CSS)
+```css
+--soft-pink: #FFC0CB
+--luxury-purple: #8B5FBF
+--premium-gold: #FFD700
+--warm-white: #FFF8F0
+--soft-lavender: #E6E6FA
+--light-peach: #FFE5B4
+```
+
+### Шрифтове
+- **Handwriting**: Dancing Script (заглавия)
+- **Elegant**: Playfair Display (подзаглавия)
+- **Body**: Inter (основен текст)
+
+## 📞 Контакти
+
+- **Телефон**: +359 888 123 456
+- **Email**: info@rozis-dog-hotel.com
+- **Viber**: +359 888 123 456
+- **Адрес**: Сапарева баня, България
+- **Facebook**: [Rozi's Luxury Dog Hotel](https://www.facebook.com/profile.php?id=100058613121575)
+- **Instagram**: [@rozis_luxury_dog_hotel](https://www.instagram.com/rozis_luxury_dog_hotel/)
 
 ## 📄 Лиценз
 
-Този проект е създаден за Rozi's Luxury Dog Hotel. Всички права запазени.
+Този проект е създаден като подарък за Rozi's Luxury Dog Hotel.
 
 ---
 
-Създадено с ❤️ за нашите четирикраки приятели 🐕
+**Made with ❤️ by Weakless666**

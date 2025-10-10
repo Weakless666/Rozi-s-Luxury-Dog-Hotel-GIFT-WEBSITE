@@ -16,43 +16,37 @@ const GalleryCategories = () => {
       id: 'all',
       name: 'Всички',
       icon: Camera,
-      color: 'from-soft-pink to-luxury-purple',
-      count: 156
+      color: 'from-soft-pink to-luxury-purple'
     },
     {
       id: 'rooms',
       name: 'Стаи и помещения',
       icon: Home,
-      color: 'from-luxury-purple to-premium-gold',
-      count: 32
+      color: 'from-luxury-purple to-premium-gold'
     },
     {
       id: 'grooming',
       name: 'Груминг',
       icon: Scissors,
-      color: 'from-premium-gold to-soft-pink',
-      count: 28
+      color: 'from-premium-gold to-soft-pink'
     },
     {
       id: 'activities',
       name: 'Игри и упражнения',
       icon: Dumbbell,
-      color: 'from-soft-pink to-luxury-purple',
-      count: 45
+      color: 'from-soft-pink to-luxury-purple'
     },
     {
       id: 'happy-dogs',
       name: 'Щастливи кучета',
       icon: Heart,
-      color: 'from-luxury-purple to-premium-gold',
-      count: 38
+      color: 'from-luxury-purple to-premium-gold'
     },
     {
       id: 'special-moments',
       name: 'Специални моменти',
       icon: Star,
-      color: 'from-premium-gold to-soft-pink',
-      count: 13
+      color: 'from-premium-gold to-soft-pink'
     }
   ]
 
@@ -114,13 +108,6 @@ const GalleryCategories = () => {
               >
                 <Icon className="w-5 h-5" />
                 <span>{category.name}</span>
-                <span className={`text-sm px-2 py-1 rounded-full ${
-                  isActive 
-                    ? 'bg-white/20 text-white' 
-                    : 'bg-soft-pink/20 text-luxury-purple'
-                }`}>
-                  {category.count}
-                </span>
               </motion.button>
             )
           })}

@@ -97,10 +97,34 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
           checkIn: bookingData.checkIn,
           checkOut: bookingData.checkOut,
           services: bookingData.services,
-          total,
+          specialRequests: bookingData.specialRequests,
+          totalPrice: total,
+          numberOfDays: calculateDays(),
         }),
       })
+      
       if (!res.ok) throw new Error('Request failed')
+      
+      const result = await res.json()
+      
+      // Send confirmation email
+      try {
+        await fetch('/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            to: bookingData.email,
+            subject: 'Потвърждение на резервация - Rozi\'s Luxury Dog Hotel',
+            bookingData: result.booking,
+            type: 'confirmation'
+          }),
+        });
+      } catch (emailError) {
+        console.log('Email sending failed, but booking was successful:', emailError);
+      }
+      
       setIsSuccess(true)
       setIsSubmitting(false)
       setTimeout(() => {
