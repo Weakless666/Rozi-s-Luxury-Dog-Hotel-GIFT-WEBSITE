@@ -4,10 +4,9 @@ import { PawPrint, Heart, Star } from 'lucide-react'
 
 interface LoadingScreenProps {
   isLoading: boolean
-  onComplete: () => void
 }
 
-const LoadingScreen = ({ isLoading, onComplete }: LoadingScreenProps) => {
+const LoadingScreen = ({ isLoading }: LoadingScreenProps) => {
   const [progress, setProgress] = useState(0)
   const [currentMessage, setCurrentMessage] = useState(0)
 
@@ -25,7 +24,6 @@ const LoadingScreen = ({ isLoading, onComplete }: LoadingScreenProps) => {
       setProgress(prev => {
         if (prev >= 100) {
           clearInterval(timer)
-          setTimeout(onComplete, 500)
           return 100
         }
         return prev + 2
@@ -33,7 +31,7 @@ const LoadingScreen = ({ isLoading, onComplete }: LoadingScreenProps) => {
     }, 50)
 
     return () => clearInterval(timer)
-  }, [isLoading, onComplete])
+  }, [isLoading])
 
   useEffect(() => {
     if (!isLoading) return

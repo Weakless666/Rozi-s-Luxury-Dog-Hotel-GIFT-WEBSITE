@@ -22,21 +22,16 @@ function App() {
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 3000) // 3 seconds loading time
+    }, 2000) // 2 seconds loading time
 
     return () => clearTimeout(timer)
   }, [])
-
-  const handleLoadingComplete = () => {
-    setIsLoading(false)
-  }
 
   return (
     <Router>
       <div className="min-h-screen bg-gradient-to-br from-warm-white via-soft-lavender to-light-peach">
         <LoadingScreen 
           isLoading={isLoading} 
-          onComplete={handleLoadingComplete} 
         />
         
         {!isLoading && (
@@ -61,9 +56,9 @@ function App() {
             </motion.main>
             <Footer />
             <CookieConsent 
-              onAccept={() => console.log('Cookies accepted')}
-              onReject={() => console.log('Cookies rejected')}
-              onCustomize={() => console.log('Cookies customized')}
+              onAccept={() => {}}
+              onReject={() => {}}
+              onCustomize={() => {}}
             />
           </>
         )}

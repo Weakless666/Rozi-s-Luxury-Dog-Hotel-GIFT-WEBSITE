@@ -81,7 +81,6 @@ const GalleryPreview = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   style={{ minHeight: '300px', backgroundColor: '#f0f0f0' }}
                   onError={(e) => {
-                    console.log('Image failed to load:', image.imageUrl);
                     // Fallback to gradient placeholder if image fails to load
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
@@ -99,7 +98,6 @@ const GalleryPreview = () => {
                       `;
                     }
                   }}
-                  onLoad={() => console.log('Image loaded successfully:', image.imageUrl)}
                 />
                 
                 {/* Simple hover overlay with expand icon */}
