@@ -10,6 +10,7 @@ import Services from './pages/Services'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
 import Admin from './pages/Admin'
+import Adopt from './pages/Adopt'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -50,6 +51,7 @@ function App() {
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/admin" element={<Admin />} />
+                <Route path="/adopt" element={<Adopt />} />
               </Routes>
             </motion.main>
             <Footer />

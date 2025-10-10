@@ -17,7 +17,7 @@ app.use(express.static('public'))
 // API Routes
 app.post('/api/bookings', async (req, res) => {
   try {
-    const sql = neon(process.env.DATABASE_URL!)
+    const sql = neon(process.env.database_url!)
     
     if (!sql) {
       return res.status(500).json({ error: 'Database connection failed' })
@@ -151,6 +151,128 @@ app.post('/api/send-email', async (req, res) => {
   } catch (error) {
     console.error('Email error:', error)
     res.status(500).json({ error: 'Грешка при изпращане на имейла' })
+  }
+})
+
+// Adopt endpoints
+app.get('/api/adopt', async (req, res) => {
+  try {
+    const sql = neon(process.env.database_url!)
+    
+    if (!sql) {
+      return res.status(500).json({ error: 'Database connection failed' })
+    }
+
+    const dogs = await sql`
+      SELECT * FROM adopt_dogs 
+      WHERE is_adopted = false 
+      ORDER BY date_added DESC
+    `
+    res.status(200).json(dogs)
+
+  } catch (error) {
+    console.error('Adopt GET error:', error)
+    res.status(500).json({ error: 'Грешка при зареждане на кучетата' })
+  }
+})
+
+app.post('/api/adopt', async (req, res) => {
+  try {
+    const sql = neon(process.env.database_url!)
+    
+    if (!sql) {
+      return res.status(500).json({ error: 'Database connection failed' })
+    }
+
+    const {
+      name,
+      breed,
+      age,
+      gender,
+      size,
+      description,
+      medicalInfo,
+      personality,
+      images,
+      contactInfo
+    } = req.body
+
+    const result = await sql`
+      INSERT INTO adopt_dogs (
+        name, breed, age, gender, size, description, medical_info, 
+        personality, images, contact_info, date_added, is_adopted
+      ) VALUES (
+        ${name}, ${breed}, ${age}, ${gender}, ${size}, ${description}, 
+        ${medicalInfo}, ${JSON.stringify(personality)}, ${JSON.stringify(images)}, 
+        ${JSON.stringify(contactInfo)}, NOW(), false
+      ) RETURNING *
+    `
+
+    res.status(201).json({ 
+      success: true, 
+      message: 'Кученцето е добавено успешно за осиновяване!',
+      dog: result[0]
+    })
+
+  } catch (error) {
+    console.error('Adopt POST error:', error)
+    res.status(500).json({ error: 'Грешка при добавяне на кученцето' })
+  }
+})
+
+app.post('/api/adopt-upload', async (req, res) => {
+  try {
+    const {
+      name,
+      breed,
+      age,
+      gender,
+      size,
+      description,
+      medicalInfo,
+      personality,
+      images,
+      contactInfo
+    } = req.body
+
+    // Validate required fields
+    if (!name || !breed || !age || !gender || !size || !description) {
+      return res.status(400).json({ 
+        error: 'Липсват задължителни полета',
+        required: ['name', 'breed', 'age', 'gender', 'size', 'description']
+      })
+    }
+
+    const dogData = {
+      id: Date.now(),
+      name,
+      breed,
+      age,
+      gender,
+      size,
+      description,
+      medicalInfo: medicalInfo || 'Информацията ще бъде добавена',
+      personality: personality || ['Дружелюбен'],
+      images: images || ['/images/dog1.jpg'],
+      contactInfo: contactInfo || {
+        phone: '+359 888 123 456',
+        email: 'adopt@rozis-dog-hotel.com',
+        location: 'Сапарева баня'
+      },
+      dateAdded: new Date().toISOString().split('T')[0],
+      isAdopted: false
+    }
+
+    res.status(200).json({ 
+      success: true, 
+      message: 'Кученцето е добавено успешно за осиновяване!',
+      dog: dogData,
+      note: 'Функционалността за качване на снимки ще бъде добавена скоро'
+    })
+
+  } catch (error) {
+    console.error('Adopt upload error:', error)
+    res.status(500).json({ error: 'Грешка при добавяне на кученцето' })
   }
 })
 

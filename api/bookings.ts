@@ -6,7 +6,7 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
 
   try {
     // Connect to NeonDB
-    const sql = neon(process.env.DATABASE_URL!)
+    const sql = neon(process.env.database_url!)
 
     // Initialize database table
     await sql`

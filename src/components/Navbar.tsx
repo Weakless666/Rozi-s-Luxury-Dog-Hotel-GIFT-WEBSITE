@@ -18,13 +18,14 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navItems = [
-    { name: 'Начало', path: '/' },
-    { name: 'За нас', path: '/about' },
-    { name: 'Услуги', path: '/services' },
-    { name: 'Галерия', path: '/gallery' },
-    { name: 'Контакти', path: '/contact' }
-  ]
+      const navItems = [
+        { name: 'Начало', path: '/' },
+        { name: 'За нас', path: '/about' },
+        { name: 'Услуги', path: '/services' },
+        { name: 'Галерия', path: '/gallery' },
+        { name: 'Осиновяване', path: '/adopt' },
+        { name: 'Контакти', path: '/contact' }
+      ]
 
   return (
     <motion.nav

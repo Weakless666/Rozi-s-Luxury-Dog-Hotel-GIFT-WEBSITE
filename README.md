@@ -44,6 +44,13 @@ npm run dev     # Frontend on port 3000
 - Integrated NeonDB for bookings
 - Added email notifications
 
+### ✅ Adoption Section
+- Created new Adopt page for dog adoption
+- Added dog listing with filters (breed, age, size, gender)
+- Implemented dog detail modal with full information
+- Added API endpoints for adoption management
+- Created database schema for adopt_dogs table
+
 ### ✅ TypeScript Errors
 - Removed Next.js dependencies
 - Added proper type definitions
@@ -62,6 +69,9 @@ npm run dev     # Frontend on port 3000
 - `POST /api/bookings` - Create booking
 - `GET /api/gallery` - Get gallery images  
 - `POST /api/send-email` - Send email notifications
+- `GET /api/adopt` - Get dogs for adoption
+- `POST /api/adopt` - Add new dog for adoption
+- `POST /api/adopt-upload` - Upload dog with images
 
 ## 🎯 Next Steps
 1. Set up NeonDB database
