@@ -1,7 +1,7 @@
-import { NextApiRequest, NextApiResponse } from 'next'
 import { neon } from '@neondatabase/serverless'
+import { ApiRequest, ApiResponse } from './types'
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: ApiRequest, res: ApiResponse) {
   const { method } = req
 
   try {
@@ -133,7 +133,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         break
 
       default:
-        res.setHeader('Allow', ['GET', 'POST', 'PATCH', 'DELETE'])
+        if (res.setHeader) {
+          res.setHeader('Allow', ['GET', 'POST', 'PATCH', 'DELETE'])
+        }
         res.status(405).json({ error: `Method ${method} not allowed` })
     }
 

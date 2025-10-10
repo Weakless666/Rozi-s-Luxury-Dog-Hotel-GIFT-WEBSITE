@@ -62,7 +62,11 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
 
   const calculateDays = () => {
     if (!bookingData.checkIn || !bookingData.checkOut) return 0
-    return Math.ceil((new Date(bookingData.checkOut).getTime() - new Date(bookingData.checkIn).getTime()) / (1000 * 60 * 60 * 24))
+    const checkInDate = new Date(bookingData.checkIn)
+    const checkOutDate = new Date(bookingData.checkOut)
+    const timeDiff = checkOutDate.getTime() - checkInDate.getTime()
+    const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24))
+    return daysDiff > 0 ? daysDiff : 1 // Minimum 1 day
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
