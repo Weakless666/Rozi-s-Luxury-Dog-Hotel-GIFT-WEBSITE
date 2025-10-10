@@ -425,7 +425,7 @@ const GalleryGrid = () => {
     return [...staticImages, ...uploadedImages]
   }
 
-  const [galleryImages, setGalleryImages] = useState(getGalleryImages())
+  const galleryImages = getGalleryImages()
 
   const openModal = (image: any) => {
     setSelectedImage(image)
