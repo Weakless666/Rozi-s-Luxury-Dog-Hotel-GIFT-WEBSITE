@@ -21,9 +21,16 @@ export default defineConfig({
       input: {
         main: './index.html'
       }
-    }
+    },
+    // Fix for Vercel deployment
+    target: 'esnext',
+    minify: 'esbuild'
   },
   define: {
     global: 'globalThis'
+  },
+  // Fix for Rollup platform issues
+  optimizeDeps: {
+    exclude: ['@rollup/rollup-linux-x64-gnu']
   }
 })
