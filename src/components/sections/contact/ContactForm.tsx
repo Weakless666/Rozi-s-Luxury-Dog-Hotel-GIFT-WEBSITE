@@ -175,7 +175,7 @@ const ContactForm = () => {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-soft-pink focus:border-transparent transition-all duration-300"
-                      placeholder="+359 888 123 456"
+                      placeholder="+359 882 739 396"
                     />
                   </div>
                   

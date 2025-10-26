@@ -43,9 +43,9 @@ const BookingSection = () => {
     {
       icon: Phone,
       title: 'Телефон',
-      value: '+359 888 123 456',
+      value: '+359 882 739 396',
       description: 'Работно време: 8:00 - 20:00',
-      action: 'tel:+359888123456',
+      action: 'tel:+359882739396',
       color: 'from-soft-pink to-luxury-purple'
     },
     {

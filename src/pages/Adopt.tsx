@@ -149,7 +149,7 @@ const Adopt = () => {
                   <motion.a
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    href="tel:+359888123456"
+                    href="tel:+359882739396"
                     className="btn-primary inline-flex items-center space-x-2"
                   >
                     <Phone className="w-5 h-5" />
@@ -244,7 +244,7 @@ const Adopt = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="tel:+359888123456"
+              href="tel:+359882739396"
               className="bg-white text-luxury-purple px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center justify-center space-x-2"
             >
               <Phone className="w-5 h-5" />

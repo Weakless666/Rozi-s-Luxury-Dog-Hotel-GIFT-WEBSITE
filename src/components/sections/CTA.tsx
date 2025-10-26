@@ -15,8 +15,8 @@ const CTA = () => {
     {
       icon: Phone,
       title: 'Обадете се сега',
-      description: '+359 888 123 456',
-      action: 'tel:+359888123456',
+      description: '+359 882 739 396',
+      action: 'tel:+359882739396',
       color: 'from-soft-pink to-luxury-purple'
     },
     {
@@ -98,7 +98,7 @@ const CTA = () => {
               whileTap={{ scale: 0.95 }}
             >
               <a 
-                href="tel:+359888123456" 
+                href="tel:+359882739396" 
                 className="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full font-bold text-lg border-2 border-white/30 hover:bg-white/30 hover:border-white/50 transform hover:scale-105 transition-all duration-300 ease-in-out inline-flex items-center space-x-2"
               >
                 <Phone className="w-5 h-5" />

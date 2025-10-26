@@ -123,7 +123,7 @@ const PrivacyPolicy = () => {
                 </p>
                 <div className="bg-gradient-to-r from-soft-pink/10 to-luxury-purple/10 rounded-lg p-4">
                   <p className="text-gray-700"><strong>Имейл:</strong> privacy@rozis-dog-hotel.com</p>
-                  <p className="text-gray-700"><strong>Телефон:</strong> +359 888 123 456</p>
+                  <p className="text-gray-700"><strong>Телефон:</strong> +359 882 739 396</p>
                   <p className="text-gray-700"><strong>Адрес:</strong> Сапарева баня, България</p>
                 </div>
               </section>

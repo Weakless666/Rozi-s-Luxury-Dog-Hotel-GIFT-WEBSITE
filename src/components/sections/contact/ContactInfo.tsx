@@ -19,9 +19,9 @@ const ContactInfo = () => {
     {
       icon: Phone,
       title: 'Телефон',
-      value: '+359 888 123 456',
+      value: '+359 882 739 396',
       description: 'Обадете се за бърза консултация и резервация',
-      action: 'tel:+359888123456',
+      action: 'tel:+359882739396',
       color: 'from-soft-pink to-luxury-purple',
       available: '8:00 - 20:00'
     },
@@ -37,9 +37,9 @@ const ContactInfo = () => {
     {
       icon: ViberIcon,
       title: 'Viber',
-      value: '+359 888 123 456',
+      value: '+359 882 739 396',
       description: 'Бързо съобщение за резервации',
-      action: 'viber://chat?number=+359888123456',
+      action: 'viber://chat?number=+359882739396',
       color: 'from-purple-500 to-purple-600',
       available: '8:00 - 20:00'
     },

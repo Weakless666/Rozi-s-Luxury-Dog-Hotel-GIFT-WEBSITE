@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Heart, PawPrint, Phone, Mail, MapPin, Instagram, Facebook, MessageCircle } from 'lucide-react'
+import { Heart, PawPrint, Phone, Mail, MapPin, Instagram, Facebook } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -20,10 +20,9 @@ const Footer = () => {
       { name: 'Транспорт', path: '/services#transport' }
     ],
     contact: [
-      { name: 'Телефон', value: '+359 888 123 456', icon: Phone },
+      { name: 'Телефон', value: '+359 882 739 396', icon: Phone },
       { name: 'Имейл', value: 'info@rozis-dog-hotel.com', icon: Mail },
-      { name: 'Viber', value: '+359 888 123 456', icon: MessageCircle },
-      { name: 'Адрес', value: 'Сапарева баня, България', icon: MapPin }
+      { name: 'Адрес', value: 'ул. "Германея" 60, 2650 Сапарева баня', icon: MapPin }
     ]
   }
 
@@ -143,6 +142,31 @@ const Footer = () => {
               <ul className="space-y-4">
                 {footerLinks.contact.map((contact) => {
                   const Icon = contact.icon
+                  const isAddress = contact.name === 'Адрес'
+                  const link = isAddress 
+                    ? 'https://www.google.com/maps/search/?api=1&query=ул.+Германея+60,+2650+Сапарева+баня,+България'
+                    : contact.name === 'Телефон'
+                    ? 'tel:+359882739396'
+                    : contact.name === 'Имейл'
+                    ? 'mailto:info@rozis-dog-hotel.com'
+                    : undefined
+                  
+                  if (link) {
+                    return (
+                      <li key={contact.name} className="flex items-center space-x-3">
+                        <Icon className="w-5 h-5 text-soft-pink flex-shrink-0" />
+                        <a 
+                          href={link}
+                          target={link.startsWith('http') ? '_blank' : undefined}
+                          rel={link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          className="text-white/90 hover:text-white underline transition-colors"
+                        >
+                          {contact.value}
+                        </a>
+                      </li>
+                    )
+                  }
+                  
                   return (
                     <li key={contact.name} className="flex items-center space-x-3">
                       <Icon className="w-5 h-5 text-soft-pink flex-shrink-0" />

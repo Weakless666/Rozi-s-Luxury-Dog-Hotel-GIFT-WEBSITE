@@ -55,14 +55,21 @@ const ContactMap = () => {
                 <p className="text-lg opacity-90 mb-4">
                   Сапарева баня, България
                 </p>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-medium hover:bg-white/30 transition-all duration-300 inline-flex items-center space-x-2"
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=ул.+Германея+60,+2650+Сапарева+баня,+България"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
                 >
-                  <Navigation className="w-4 h-4" />
-                  <span>Отвори в Google Maps</span>
-                </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-medium hover:bg-white/30 transition-all duration-300 inline-flex items-center space-x-2"
+                  >
+                    <Navigation className="w-4 h-4" />
+                    <span>Отвори в Google Maps</span>
+                  </motion.button>
+                </a>
               </div>
               
               {/* Map decorations */}
@@ -93,8 +100,15 @@ const ContactMap = () => {
               </h3>
               <div className="space-y-2 text-gray-600">
                 <p className="font-medium"><span className="font-latin">Rozi's</span> Luxury Dog Hotel</p>
-                <p>ул. "Любов към животните" 123</p>
-                <p>2650 Сапарева баня, България</p>
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=ул.+Германея+60,+2650+Сапарева+баня,+България"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block hover:text-soft-pink transition-colors duration-300"
+                >
+                  <p className="underline">ул. "Германея" 60</p>
+                  <p>2650 Сапарева баня, България</p>
+                </a>
               </div>
             </div>
 
@@ -107,7 +121,7 @@ const ContactMap = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Phone className="w-4 h-4 text-soft-pink" />
-                  <span className="text-gray-600">+359 888 123 456</span>
+                  <span className="text-gray-600">+359 882 739 396</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-4 h-4 text-soft-pink" />
@@ -149,7 +163,7 @@ const ContactMap = () => {
               </h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li>• С кола: 5 мин от центъра на Сапарева баня</li>
-                <li>• С градски транспорт: автобус 123, спирка "Любов към животните"</li>
+                <li>• С градски транспорт: лесен достъп от центъра</li>
                 <li>• С такси: около 5-10 лв от центъра</li>
                 <li>• Безплатно паркиране на територията</li>
               </ul>

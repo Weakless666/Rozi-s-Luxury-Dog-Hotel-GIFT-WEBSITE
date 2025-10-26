@@ -12,7 +12,7 @@ const PricingSection = () => {
     {
       name: 'Базов пакет',
       price: '100',
-      period: 'ден',
+      period: 'нощ',
       description: 'Идеален за кратки престои',
       color: 'from-soft-pink to-luxury-purple',
       popular: false,
@@ -27,7 +27,7 @@ const PricingSection = () => {
     {
       name: 'Луксозен пакет',
       price: '120',
-      period: 'ден',
+      period: 'нощ',
       description: 'Най-популярният избор',
       color: 'from-luxury-purple to-premium-gold',
       popular: true,
@@ -44,7 +44,7 @@ const PricingSection = () => {
     {
       name: 'Премиум пакет',
       price: '150',
-      period: 'ден',
+      period: 'нощ',
       description: 'За най-взискателните',
       color: 'from-premium-gold to-soft-pink',
       popular: false,
@@ -63,8 +63,8 @@ const PricingSection = () => {
   ]
 
   const additionalServices = [
-    { name: 'Груминг', price: '30-50лв' },
-    { name: 'Транспорт', price: '20-40лв' },
+    { name: 'Груминг услуги', price: 'от 30лв' },
+    { name: 'Транспорт (София и обл.)', price: '50лв/посока' },
     { name: 'Фото сесия', price: '50лв' },
     { name: 'Ветеринарна консултация', price: '40лв' },
     { name: 'Специална грижа', price: 'по договаряне' }

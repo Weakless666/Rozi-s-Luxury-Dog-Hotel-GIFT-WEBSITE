@@ -64,21 +64,16 @@ const ContactHero = () => {
             className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12"
           >
             {[
-            { icon: Phone, label: 'Телефон', value: '+359 888 123 456', color: 'from-soft-pink to-luxury-purple' },
-            { icon: Mail, label: 'Имейл', value: 'info@rozis-dog-hotel.com', color: 'from-luxury-purple to-premium-gold' },
-            { icon: MessageCircle, label: 'Viber', value: '+359 888 123 456', color: 'from-purple-500 to-purple-600' },
-            { icon: MapPin, label: 'Адрес', value: 'Сапарева баня, България', color: 'from-premium-gold to-soft-pink' },
+            { icon: Phone, label: 'Телефон', value: '+359 882 739 396', color: 'from-soft-pink to-luxury-purple', link: 'tel:+359882739396' },
+            { icon: Mail, label: 'Имейл', value: 'info@rozis-dog-hotel.com', color: 'from-luxury-purple to-premium-gold', link: 'mailto:info@rozis-dog-hotel.com' },
+            { icon: MessageCircle, label: 'Viber', value: '+359 882 739 396', color: 'from-purple-500 to-purple-600', link: 'viber://chat?number=+359882739396' },
+            { icon: MapPin, label: 'Адрес', value: 'ул. "Германея" 60, 2650 Сапарева баня', color: 'from-premium-gold to-soft-pink', link: 'https://www.google.com/maps/search/?api=1&query=ул.+Германея+60,+2650+Сапарева+баня,+България' },
             { icon: Clock, label: 'Работно време', value: '8:00 - 20:00', color: 'from-soft-pink to-luxury-purple' }
             ].map((contact, index) => {
               const Icon = contact.icon
-              return (
-                <motion.div
-                  key={contact.label}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={inView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ delay: 1 + index * 0.1, duration: 0.6 }}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover text-center"
-                >
+              const isClickable = contact.link
+              const content = (
+                <>
                   <div className={`w-16 h-16 bg-gradient-to-br ${contact.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
@@ -88,6 +83,35 @@ const ContactHero = () => {
                   <p className="text-gray-600 font-medium">
                     {contact.value}
                   </p>
+                </>
+              )
+              
+              if (isClickable) {
+                return (
+                  <motion.a
+                    key={contact.label}
+                    href={contact.link}
+                    target={contact.link.startsWith('http') ? '_blank' : undefined}
+                    rel={contact.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={inView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ delay: 1 + index * 0.1, duration: 0.6 }}
+                    className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover text-center block"
+                  >
+                    {content}
+                  </motion.a>
+                )
+              }
+              
+              return (
+                <motion.div
+                  key={contact.label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={inView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ delay: 1 + index * 0.1, duration: 0.6 }}
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover text-center"
+                >
+                  {content}
                 </motion.div>
               )
             })}
