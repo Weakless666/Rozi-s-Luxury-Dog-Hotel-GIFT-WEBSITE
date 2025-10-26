@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://rozis-luxury-dog-hotel.vercel.app/sitemap.xml
+Sitemap: https://www.rozi-dog-hotel.eu/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
