@@ -1,8 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -18,9 +19,9 @@ export default {
         'light-peach': '#FFE4E1'
       },
       fontFamily: {
-        'handwriting': ['Dancing Script', 'cursive'],
-        'elegant': ['Playfair Display', 'serif'],
-        'sans': ['Inter', 'sans-serif']
+        'handwriting': ['var(--font-dancing-script)', 'Dancing Script', 'cursive'],
+        'elegant': ['var(--font-playfair-display)', 'Playfair Display', 'serif'],
+        'sans': ['var(--font-inter)', 'Inter', 'sans-serif']
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
