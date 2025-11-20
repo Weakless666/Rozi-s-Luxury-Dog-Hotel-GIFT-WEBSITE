@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Heart, PawPrint, Phone, Mail, MapPin, Instagram, Facebook } from 'lucide-react'
+import { Heart, PawPrint, Phone, MapPin, Instagram, Facebook } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -21,7 +21,6 @@ const Footer = () => {
     ],
     contact: [
       { name: 'Телефон', value: '+359 882 739 396', icon: Phone },
-      { name: 'Имейл', value: 'info@rozis-dog-hotel.com', icon: Mail },
       { name: 'Адрес', value: 'ул. "Германея" 60, 2650 Сапарева баня', icon: MapPin }
     ]
   }
@@ -55,11 +54,14 @@ const Footer = () => {
                   <h3 className="text-2xl font-handwriting font-bold">
                     Rozi's Luxury
                   </h3>
-                  <p className="text-sm opacity-90">Dog Hotel</p>
+                  <div className="flex items-center gap-2">
+                    <p className="text-sm opacity-90">Dog Hotel</p>
+                    <span className="bg-soft-pink text-white px-2 py-1 rounded text-xs font-bold">Четириноги</span>
+                  </div>
                 </div>
               </div>
               <p className="text-white/90 mb-6 leading-relaxed">
-                Луксозен хотел за кучета, където вашите четирикраки приятели получават 
+                Луксозен хотел за кучета, където вашите четириноги приятели получават 
                 най-добрата грижа, любов и внимание.
               </p>
               <div className="flex space-x-4">
@@ -147,8 +149,6 @@ const Footer = () => {
                     ? 'https://www.google.com/maps/search/?api=1&query=ул.+Германея+60,+2650+Сапарева+баня,+България'
                     : contact.name === 'Телефон'
                     ? 'tel:+359882739396'
-                    : contact.name === 'Имейл'
-                    ? 'mailto:info@rozis-dog-hotel.com'
                     : undefined
                   
                   if (link) {
@@ -207,7 +207,7 @@ const Footer = () => {
               <div className="flex items-center space-x-2">
                 <span>Направено с</span>
                 <Heart className="w-4 h-4 text-soft-pink animate-pulse" />
-                <span>за нашите четирикраки приятели</span>
+                <span>за нашите четириноги приятели</span>
               </div>
               <div className="text-xs text-white/60">
                 Made By: <span className="font-semibold text-soft-pink">Weakless666</span>

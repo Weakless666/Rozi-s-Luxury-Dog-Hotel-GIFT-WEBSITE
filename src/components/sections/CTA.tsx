@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Phone, Mail, Calendar, ArrowRight, Heart, PawPrint } from 'lucide-react'
+import { Phone, Calendar, ArrowRight, Heart, PawPrint } from 'lucide-react'
 import BookingModal from '../../components/BookingModal'
 import { useState } from 'react'
 
@@ -18,13 +18,6 @@ const CTA = () => {
       description: '+359 882 739 396',
       action: 'tel:+359882739396',
       color: 'from-soft-pink to-luxury-purple'
-    },
-    {
-      icon: Mail,
-      title: 'Изпратете имейл',
-      description: 'info@rozis-dog-hotel.com',
-      action: 'mailto:info@rozis-dog-hotel.com',
-      color: 'from-luxury-purple to-premium-gold'
     },
     {
       icon: Calendar,
@@ -65,11 +58,11 @@ const CTA = () => {
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-handwriting font-bold mb-6">
-            Дайте на вашия <span className="text-white">любимец</span> най-доброто!
+            Дайте на вашия <span className="text-white">любимец</span> най-доброто! <span className="bg-soft-pink text-white px-3 py-1 rounded-lg text-2xl md:text-3xl font-sans ml-2">четириног</span>
           </h2>
 
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-8">
-            Не чакайте повече! Резервирайте място за вашия четирикрак приятел 
+            Не чакайте повече! Резервирайте място за вашия четириног приятел 
             и му осигурете незабравимо преживяване в луксозния ни хотел.
           </p>
 
@@ -177,6 +170,12 @@ const CTA = () => {
               <ArrowRight className="w-5 h-5" />
             </button>
           </motion.div>
+          <div className="mt-4">
+            <p className="text-luxury-purple text-sm mb-2">Без това</p>
+            <p className="text-soft-pink text-xl font-bold">
+              Те всички са за повече от 3 дни 😅
+            </p>
+          </div>
         </motion.div>
       </div>
 

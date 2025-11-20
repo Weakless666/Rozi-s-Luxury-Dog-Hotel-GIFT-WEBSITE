@@ -124,28 +124,74 @@ const Testimonials = () => {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="mt-16 bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
         >
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            {[
-              { number: '500+', label: 'Доволни клиенти' },
-              { number: '4.9/5', label: 'Среден рейтинг' },
-              { number: '1000+', label: 'Щастливи кучета' },
-              { number: '5★', label: 'Отзиви в Google' }
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ delay: 1 + index * 0.1, duration: 0.6 }}
-                className="group"
-              >
-                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2 group-hover:scale-110 transition-transform duration-300">
-                  {stat.number}
-                </div>
-                <div className="text-gray-600 font-medium">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 text-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ delay: 1, duration: 0.6 }}
+              className="group"
+            >
+              <div className="text-3xl md:text-4xl font-bold text-gradient mb-2 group-hover:scale-110 transition-transform duration-300">
+                500+
+              </div>
+              <div className="text-gray-600 font-medium">
+                Доволни клиенти
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ delay: 1.1, duration: 0.6 }}
+              className="group"
+            >
+              <div className="bg-soft-pink/20 text-soft-pink px-4 py-2 rounded-lg mb-2 inline-block font-semibold">
+                Засега са 5/5
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="group"
+            >
+              <div className="text-3xl md:text-4xl font-bold text-gradient mb-2 group-hover:scale-110 transition-transform duration-300">
+                4.9/5
+              </div>
+              <div className="text-gray-600 font-medium">
+                Среден рейтинг
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ delay: 1.3, duration: 0.6 }}
+              className="group"
+            >
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <span className="text-3xl md:text-4xl font-bold text-gradient">200+</span>
+                <span className="text-3xl md:text-4xl font-bold text-gradient">1000+</span>
+              </div>
+              <div className="text-gray-600 font-medium">
+                Щастливи кучета
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ delay: 1.4, duration: 0.6 }}
+              className="group"
+            >
+              <div className="text-3xl md:text-4xl font-bold text-gradient mb-2 group-hover:scale-110 transition-transform duration-300">
+                5⭐
+              </div>
+              <div className="text-gray-600 font-medium">
+                Отзиви в Google
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>

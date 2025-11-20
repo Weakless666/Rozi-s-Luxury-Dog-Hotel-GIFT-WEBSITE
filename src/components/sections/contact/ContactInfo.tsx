@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Phone, Mail, Clock, MessageCircle, Calendar, Star, Heart, Facebook } from 'lucide-react'
+import { Phone, Clock, MessageCircle, Calendar, Star, Heart, Facebook } from 'lucide-react'
 
 // Viber icon component
 const ViberIcon = ({ className }: { className?: string }) => (
@@ -24,15 +24,6 @@ const ContactInfo = () => {
       action: 'tel:+359882739396',
       color: 'from-soft-pink to-luxury-purple',
       available: '8:00 - 20:00'
-    },
-    {
-      icon: Mail,
-      title: 'Имейл',
-      value: 'info@rozis-dog-hotel.com',
-      description: 'Изпратете имейл за подробна информация',
-      action: 'mailto:info@rozis-dog-hotel.com',
-      color: 'from-luxury-purple to-premium-gold',
-      available: '24/7'
     },
     {
       icon: ViberIcon,

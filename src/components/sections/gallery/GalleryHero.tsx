@@ -53,7 +53,7 @@ const GalleryHero = () => {
             className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
           >
             Разгледайте снимки от ежедневния живот в нашия хотел и вижте как 
-            вашите четирикраки приятели ще се наслаждават на времето си тук.
+            вашите четириноги приятели ще се наслаждават на времето си тук.
           </motion.p>
 
           {/* Quick stats */}
@@ -63,32 +63,54 @@ const GalleryHero = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
           >
-            {[
-              { icon: Camera, number: '500+', label: 'Снимки в галерията', color: 'from-soft-pink to-luxury-purple' },
-              { icon: Heart, number: '100+', label: 'Щастливи кучета', color: 'from-luxury-purple to-premium-gold' },
-              { icon: Star, number: '5★', label: 'Рейтинг от клиенти', color: 'from-premium-gold to-soft-pink' }
-            ].map((stat, index) => {
-              const Icon = stat.icon
-              return (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={inView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ delay: 1 + index * 0.1, duration: 0.6 }}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover"
-                >
-                  <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-3xl font-bold text-gradient mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-gray-600 font-medium">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              )
-            })}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ delay: 1, duration: 0.6 }}
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover"
+            >
+              <div className="text-3xl font-bold text-gradient mb-2">
+                500+
+              </div>
+              <div className="text-gray-600 font-medium">
+                Снимки в галерията
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ delay: 1.1, duration: 0.6 }}
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-luxury-purple to-premium-gold rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Heart className="w-8 h-8 text-white" />
+              </div>
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <span className="bg-soft-pink/30 text-soft-pink px-3 py-1 rounded-full text-2xl font-bold">200+</span>
+                <span className="text-3xl font-bold text-gradient">100+</span>
+              </div>
+              <div className="text-gray-600 font-medium">
+                Щастливи кучета
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-premium-gold to-soft-pink rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Star className="w-8 h-8 text-white" />
+              </div>
+              <div className="text-3xl font-bold text-gradient mb-2">
+                5⭐
+              </div>
+              <div className="text-gray-600 font-medium">
+                Рейтинг от клиенти
+              </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

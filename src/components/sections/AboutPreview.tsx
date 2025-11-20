@@ -18,7 +18,7 @@ const AboutPreview = () => {
     {
       icon: Users,
       title: 'Професионален екип',
-      description: 'Опитни специалисти с години опит в грижата за кучета и ветеринарна медицина.'
+      description: 'Професионалисти с безусловна любов към четириногите и години опит в грижата за най-чистите души.'
     },
     {
       icon: Award,
@@ -53,7 +53,7 @@ const AboutPreview = () => {
             </h2>
 
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              В <span className="font-latin">Rozi's</span> Luxury Dog Hotel вярваме, че всеки четирикрак приятел заслужава най-доброто. 
+              В <span className="font-latin">Rozi's</span> Luxury Dog Hotel вярваме, че всеки четириног приятел заслужава най-доброто. 
               Нашият хотел е създаден с любов и внимание към детайла, за да осигури на вашите кучета 
               не само комфорт, но и истинско щастие.
             </p>

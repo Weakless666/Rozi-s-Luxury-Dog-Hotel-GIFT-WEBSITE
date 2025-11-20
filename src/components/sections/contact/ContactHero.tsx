@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react'
+import { Phone, MapPin, Clock, MessageCircle } from 'lucide-react'
 
 const ContactHero = () => {
   const [ref, inView] = useInView({
@@ -65,7 +65,6 @@ const ContactHero = () => {
           >
             {[
             { icon: Phone, label: 'Телефон', value: '+359 882 739 396', color: 'from-soft-pink to-luxury-purple', link: 'tel:+359882739396' },
-            { icon: Mail, label: 'Имейл', value: 'info@rozis-dog-hotel.com', color: 'from-luxury-purple to-premium-gold', link: 'mailto:info@rozis-dog-hotel.com' },
             { icon: MessageCircle, label: 'Viber', value: '+359 882 739 396', color: 'from-purple-500 to-purple-600', link: 'viber://chat?number=+359882739396' },
             { icon: MapPin, label: 'Адрес', value: 'ул. "Германея" 60, 2650 Сапарева баня', color: 'from-premium-gold to-soft-pink', link: 'https://www.google.com/maps/search/?api=1&query=ул.+Германея+60,+2650+Сапарева+баня,+България' },
             { icon: Clock, label: 'Работно време', value: '8:00 - 20:00', color: 'from-soft-pink to-luxury-purple' }
