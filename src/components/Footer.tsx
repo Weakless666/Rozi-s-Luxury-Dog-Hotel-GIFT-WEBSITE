@@ -21,7 +21,6 @@ const Footer = () => {
     ],
     contact: [
       { name: 'Телефон', value: '+359 882 739 396', icon: Phone },
-      { name: 'Имейл', value: 'info@rozis-dog-hotel.com', icon: Mail },
       { name: 'Адрес', value: 'ул. "Германея" 60, 2650 Сапарева баня', icon: MapPin }
     ]
   }
@@ -59,7 +58,7 @@ const Footer = () => {
                 </div>
               </div>
               <p className="text-white/90 mb-6 leading-relaxed">
-                Луксозен хотел за кучета, където вашите четирикраки приятели получават 
+                Луксозен хотел за кучета, където вашите четириноги приятели получават 
                 най-добрата грижа, любов и внимание.
               </p>
               <div className="flex space-x-4">

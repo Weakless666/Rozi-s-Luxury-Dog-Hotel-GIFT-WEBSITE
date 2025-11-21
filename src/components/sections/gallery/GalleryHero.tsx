@@ -65,7 +65,7 @@ const GalleryHero = () => {
           >
             {[
               { icon: Camera, number: '500+', label: 'Снимки в галерията', color: 'from-soft-pink to-luxury-purple' },
-              { icon: Heart, number: '100+', label: 'Щастливи кучета', color: 'from-luxury-purple to-premium-gold' },
+              { icon: Heart, number: '200+', label: 'Щастливи кучета', color: 'from-luxury-purple to-premium-gold' },
               { icon: Star, number: '5★', label: 'Рейтинг от клиенти', color: 'from-premium-gold to-soft-pink' }
             ].map((stat, index) => {
               const Icon = stat.icon

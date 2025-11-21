@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
-import { Home, Scissors, Dumbbell, Heart, Camera, Star } from 'lucide-react'
+import { Heart, Camera } from 'lucide-react'
 
 const GalleryCategories = () => {
   const [ref, inView] = useInView({
@@ -19,34 +19,10 @@ const GalleryCategories = () => {
       color: 'from-soft-pink to-luxury-purple'
     },
     {
-      id: 'rooms',
-      name: 'Стаи и помещения',
-      icon: Home,
-      color: 'from-luxury-purple to-premium-gold'
-    },
-    {
-      id: 'grooming',
-      name: 'Груминг',
-      icon: Scissors,
-      color: 'from-premium-gold to-soft-pink'
-    },
-    {
-      id: 'activities',
-      name: 'Игри и упражнения',
-      icon: Dumbbell,
-      color: 'from-soft-pink to-luxury-purple'
-    },
-    {
       id: 'happy-dogs',
       name: 'Щастливи кучета',
       icon: Heart,
       color: 'from-luxury-purple to-premium-gold'
-    },
-    {
-      id: 'special-moments',
-      name: 'Специални моменти',
-      icon: Star,
-      color: 'from-premium-gold to-soft-pink'
     }
   ]
 
@@ -133,42 +109,6 @@ const GalleryCategories = () => {
             </div>
           )}
           
-          {activeCategory === 'rooms' && (
-            <div className="bg-gradient-to-br from-luxury-purple/20 to-premium-gold/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-elegant font-semibold text-gray-800 mb-4">
-                Стаи и помещения
-              </h3>
-              <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                Луксозните стаи и общите пространства в нашия хотел са проектирани 
-                с внимание към детайла, за да осигурят максимален комфорт на нашите гости.
-              </p>
-            </div>
-          )}
-          
-          {activeCategory === 'grooming' && (
-            <div className="bg-gradient-to-br from-premium-gold/20 to-soft-pink/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-elegant font-semibold text-gray-800 mb-4">
-                Груминг услуги
-              </h3>
-              <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                Нашите професионални груминг услуги ще направят всяко куче да изглежда 
-                и се чувства невероятно. От почистване до стрижка - всичко с любов и внимание.
-              </p>
-            </div>
-          )}
-          
-          {activeCategory === 'activities' && (
-            <div className="bg-gradient-to-br from-soft-pink/20 to-luxury-purple/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-elegant font-semibold text-gray-800 mb-4">
-                Игри и упражнения
-              </h3>
-              <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                Активните игри и упражнения са важна част от престоя в нашия хотел. 
-                Вижте как нашите гости се наслаждават на забавленията.
-              </p>
-            </div>
-          )}
-          
           {activeCategory === 'happy-dogs' && (
             <div className="bg-gradient-to-br from-luxury-purple/20 to-premium-gold/20 rounded-2xl p-8">
               <h3 className="text-2xl font-elegant font-semibold text-gray-800 mb-4">
@@ -181,17 +121,6 @@ const GalleryCategories = () => {
             </div>
           )}
           
-          {activeCategory === 'special-moments' && (
-            <div className="bg-gradient-to-br from-premium-gold/20 to-soft-pink/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-elegant font-semibold text-gray-800 mb-4">
-                Специални моменти
-              </h3>
-              <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                От рождени дни до семейни снимки - съхраняваме всички специални моменти 
-                в живота на нашите гости и техните собственици.
-              </p>
-            </div>
-          )}
         </motion.div>
       </div>
     </section>

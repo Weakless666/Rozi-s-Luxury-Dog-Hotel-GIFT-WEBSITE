@@ -55,7 +55,7 @@ const Hero = () => {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed px-4 sm:px-0"
             >
-              Място, където вашите четирикраки приятели получават 
+              Място, където вашите четириноги приятели получават 
               <span className="text-luxury-purple font-semibold"> най-добрата грижа</span>, 
               <span className="text-soft-pink font-semibold"> любов</span> и 
               <span className="text-gentle-rose font-semibold"> внимание</span>
@@ -160,7 +160,7 @@ const Hero = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-800">24/7 Грижа</div>
-                    <div className="text-sm text-gray-600">Професионална обслужване</div>
+                    <div className="text-sm text-gray-600">Професионално обслужване</div>
                   </div>
                 </div>
               </motion.div>

@@ -199,48 +199,6 @@ const GalleryGrid = () => {
       imageUrl: '/images/spa-room.jpg'
     },
 
-    // GROOMING - Груминг
-    {
-      id: 19,
-      title: 'Професионален груминг',
-      description: 'Майстор Иван прави магия с козината на Луна',
-      category: 'grooming',
-      type: 'image',
-      likes: 32,
-      date: '2024-01-13',
-      imageUrl: '/images/grooming1.jpg'
-    },
-    {
-      id: 20,
-      title: 'Груминг процес',
-      description: 'Стъпка по стъпка как се прави перфектния груминг',
-      category: 'grooming',
-      type: 'video',
-      likes: 28,
-      date: '2024-01-09',
-      imageUrl: '/images/grooming2.jpg'
-    },
-    {
-      id: 21,
-      title: 'Груминг на дългокосместа порода',
-      description: 'Специализиран груминг за дългокосмести кучета',
-      category: 'grooming',
-      type: 'image',
-      likes: 36,
-      date: '2023-12-30',
-      imageUrl: '/images/grooming3.jpg'
-    },
-    {
-      id: 22,
-      title: 'Красива прическа',
-      description: 'Резултатът от професионалния груминг',
-      category: 'grooming',
-      type: 'image',
-      likes: 41,
-      date: '2024-01-04',
-      imageUrl: '/images/grooming-result.jpg'
-    },
-
     // ACTIVITIES - Дейности
     {
       id: 23,

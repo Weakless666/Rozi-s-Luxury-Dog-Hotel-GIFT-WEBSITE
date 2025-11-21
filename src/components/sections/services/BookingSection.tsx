@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Calendar, Phone, Mail, Clock, CheckCircle, ArrowRight } from 'lucide-react'
+import { Calendar, Phone, Clock, CheckCircle, ArrowRight } from 'lucide-react'
 
 const BookingSection = () => {
   const [ref, inView] = useInView({
@@ -12,29 +12,8 @@ const BookingSection = () => {
     {
       step: '1',
       title: 'Свържете се с нас',
-      description: 'Обадете се или изпратете имейл за първоначална консултация',
+      description: 'Обадете се или изпратете лично съобщение за първоначална консултация',
       icon: Phone,
-      color: 'from-soft-pink to-luxury-purple'
-    },
-    {
-      step: '2',
-      title: 'Изберете услуги',
-      description: 'Определете нужните услуги и пакет за вашия любимец',
-      icon: CheckCircle,
-      color: 'from-luxury-purple to-premium-gold'
-    },
-    {
-      step: '3',
-      title: 'Резервирайте дата',
-      description: 'Изберете удобна дата и час за настаняване',
-      icon: Calendar,
-      color: 'from-premium-gold to-soft-pink'
-    },
-    {
-      step: '4',
-      title: 'Потвърждение',
-      description: 'Получете потвърждение и инструкции за подготовка',
-      icon: Mail,
       color: 'from-soft-pink to-luxury-purple'
     }
   ]
@@ -47,22 +26,6 @@ const BookingSection = () => {
       description: 'Работно време: 8:00 - 20:00',
       action: 'tel:+359882739396',
       color: 'from-soft-pink to-luxury-purple'
-    },
-    {
-      icon: Mail,
-      title: 'Имейл',
-      value: 'info@rozis-dog-hotel.com',
-      description: 'Отговоряме в рамките на 2 часа',
-      action: 'mailto:info@rozis-dog-hotel.com',
-      color: 'from-luxury-purple to-premium-gold'
-    },
-    {
-      icon: Calendar,
-      title: 'Онлайн резервация',
-      value: 'Форма за контакт',
-      description: 'Бърза и лесна резервация',
-      action: '/contact',
-      color: 'from-premium-gold to-soft-pink'
     }
   ]
 
@@ -97,7 +60,7 @@ const BookingSection = () => {
         </motion.div>
 
         {/* Booking steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 gap-8 mb-16 max-w-md mx-auto">
           {bookingSteps.map((step, index) => {
             const Icon = step.icon
             return (
@@ -141,7 +104,7 @@ const BookingSection = () => {
             Свържете се с нас
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 max-w-md mx-auto">
             {contactMethods.map((method, index) => {
               const Icon = method.icon
               return (
@@ -201,8 +164,7 @@ const BookingSection = () => {
                 Работно време
               </h4>
               <ul className="space-y-2 text-gray-600">
-                <li>Понеделник - Петък: 8:00 - 20:00</li>
-                <li>Събота: 9:00 - 18:00</li>
+                <li>Понеделник - Събота: 8:00 - 20:00</li>
                 <li>Неделя: 10:00 - 16:00</li>
                 <li>24/7 грижа за настанали кучета</li>
               </ul>
@@ -214,10 +176,11 @@ const BookingSection = () => {
                 Изисквания
               </h4>
               <ul className="space-y-2 text-gray-600">
-                <li>Ваксинации в срок</li>
+                <li>Поставена годишна ваксина против бяс</li>
                 <li>Ветеринарна карта</li>
-                <li>Предварителна резервация</li>
-                <li>Информация за специални нужди</li>
+                <li>Обезпаразитяване вътрешно и външно през последните 20 дена</li>
+                <li>Чип на името на собственика</li>
+                <li>Информация при необходимост от специални нужди и грижи</li>
               </ul>
             </div>
           </div>

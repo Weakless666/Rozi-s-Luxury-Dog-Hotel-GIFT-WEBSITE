@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Phone, Mail, Calendar, ArrowRight, Heart, PawPrint } from 'lucide-react'
+import { Phone, Mail, ArrowRight, Heart, PawPrint } from 'lucide-react'
 import BookingModal from '../../components/BookingModal'
 import { useState } from 'react'
 
@@ -25,13 +25,6 @@ const CTA = () => {
       description: 'info@rozis-dog-hotel.com',
       action: 'mailto:info@rozis-dog-hotel.com',
       color: 'from-luxury-purple to-premium-gold'
-    },
-    {
-      icon: Calendar,
-      title: 'Резервирайте онлайн',
-      description: 'Бърза и лесна резервация',
-      action: '/contact',
-      color: 'from-premium-gold to-soft-pink'
     }
   ]
 
@@ -69,7 +62,7 @@ const CTA = () => {
           </h2>
 
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-8">
-            Не чакайте повече! Резервирайте място за вашия четирикрак приятел 
+            Не чакайте повече! Резервирайте място за вашия четириног приятел 
             и му осигурете незабравимо преживяване в луксозния ни хотел.
           </p>
 
@@ -113,7 +106,7 @@ const CTA = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {ctaOptions.map((option, index) => {
             const Icon = option.icon
@@ -152,32 +145,6 @@ const CTA = () => {
           })}
         </motion.div>
 
-        {/* Special offer */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="mt-16 bg-white/20 backdrop-blur-sm rounded-2xl p-8 text-center"
-        >
-          <h3 className="text-2xl font-handwriting font-bold text-white mb-4">
-            🎉 Специална оферта за нови клиенти!
-          </h3>
-          <p className="text-white/90 text-lg mb-4">
-            Получете 20% отстъпка за първото настаняване при резервация за повече от 3 дни!
-          </p>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <button 
-              onClick={() => setIsBookingOpen(true)}
-              className="bg-white text-luxury-purple px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out inline-flex items-center space-x-2"
-            >
-              <span>Възползвайте се сега</span>
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </motion.div>
-        </motion.div>
       </div>
 
       {/* Booking Modal */}
