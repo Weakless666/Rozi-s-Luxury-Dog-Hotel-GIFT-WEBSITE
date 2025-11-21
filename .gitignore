@@ -7,6 +7,8 @@ yarn-error.log*
 # Production builds
 dist/
 build/
+.next/
+out/
 
 # Environment variables
 .env
@@ -46,3 +48,10 @@ coverage/
 # Temporary folders
 tmp/
 temp/
+
+# Vite
+.vite/
+.vite/deps_temp_*/
+
+# Vercel
+.vercel
