@@ -7,6 +7,8 @@ yarn-error.log*
 # Production builds
 dist/
 build/
+.next/
+out/
 
 # Environment variables
 .env
@@ -53,4 +55,3 @@ temp/
 
 # Vercel
 .vercel
-
