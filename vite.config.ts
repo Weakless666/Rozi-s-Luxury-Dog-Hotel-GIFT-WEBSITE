@@ -22,8 +22,23 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html'
+      },
+      output: {
+        manualChunks: {
+          // React core libraries
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          // Animation library
+          'framer-motion': ['framer-motion'],
+          // Form handling
+          'form-vendor': ['react-hook-form', 'zod'],
+          // UI utilities
+          'ui-vendor': ['lucide-react', 'react-intersection-observer'],
+          // Database
+          'db-vendor': ['@neondatabase/serverless']
+        }
       }
-    }
+    },
+    chunkSizeWarningLimit: 600
   },
   define: {
     global: 'globalThis'
