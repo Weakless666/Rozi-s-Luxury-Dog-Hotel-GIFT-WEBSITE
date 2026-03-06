@@ -64,7 +64,7 @@ const HeroSection = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
           >
             {[
-              { icon: Heart, number: '500+', label: 'Щастливи клиенти', color: 'from-soft-pink to-luxury-purple' },
+              { icon: Heart, number: '300+', label: 'Щастливи клиенти', color: 'from-soft-pink to-luxury-purple' },
               { icon: PawPrint, number: '5+', label: 'Години опит', color: 'from-luxury-purple to-premium-gold' },
               { icon: Star, number: '4.9/5', label: 'Рейтинг', color: 'from-premium-gold to-soft-pink' }
             ].map((stat, index) => {

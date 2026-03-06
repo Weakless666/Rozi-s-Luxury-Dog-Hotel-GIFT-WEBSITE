@@ -10,11 +10,9 @@ const Footer = () => {
       { name: 'За нас', path: '/about' },
       { name: 'Услуги', path: '/services' },
       { name: 'Галерия', path: '/gallery' },
-      { name: 'Осиновяване', path: '/adopt' },
       { name: 'Контакти', path: '/contact' }
     ],
     services: [
-      { name: 'Настаняване', path: '/services#accommodation' },
       { name: 'Транспорт', path: '/services#transport' }
     ],
     contact: [

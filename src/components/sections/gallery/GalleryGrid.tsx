@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
-import { Heart, Play, Download, X } from 'lucide-react'
+import { Heart, Play, X } from 'lucide-react'
 
 const GalleryGrid = () => {
   const [ref, inView] = useInView({
@@ -299,61 +299,8 @@ const GalleryGrid = () => {
       likes: 41,
       date: '2024-01-01',
       imageUrl: '/images/activity12.png'
-    },
-
-    // FOOD - Хранене
-    {
-      id: 35,
-      title: 'Специализирано хранене',
-      description: 'Премиум храна за различните нужди',
-      category: 'food',
-      type: 'image',
-      likes: 35,
-      date: '2023-12-26',
-      imageUrl: '/images/food1.jpg'
-    },
-    {
-      id: 36,
-      title: 'Специална вечеря',
-      description: 'Празнична вечеря за рожден ден',
-      category: 'food',
-      type: 'image',
-      likes: 48,
-      date: '2023-12-28',
-      imageUrl: '/images/special-dinner.jpg'
-    },
-    {
-      id: 37,
-      title: 'Здравословни лакомства',
-      description: 'Натурални лакомства за награди',
-      category: 'food',
-      type: 'image',
-      likes: 29,
-      date: '2023-12-25',
-      imageUrl: '/images/treats.jpg'
-    },
-
-    // SPECIAL MOMENTS - Специални моменти
-    {
-      id: 38,
-      title: 'Семейна снимка',
-      description: 'Специален момент с семейството на Макс',
-      category: 'special-moments',
-      type: 'image',
-      likes: 45,
-      date: '2024-01-11',
-      imageUrl: '/images/family1.jpg'
-    },
-    {
-      id: 39,
-      title: 'Рожден ден',
-      description: 'Специална тортова парти за 3-годишнината на Мия',
-      category: 'special-moments',
-      type: 'image',
-      likes: 52,
-      date: '2024-01-06',
-      imageUrl: '/images/birthday1.jpg'
     }
+
   ]
 
     // Get uploaded images from localStorage
@@ -453,23 +400,6 @@ const GalleryGrid = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Load more button */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="text-center mt-12"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="btn-primary inline-flex items-center space-x-2"
-          >
-            <span>Зареди още снимки</span>
-            <Download className="w-5 h-5" />
-          </motion.button>
-        </motion.div>
 
         {/* Modal for image preview */}
         {selectedImage && (

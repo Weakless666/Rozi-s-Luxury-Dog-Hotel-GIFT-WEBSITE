@@ -23,7 +23,6 @@ const Navbar = () => {
         { name: 'За нас', path: '/about' },
         { name: 'Услуги', path: '/services' },
         { name: 'Галерия', path: '/gallery' },
-        { name: 'Осиновяване', path: '/adopt' },
         { name: 'Контакти', path: '/contact' }
       ]
 

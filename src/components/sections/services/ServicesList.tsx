@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Home, Car, Utensils, Shield } from 'lucide-react'
+import { Home, Car, Utensils } from 'lucide-react'
 
 const ServicesList = () => {
   const [ref, inView] = useInView({
@@ -32,8 +32,6 @@ const ServicesList = () => {
       features: [
         'Само София и София област',
         '30€ в една посока',
-        'Безопасни климатизирани клетки',
-        'Професионален шофьор',
         'Гъвкави часове'
       ],
       price: '30€/посока',
@@ -53,21 +51,6 @@ const ServicesList = () => {
       ],
       price: 'включено',
       color: 'from-premium-gold to-soft-pink',
-      popular: false
-    },
-    {
-      icon: Shield,
-      title: 'Специална грижа',
-      description: 'Допълнителни услуги за кучета с специални нужди или възрастни кучета.',
-      features: [
-        'Грижа за възрастни кучета',
-        'Специални нужди',
-        'Медикаментозно лечение',
-        'Допълнително внимание',
-        'Персонализиран подход'
-      ],
-      price: 'по договаряне',
-      color: 'from-luxury-purple to-premium-gold',
       popular: false
     }
   ]
@@ -97,8 +80,8 @@ const ServicesList = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            От луксозно настаняване до специализирана грижа - предлагаме пълен спектър 
-            от услуги, които ще направят престоя на вашите кучета незабравим.
+            От луксозно настаняване до специализирано хранене - предлагаме услуги, 
+            които ще направят престоя на вашите кучета незабравим.
           </p>
         </motion.div>
 

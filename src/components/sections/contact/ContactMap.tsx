@@ -167,33 +167,6 @@ const ContactMap = () => {
           </motion.div>
         </div>
 
-        {/* Additional info */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.8, duration: 0.8 }}
-          className="mt-16 bg-gradient-to-br from-luxury-purple/20 to-soft-pink/20 rounded-2xl p-8 text-center"
-        >
-          <h3 className="text-2xl font-handwriting font-bold text-gray-800 mb-4">
-            🚗 Удобен достъп и паркиране
-          </h3>
-          <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto mb-6">
-            Нашият хотел в Сапарева баня е лесно достъпен с кола, градски транспорт или такси. 
-            Предлагаме безплатно паркиране на територията и можем да организираме 
-            транспорт до и от хотела при нужда.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <span className="bg-white/80 text-luxury-purple px-6 py-2 rounded-full font-medium">
-              🅿️ Безплатно паркиране
-            </span>
-            <span className="bg-white/80 text-luxury-purple px-6 py-2 rounded-full font-medium">
-              🚌 Достъп с градски транспорт
-            </span>
-            <span className="bg-white/80 text-luxury-purple px-6 py-2 rounded-full font-medium">
-              🚗 Лесен достъп с кола
-            </span>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
