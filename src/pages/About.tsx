@@ -1,6 +1,5 @@
 import HeroSection from '../components/sections/about/HeroSection'
 import StorySection from '../components/sections/about/StorySection'
-import TeamSection from '../components/sections/about/TeamSection'
 import ValuesSection from '../components/sections/about/ValuesSection'
 import MissionSection from '../components/sections/about/MissionSection'
 
@@ -10,7 +9,6 @@ const About = () => {
       <HeroSection />
       <StorySection />
       <ValuesSection />
-      <TeamSection />
       <MissionSection />
     </div>
   )

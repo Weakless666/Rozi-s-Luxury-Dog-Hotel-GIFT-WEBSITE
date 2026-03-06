@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Heart, Home, Users, Award } from 'lucide-react'
+import { Heart, Users } from 'lucide-react'
 
 const StorySection = () => {
   const [ref, inView] = useInView({
@@ -10,32 +10,11 @@ const StorySection = () => {
 
   const storySteps = [
     {
-      year: '2019',
-      title: 'Началото на мечтата',
-      description: 'Rozi започва своята мечта с малка клиника за кучета, където всеки ден учи нови неща за грижата за животните.',
-      icon: Heart,
-      color: 'from-soft-pink to-luxury-purple'
-    },
-    {
       year: '2020',
       title: 'Първите клиенти',
       description: 'Първите доволни клиенти и техните кучета доказват, че професионалната грижа и любовта са ключът към успеха.',
       icon: Users,
       color: 'from-luxury-purple to-premium-gold'
-    },
-    {
-      year: '2021',
-      title: 'Разширяване',
-      description: 'Откриваме първия луксозен хотел за кучета с модерни съоръжения и професионален екип.',
-      icon: Home,
-      color: 'from-premium-gold to-soft-pink'
-    },
-    {
-      year: '2024',
-      title: 'Признание',
-      description: 'Ставаме най-оценяваният хотел за кучета в региона с над 500 доволни клиенти и 5-звезден рейтинг.',
-      icon: Award,
-      color: 'from-soft-pink to-luxury-purple'
     }
   ]
 

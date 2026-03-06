@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Phone, Clock, MessageCircle, Star, Heart, Facebook } from 'lucide-react'
+import { Phone, Clock, MessageCircle, Star, Heart, Facebook, Instagram } from 'lucide-react'
 
 // Viber icon component
 const ViberIcon = ({ className }: { className?: string }) => (
@@ -42,14 +42,20 @@ const ContactInfo = () => {
       action: 'https://www.facebook.com/profile.php?id=100058613121575',
       color: 'from-blue-500 to-blue-600',
       available: '24/7'
+    },
+    {
+      icon: Instagram,
+      title: 'Instagram',
+      value: 'Следвайте ни',
+      description: 'Снимки, истории и новини от хотела',
+      action: 'https://www.instagram.com/rozis_luxury_dog_hotel/',
+      color: 'from-pink-500 to-purple-600',
+      available: '24/7'
     }
   ]
 
   const workingHours = [
-    { day: 'Понеделник - Петък', hours: '8:00 - 20:00' },
-    { day: 'Събота', hours: '9:00 - 18:00' },
-    { day: 'Неделя', hours: '10:00 - 16:00' },
-    { day: '24/7 грижа', hours: 'За настанали кучета' }
+    { day: 'Понеделник - Неделя', hours: '8:00 - 20:00' }
   ]
 
   return (
@@ -152,13 +158,6 @@ const ContactInfo = () => {
                 </div>
               ))}
             </div>
-            
-            <div className="mt-6 p-4 bg-gradient-to-r from-soft-pink/20 to-luxury-purple/20 rounded-xl">
-              <p className="text-sm text-gray-600">
-                <strong>Важно:</strong> За спешни случаи през нощта, моля обадете се на 
-                основния телефон. Имаме 24/7 грижа за настанали кучета.
-              </p>
-            </div>
           </motion.div>
 
           {/* Why choose us */}
@@ -178,8 +177,7 @@ const ContactInfo = () => {
                 'Професионален екип с години опит',
                 '24/7 грижа и наблюдение',
                 'Луксозни условия и удобства',
-                'Индивидуален подход към всеки куче',
-                'Ветеринарна грижа включена',
+                'Индивидуален подход към всяко куче',
                 'Прозрачни цени без скрити такси'
               ].map((reason, index) => (
                 <div key={index} className="flex items-center space-x-3">
@@ -189,13 +187,6 @@ const ContactInfo = () => {
                   <span className="text-gray-700">{reason}</span>
                 </div>
               ))}
-            </div>
-            
-            <div className="mt-6 p-4 bg-gradient-to-r from-premium-gold/20 to-soft-pink/20 rounded-xl">
-              <p className="text-sm text-gray-600">
-                <strong>Гаранция за качество:</strong> Ако не сте доволни от нашите услуги, 
-                ще върнем парите ви или ще предложим безплатна допълнителна грижа.
-              </p>
             </div>
           </motion.div>
         </div>

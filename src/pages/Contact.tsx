@@ -1,6 +1,5 @@
 import ContactHero from '../components/sections/contact/ContactHero'
 import ContactInfo from '../components/sections/contact/ContactInfo'
-import ContactForm from '../components/sections/contact/ContactForm'
 import ContactMap from '../components/sections/contact/ContactMap'
 
 const Contact = () => {
@@ -8,7 +7,6 @@ const Contact = () => {
     <div className="pt-20">
       <ContactHero />
       <ContactInfo />
-      <ContactForm />
       <ContactMap />
     </div>
   )

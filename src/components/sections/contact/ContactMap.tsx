@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { MapPin, Navigation, Clock, Phone } from 'lucide-react'
+import { MapPin, Navigation, Phone } from 'lucide-react'
 
 const ContactMap = () => {
   const [ref, inView] = useInView({
@@ -11,33 +11,6 @@ const ContactMap = () => {
   return (
     <section className="section-padding bg-white/50">
       <div className="container-custom">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-soft-pink/20 to-luxury-purple/20 rounded-full px-6 py-3 mb-6 shadow-lg"
-          >
-            <MapPin className="w-5 h-5 text-soft-pink" />
-            <span className="text-luxury-purple font-medium">Местоположение</span>
-          </motion.div>
-
-          <h2 className="text-4xl md:text-5xl font-handwriting font-bold text-gray-800 mb-6">
-            <span className="text-gradient">Намерете</span> ни лесно
-          </h2>
-
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Нашият хотел се намира в красива и спокойна част на София, 
-            с лесен достъп и удобно паркиране.
-          </p>
-        </motion.div>
-
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Map placeholder */}
           <motion.div
@@ -126,44 +99,6 @@ const ContactMap = () => {
               </div>
             </div>
 
-            {/* Working hours */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-              <h3 className="text-xl font-elegant font-semibold text-gray-800 mb-4 flex items-center">
-                <Clock className="w-5 h-5 text-premium-gold mr-2" />
-                Работно време
-              </h3>
-              <div className="space-y-2 text-gray-600">
-                <div className="flex justify-between">
-                  <span>Пон - Пет:</span>
-                  <span className="font-medium">8:00 - 20:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Събота:</span>
-                  <span className="font-medium">9:00 - 18:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Неделя:</span>
-                  <span className="font-medium">10:00 - 16:00</span>
-                </div>
-                <div className="flex justify-between pt-2 border-t border-gray-200">
-                  <span className="text-luxury-purple font-medium">24/7 грижа:</span>
-                  <span className="text-luxury-purple font-medium">За настанали кучета</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Directions */}
-            <div className="bg-gradient-to-br from-soft-pink/20 to-luxury-purple/20 rounded-2xl p-6">
-              <h3 className="text-lg font-elegant font-semibold text-gray-800 mb-3">
-                Как да стигнете до нас
-              </h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li>• С кола: 5 мин от центъра на Сапарева баня</li>
-                <li>• С градски транспорт: лесен достъп от центъра</li>
-                <li>• С такси: около 5-10 лв от центъра</li>
-                <li>• Безплатно паркиране на територията</li>
-              </ul>
-            </div>
           </motion.div>
         </div>
 
