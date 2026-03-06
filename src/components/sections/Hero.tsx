@@ -99,7 +99,7 @@ const Hero = () => {
               className="grid grid-cols-3 gap-4 sm:gap-8 mt-10 sm:mt-12 px-4 sm:px-0"
             >
               {[
-                { number: '500+', label: 'Щастливи клиенти' },
+                { number: '300+', label: 'Щастливи клиенти' },
                 { number: '5★', label: 'Рейтинг' },
                 { number: '24/7', label: 'Грижа' }
               ].map((stat, index) => (

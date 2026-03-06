@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Home, Car, Stethoscope, Utensils, Camera, Shield } from 'lucide-react'
+import { Home, Car, Utensils, Shield } from 'lucide-react'
 
 const ServicesList = () => {
   const [ref, inView] = useInView({
@@ -41,21 +41,6 @@ const ServicesList = () => {
       popular: false
     },
     {
-      icon: Stethoscope,
-      title: 'Ветеринарна грижа',
-      description: 'Професионална медицинска грижа и профилактика за поддържане на здравето.',
-      features: [
-        'Регулярни медицински прегледи',
-        'Ваксинации и профилактика',
-        'Лечение на болести',
-        'Специализирана грижа',
-        '24/7 ветеринарна поддръжка'
-      ],
-      price: 'по договаряне',
-      color: 'from-luxury-purple to-premium-gold',
-      popular: false
-    },
-    {
       icon: Utensils,
       title: 'Специализирано хранене',
       description: 'Персонализирано меню за всеки куче, отговарящо на неговите нужди и предпочитания.',
@@ -68,21 +53,6 @@ const ServicesList = () => {
       ],
       price: 'включено',
       color: 'from-premium-gold to-soft-pink',
-      popular: false
-    },
-    {
-      icon: Camera,
-      title: 'Фото сесии',
-      description: 'Професионални снимки на вашите кучета в красива обстановка за спомени.',
-      features: [
-        'Професионални снимки',
-        'Красива обстановка',
-        'Различни теми',
-        'Цифрови файлове',
-        'Печат на снимки'
-      ],
-      price: 'от 30€',
-      color: 'from-soft-pink to-luxury-purple',
       popular: false
     },
     {
