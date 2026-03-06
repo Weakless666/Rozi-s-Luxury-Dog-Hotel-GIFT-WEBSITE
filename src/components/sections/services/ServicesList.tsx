@@ -21,7 +21,7 @@ const ServicesList = () => {
         'Гурме закуски и вечери',
         '24/7 човешко присъствие и внимание'
       ],
-      price: '60€ на нощ',
+      price: '55€ на нощ',
       color: 'from-soft-pink to-luxury-purple',
       popular: true
     },
@@ -149,47 +149,12 @@ const ServicesList = () => {
                       </li>
                     ))}
                   </ul>
-                  
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`w-full bg-gradient-to-r ${service.color} text-white font-medium py-3 px-4 rounded-lg hover:shadow-lg transition-all duration-300`}
-                  >
-                    Резервирай
-                  </motion.button>
                 </div>
               </motion.div>
             )
           })}
         </div>
 
-        {/* Additional info */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.8, duration: 0.8 }}
-          className="mt-16 bg-gradient-to-br from-soft-pink/20 to-luxury-purple/20 rounded-2xl p-8 text-center"
-        >
-          <h3 className="text-2xl font-handwriting font-bold text-gray-800 mb-4">
-            💡 Специални оферти
-          </h3>
-          <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto mb-6">
-            При резервация за повече от 5 дни получавате 15% отстъпка, а при резервация 
-            за повече от 10 дни - 25% отстъпка! Също така предлагаме семейни пакети 
-            за собственици с повече от едно куче.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <span className="bg-white/80 text-luxury-purple px-6 py-2 rounded-full font-medium">
-              🎉 15% отстъпка за 5+ дни
-            </span>
-            <span className="bg-white/80 text-luxury-purple px-6 py-2 rounded-full font-medium">
-              🎉 25% отстъпка за 10+ дни
-            </span>
-            <span className="bg-white/80 text-luxury-purple px-6 py-2 rounded-full font-medium">
-              👨‍👩‍👧‍👦 Семейни пакети
-            </span>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
