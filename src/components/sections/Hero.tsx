@@ -55,8 +55,8 @@ const Hero = () => {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed px-4 sm:px-0"
             >
-              Място, където вашите четириноги приятели получават 
-              <span className="text-luxury-purple font-semibold"> най-добрата грижа</span>, 
+              Място, където вашите четириноги приятели получават{'\u00A0'}
+              <span className="text-luxury-purple font-semibold whitespace-nowrap">най-добрата грижа</span>, 
               <span className="text-soft-pink font-semibold"> любов</span> и 
               <span className="text-gentle-rose font-semibold"> внимание</span>
             </motion.p>
@@ -96,7 +96,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
-              className="grid grid-cols-3 gap-8 mt-12"
+              className="grid grid-cols-3 gap-4 sm:gap-8 mt-10 sm:mt-12 px-4 sm:px-0"
             >
               {[
                 { number: '500+', label: 'Щастливи клиенти' },
@@ -110,10 +110,10 @@ const Hero = () => {
                   transition={{ delay: 1.2 + index * 0.1, duration: 0.6 }}
                   className="text-center"
                 >
-                  <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-gray-600 font-medium">
+                  <div className="text-[11px] sm:text-sm md:text-base text-gray-600 font-medium leading-tight whitespace-nowrap">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -152,7 +152,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.6 }}
-                className="absolute -top-6 -left-6 bg-white rounded-2xl p-4 shadow-xl"
+                className="absolute top-4 left-4 sm:-top-6 sm:-left-6 bg-white rounded-2xl p-3 sm:p-4 shadow-xl max-w-[85%] sm:max-w-none"
               >
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-soft-pink to-luxury-purple rounded-full flex items-center justify-center">
@@ -160,7 +160,7 @@ const Hero = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-800">24/7 Грижа</div>
-                    <div className="text-sm text-gray-600">Професионално обслужване</div>
+                    <div className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">Професионално обслужване</div>
                   </div>
                 </div>
               </motion.div>
@@ -169,7 +169,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.2, duration: 0.6 }}
-                className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-xl"
+                className="absolute bottom-4 right-4 sm:-bottom-6 sm:-right-6 bg-white rounded-2xl p-3 sm:p-4 shadow-xl max-w-[85%] sm:max-w-none"
               >
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-premium-gold to-soft-pink rounded-full flex items-center justify-center">
@@ -177,7 +177,7 @@ const Hero = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-800">5★ Рейтинг</div>
-                    <div className="text-sm text-gray-600">От доволни клиенти</div>
+                    <div className="text-xs sm:text-sm text-gray-600">От доволни клиенти</div>
                   </div>
                 </div>
               </motion.div>

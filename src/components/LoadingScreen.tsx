@@ -312,7 +312,7 @@ const LoadingScreen = ({ isLoading }: LoadingScreenProps) => {
               }}
               className="text-sm text-gray-500"
             >
-              Приготвени с ❤️ за вашите четирикраки приятели
+              Приготвени с ❤️ за вашите четириноги приятели
             </motion.p>
           </motion.div>
 

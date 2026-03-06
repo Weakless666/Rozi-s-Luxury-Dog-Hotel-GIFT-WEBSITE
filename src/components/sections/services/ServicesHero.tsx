@@ -53,7 +53,7 @@ const ServicesHero = () => {
             className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
           >
             Предлагаме пълен спектър от <span className="text-luxury-purple font-semibold">професионални услуги</span> 
-            за вашите четирикраки приятели, от луксозно настаняване до специализирана грижа.
+            за вашите четириноги приятели, от луксозно настаняване до специализирана грижа.
           </motion.p>
 
           {/* Quick stats */}

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Phone, Mail, Clock, MessageCircle, Calendar, Star, Heart, Facebook } from 'lucide-react'
+import { Phone, Clock, MessageCircle, Star, Heart, Facebook } from 'lucide-react'
 
 // Viber icon component
 const ViberIcon = ({ className }: { className?: string }) => (
@@ -26,15 +26,6 @@ const ContactInfo = () => {
       available: '8:00 - 20:00'
     },
     {
-      icon: Mail,
-      title: 'Имейл',
-      value: 'info@rozis-dog-hotel.com',
-      description: 'Изпратете имейл за подробна информация',
-      action: 'mailto:info@rozis-dog-hotel.com',
-      color: 'from-luxury-purple to-premium-gold',
-      available: '24/7'
-    },
-    {
       icon: ViberIcon,
       title: 'Viber',
       value: '+359 882 739 396',
@@ -42,15 +33,6 @@ const ContactInfo = () => {
       action: 'viber://chat?number=+359882739396',
       color: 'from-purple-500 to-purple-600',
       available: '8:00 - 20:00'
-    },
-    {
-      icon: Calendar,
-      title: 'Онлайн резервация',
-      value: 'Форма за контакт',
-      description: 'Попълнете формата за лесна резервация',
-      action: '#contact-form',
-      color: 'from-soft-pink to-luxury-purple',
-      available: '24/7'
     },
     {
       icon: Facebook,
@@ -101,7 +83,7 @@ const ContactInfo = () => {
         </motion.div>
 
         {/* Contact methods */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {contactMethods.map((method, index) => {
             const Icon = method.icon
             return (

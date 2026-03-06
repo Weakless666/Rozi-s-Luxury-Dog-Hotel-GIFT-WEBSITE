@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Heart, PawPrint, Phone, Mail, MapPin, Instagram, Facebook } from 'lucide-react'
+import { Heart, PawPrint, Phone, MapPin, Instagram, Facebook } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -15,8 +15,6 @@ const Footer = () => {
     ],
     services: [
       { name: 'Настаняване', path: '/services#accommodation' },
-      { name: 'Груминг', path: '/services#grooming' },
-      { name: 'Тренировки', path: '/services#training' },
       { name: 'Транспорт', path: '/services#transport' }
     ],
     contact: [
@@ -146,8 +144,6 @@ const Footer = () => {
                     ? 'https://www.google.com/maps/search/?api=1&query=ул.+Германея+60,+2650+Сапарева+баня,+България'
                     : contact.name === 'Телефон'
                     ? 'tel:+359882739396'
-                    : contact.name === 'Имейл'
-                    ? 'mailto:info@rozis-dog-hotel.com'
                     : undefined
                   
                   if (link) {
@@ -206,7 +202,7 @@ const Footer = () => {
               <div className="flex items-center space-x-2">
                 <span>Направено с</span>
                 <Heart className="w-4 h-4 text-soft-pink animate-pulse" />
-                <span>за нашите четирикраки приятели</span>
+                <span>за нашите четириноги приятели</span>
               </div>
               <div className="text-xs text-white/60">
                 Made By: <span className="font-semibold text-soft-pink">Weakless666</span>

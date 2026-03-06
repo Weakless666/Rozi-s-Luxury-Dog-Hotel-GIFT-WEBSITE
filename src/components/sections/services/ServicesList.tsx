@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Home, Scissors, Dumbbell, Car, Stethoscope, Utensils, Camera, Shield } from 'lucide-react'
+import { Home, Car, Stethoscope, Utensils, Camera, Shield } from 'lucide-react'
 
 const ServicesList = () => {
   const [ref, inView] = useInView({
@@ -24,39 +24,6 @@ const ServicesList = () => {
       price: '60€ на нощ',
       color: 'from-soft-pink to-luxury-purple',
       popular: true
-    },
-    {
-      icon: Scissors,
-      title: 'Къпане и разресване',
-      description: 'Пълна грижа за кожата и козината',
-      features: [
-        'Къпане: малки кучета (до 5кг) - 25€.',
-        'Средни кучета (до 15кг) - 30€.',
-        'Големи кучета (до 40 кг) - 35€.',
-        'Гигантски кучета (над 40кг) - 45€.',
-        'Ресане: малки кучета (до 5кг) - 20€.',
-        'Средни кучета (до 15кг) - 25€.',
-        'Големи кучета (до 40 кг) - 30€.',
-        'Гигантски кучета (над 40кг) - 35€.'
-      ],
-      price: 'от 20€',
-      color: 'from-luxury-purple to-premium-gold',
-      popular: false
-    },
-    {
-      icon: Dumbbell,
-      title: 'Тренировки и игри',
-      description: 'Активни игри и упражнения за поддържане на здравето и щастието на кучетата.',
-      features: [
-        'Дневни игри и упражнения',
-        'Социализация с други кучета',
-        'Дресировка и команди',
-        'Агилити тренировки',
-        'Индивидуални сесии'
-      ],
-      price: 'включено',
-      color: 'from-premium-gold to-soft-pink',
-      popular: false
     },
     {
       icon: Car,

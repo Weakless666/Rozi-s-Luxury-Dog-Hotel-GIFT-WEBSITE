@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom'
-import { Home, Scissors, Dumbbell, Car, ArrowRight, Star } from 'lucide-react'
+import { Home, Car, ArrowRight, Star } from 'lucide-react'
 
 const ServicesPreview = () => {
   const [ref, inView] = useInView({
@@ -16,20 +16,6 @@ const ServicesPreview = () => {
       description: 'Комфортни стаи с модерни удобства за най-доброто преживяване на вашите кучета.',
       price: '60€ на нощ',
       features: ['Индивидуални стаи', 'Климатизация', '24/7 наблюдение']
-    },
-    {
-      icon: Scissors,
-      title: 'Професионален груминг',
-      description: 'Пълна грижа за кожата и козината от опитни майстори.',
-      price: 'от 20€',
-      features: ['Почистване', 'Стрижка', 'Нокти и уши']
-    },
-    {
-      icon: Dumbbell,
-      title: 'Тренировки и игри',
-      description: 'Активни игри и упражнения за поддържане на здравето и щастието.',
-      price: 'включено',
-      features: ['Дневни игри', 'Упражнения', 'Социализация']
     },
     {
       icon: Car,
@@ -70,7 +56,7 @@ const ServicesPreview = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon
             return (

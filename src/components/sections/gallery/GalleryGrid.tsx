@@ -169,26 +169,6 @@ const GalleryGrid = () => {
       imageUrl: '/images/room2.png'
     },
     {
-      id: 16,
-      title: 'VIP стая с балкон',
-      description: 'Луксозна стая с изглед към градината',
-      category: 'rooms',
-      type: 'image',
-      likes: 25,
-      date: '2023-12-31',
-      imageUrl: '/images/room3.jpg'
-    },
-    {
-      id: 17,
-      title: 'Обща зала',
-      description: 'Модерната обща зала за игри и релакс',
-      category: 'rooms',
-      type: 'image',
-      likes: 19,
-      date: '2024-01-05',
-      imageUrl: '/images/common-room.jpg'
-    },
-    {
       id: 18,
       title: 'Модерна спа стая',
       description: 'Спа процедури за релакс',
@@ -379,8 +359,12 @@ const GalleryGrid = () => {
     // Get uploaded images from localStorage
     const uploadedImages = JSON.parse(localStorage.getItem('galleryImages') || '[]')
     
-    // Merge static and uploaded images
-    return [...staticImages, ...uploadedImages]
+    // Merge static and uploaded images, then filter out grooming-related cards (per client request)
+    const merged = [...staticImages, ...uploadedImages]
+    return merged.filter((img: { title?: string }) => {
+      const t = (img.title || '').toLowerCase()
+      return !t.includes('груминг') && !t.includes('прическа')
+    })
   }
 
   const [galleryImages] = useState(getGalleryImages())

@@ -1,15 +1,12 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Phone, Mail, ArrowRight, Heart, PawPrint } from 'lucide-react'
-import BookingModal from '../../components/BookingModal'
-import { useState } from 'react'
+import { Phone, Mail, ArrowRight, Heart } from 'lucide-react'
 
 const CTA = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   })
-  const [isBookingOpen, setIsBookingOpen] = useState(false)
 
   const ctaOptions = [
     {
@@ -58,7 +55,7 @@ const CTA = () => {
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-handwriting font-bold mb-6">
-            Дайте на вашия <span className="text-white">любимец</span> най-доброто!
+            Дайте на вашия <span className="bg-soft-pink/80 text-white px-2 py-0.5 rounded font-sans font-semibold not-italic">четириног</span> любимец най-доброто!
           </h2>
 
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-8">
@@ -76,26 +73,13 @@ const CTA = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <button 
-                onClick={() => setIsBookingOpen(true)}
-                className="bg-white text-luxury-purple px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 ease-in-out inline-flex items-center space-x-2"
-              >
-                <PawPrint className="w-6 h-6" />
-                <span>Резервирай сега</span>
-                <ArrowRight className="w-5 h-5" />
-              </button>
-            </motion.div>
-            
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
               <a 
                 href="tel:+359882739396" 
-                className="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full font-bold text-lg border-2 border-white/30 hover:bg-white/30 hover:border-white/50 transform hover:scale-105 transition-all duration-300 ease-in-out inline-flex items-center space-x-2"
+                className="bg-white text-luxury-purple px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 ease-in-out inline-flex items-center space-x-2"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-6 h-6" />
                 <span>Обадете се</span>
+                <ArrowRight className="w-5 h-5" />
               </a>
             </motion.div>
           </motion.div>
@@ -147,11 +131,6 @@ const CTA = () => {
 
       </div>
 
-      {/* Booking Modal */}
-      <BookingModal 
-        isOpen={isBookingOpen} 
-        onClose={() => setIsBookingOpen(false)} 
-      />
     </section>
   )
 }

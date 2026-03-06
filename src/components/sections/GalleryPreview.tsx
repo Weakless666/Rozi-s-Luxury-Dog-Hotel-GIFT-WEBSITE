@@ -24,34 +24,20 @@ const GalleryPreview = () => {
     },
     {
       id: 2,
-      title: 'Луксозна стая',
-      description: 'VIP стая с всички удобства за най-взискателните гости',
-      category: 'rooms',
-      imageUrl: '/images/room1.png'
-    },
-    {
-      id: 3,
       title: 'Игри в двора',
       description: 'Активни игри и упражнения за поддържане на здравето',
       category: 'activities',
       imageUrl: '/images/activity1.png'
     },
     {
-      id: 4,
+      id: 3,
       title: 'Щастливи кучета заедно',
       description: 'Социализация и игри между нашите гости',
       category: 'dogs',
       imageUrl: '/images/dog5.png'
     },
     {
-      id: 5,
-      title: 'Релакс в стаята',
-      description: 'Спокойни моменти в луксозната атмосфера',
-      category: 'rooms',
-      imageUrl: '/images/room2.png'
-    },
-    {
-      id: 6,
+      id: 4,
       title: 'Социализация',
       description: 'Кучетата се учат да играят заедно',
       category: 'activities',

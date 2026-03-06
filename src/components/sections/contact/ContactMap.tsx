@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { MapPin, Navigation, Clock, Phone, Mail } from 'lucide-react'
+import { MapPin, Navigation, Clock, Phone } from 'lucide-react'
 
 const ContactMap = () => {
   const [ref, inView] = useInView({
@@ -121,11 +121,7 @@ const ContactMap = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Phone className="w-4 h-4 text-soft-pink" />
-                  <span className="text-gray-600">+359 882 739 396</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-4 h-4 text-soft-pink" />
-                  <span className="text-gray-600">info@rozis-dog-hotel.com</span>
+                  <a href="tel:+359882739396" className="text-gray-600 hover:text-soft-pink transition-colors">+359 882 739 396</a>
                 </div>
               </div>
             </div>
