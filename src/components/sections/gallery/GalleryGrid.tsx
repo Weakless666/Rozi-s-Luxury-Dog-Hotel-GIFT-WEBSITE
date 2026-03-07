@@ -421,14 +421,14 @@ const GalleryGrid = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-auto"
             onClick={closeModal}
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              className="max-w-6xl w-full max-h-[95vh] overflow-hidden relative"
+              className="relative flex items-center justify-center min-h-0 w-full my-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close button */}
@@ -439,20 +439,18 @@ const GalleryGrid = () => {
                 <X className="w-6 h-6 text-white" />
               </button>
 
-              {/* Modal content - just the image */}
-              <div className="flex items-center justify-center w-full h-full p-12">
-                <img
-                  src={selectedImage.imageUrl}
-                  alt={selectedImage.title}
-                  className="max-w-[80%] max-h-[80%] object-contain"
-                  onError={(e) => {
-                    // Fallback to gradient placeholder if image fails to load
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    const parent = target.parentElement;
-                    if (parent) {
-                      parent.innerHTML = `
-                        <div class="w-full h-full bg-gradient-to-br from-soft-pink/30 via-luxury-purple/30 to-premium-gold/30 flex items-center justify-center">
+              {/* Image - винаги цялата снимка, без изрязване */}
+              <img
+                src={selectedImage.imageUrl}
+                alt={selectedImage.title}
+                className="max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent) {
+                    parent.innerHTML = `
+                        <div class="w-full h-full bg-gradient-to-br from-soft-pink/30 via-luxury-purple/30 to-premium-gold/30 flex items-center justify-center min-h-[50vh]">
                           <div class="text-center">
                             <div class="w-20 h-20 bg-white/30 rounded-full flex items-center justify-center mx-auto mb-4">
                               ${selectedImage.type === 'video' ? 
@@ -464,10 +462,9 @@ const GalleryGrid = () => {
                           </div>
                         </div>
                       `;
-                    }
-                  }}
-                />
-              </div>
+                  }
+                }}
+              />
             </motion.div>
           </motion.div>
         )}
