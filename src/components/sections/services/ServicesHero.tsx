@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Star, Heart, PawPrint } from 'lucide-react'
+import { Star, Heart } from 'lucide-react'
 
 const ServicesHero = () => {
   const [ref, inView] = useInView({
@@ -52,8 +52,8 @@ const ServicesHero = () => {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
           >
-            Предлагаме пълен спектър от <span className="text-luxury-purple font-semibold">професионални услуги</span> 
-            за вашите четириноги приятели, от луксозно настаняване до специализирана грижа.
+            Предлагаме пълен спектър от <span className="text-luxury-purple font-semibold">професионални услуги</span>
+            {' '}за вашите четириноги приятели, от луксозно настаняване до специализирана грижа.
           </motion.p>
 
           {/* Quick stats */}
@@ -61,10 +61,9 @@ const ServicesHero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12"
           >
             {[
-              { icon: PawPrint, number: '8+', label: 'Основни услуги', color: 'from-soft-pink to-luxury-purple' },
               { icon: Heart, number: '24/7', label: 'Грижа и наблюдение', color: 'from-luxury-purple to-premium-gold' },
               { icon: Star, number: '100%', label: 'Доволни клиенти', color: 'from-premium-gold to-soft-pink' }
             ].map((stat, index) => {

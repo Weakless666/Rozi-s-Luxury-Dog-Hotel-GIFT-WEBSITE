@@ -65,8 +65,8 @@ const HeroSection = () => {
           >
             {[
               { icon: Heart, number: '300+', label: 'Щастливи клиенти', color: 'from-soft-pink to-luxury-purple' },
-              { icon: PawPrint, number: '5+', label: 'Години опит', color: 'from-luxury-purple to-premium-gold' },
-              { icon: Star, number: '4.9/5', label: 'Рейтинг', color: 'from-premium-gold to-soft-pink' }
+              { icon: PawPrint, number: '10+', label: 'Години опит', color: 'from-luxury-purple to-premium-gold' },
+              { icon: Star, number: '5/5', label: 'Рейтинг', color: 'from-premium-gold to-soft-pink' }
             ].map((stat, index) => {
               const Icon = stat.icon
               return (

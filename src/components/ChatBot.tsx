@@ -55,12 +55,12 @@ const ChatBot = () => {
     {
       id: 6,
       question: "Мога ли да донеса собствена храна?",
-      answer: "Разбира се! Добре е да донесете обичайната храна на кучето си за по-лесно адаптиране. Имаме и собствена висококачествена храна. Важно е да ни уведомите за специални хранителни нужди! 🍖"
+      answer: "Да, ако искате кученцето Ви да остане на същата храна като у дома, можете да донесете. 🍖"
     },
     {
       id: 7,
       question: "Колко пъти на ден ги храните?",
-      answer: "Храним кучетата 3 пъти на ден - сутрин, обяд и вечер. За кученца и възрастни кучета можем да адаптираме графика според нуждите им. Винаги следваме указанията на собствениците! 🕐"
+      answer: "Съобразяваме се с индивидуалните нужди на всеки опашатко. Следваме режима и инструкциите, които ни дава всеки стопанин. 🕐"
     },
     {
       id: 8,
@@ -83,7 +83,7 @@ const ChatBot = () => {
     {
       id: 11,
       question: "Къде спят кучетата?",
-      answer: "Кучетата спят в индивидуални луксозни стаи с удобни легла, климатизация и постоянна температура. Всяка стая е оборудвана с видеонаблюдение за сигурност. Осигуряваме спокойна и комфортна атмосфера! 🛏️"
+      answer: "Кучетата спят в индивидуални луксозни стаи с удобни легла, климатизация и постоянна температура. Осигуряваме спокойна и комфортна атмосфера! 🛏️"
     },
     {
       id: 12,
@@ -98,7 +98,7 @@ const ChatBot = () => {
     {
       id: 14,
       question: "Колко често ги извеждате навън?",
-      answer: "Извеждаме кучетата навън минимум 4-5 пъти на ден за нужда и игри. За активни кучета можем да увеличаваме честотата. Всяко излизане е под наблюдение на нашия екип! 🚶‍♂️"
+      answer: "Лятото и когато времето е топло и слънчево прекарваме почти цял ден навън. Разбира се, ако някой гост иска да влезе вътре, той е свободен да го направи. Зимата или при по-лошо време излизаме 3-4 пъти на ден."
     },
     {
       id: 15,
@@ -110,7 +110,7 @@ const ChatBot = () => {
     {
       id: 16,
       question: "Колко струва престоят на ден?",
-      answer: "Луксозното настаняване струва 55€ на нощ. Това включва всички основни услуги. Груминг услугите започват от 15€; къпане от 20€ (малки) до 35€ (гигантски), ресане от 20€ до 35€. Транспортът е 30€ в една посока, само за София и София област. 💰"
+      answer: "Луксозното настаняване струва 55€ на нощ. Транспортът е 30€ в една посока, само за София и София област. 💰"
     },
     {
       id: 17,
@@ -120,12 +120,12 @@ const ChatBot = () => {
     {
       id: 18,
       question: "Какви методи на плащане приемате?",
-      answer: "Приемаме плащане в брой, с карта, банков превод и чрез мобилни приложения. Плащането се извършва при предаване на кучето. Имаме и възможност за частично плащане при дълги престои! 💳"
+      answer: "Приемаме само плащане в брой и банков превод. Плащането се извършва при предаване на кучето. Имаме и възможност за частично плащане при дълги престои! 💳"
     },
     {
       id: 19,
       question: "Какво се случва ако закъснея?",
-      answer: "Ако закъснеете, моля уведомете ни веднага! При закъснение над 2 часа се начислява допълнителна такса от 15€. При спешни случаи винаги се опитваме да бъдем разбиращи! ⏰"
+      answer: "При взимане след 12ч на обяд в последния ден от престоя се доплащат €25 за дневни грижи, като кученцето може да остане и до късно вечерта. ⏰"
     },
 
     // 📍 Местоположение и контакти
@@ -139,40 +139,10 @@ const ChatBot = () => {
       question: "Работите ли през уикендите?",
       answer: "Да! Работим 7 дни в седмицата, 24 часа на ден. Уикендите са наши най-натоварени дни, затова препоръчваме предварителна резервация! Нашият екип е винаги на разположение! 📅"
     },
-    {
-      id: 22,
-      question: "Какъв е телефонът за връзка?",
-      answer: "Нашият телефон за връзка е +359 882 739 396. Можете да ни се обадите на Viber на същия номер. Отговаряме на всички обаждания и съобщения! 📞"
-    },
-    {
-      id: 23,
-      question: "Мога ли да разгледам хотела преди престоя?",
-      answer: "Разбира се! Препоръчваме визита преди първия престой. Можете да се запознаете с условията, екипа и да зададете всички въпроси. Свържете се с нас за уговорка на час! 👀"
-    },
 
     // 🎉 Допълнителни въпроси
     {
-      id: 24,
-      question: "Кой е любимият гост в хотела?",
-      answer: "Всички наши гости са любими! 😄 Всеки кученце получава индивидуално внимание и любов. Не можем да изберем фаворит - всеки е особен по свой начин! 🐕💕"
-    },
-    {
-      id: 25,
-      question: "Може ли кучето ми да си доведе приятел?",
-      answer: "Разбира се! Приемаме групи от кучета, които са приятели. Важно е да ни уведомите предварително и да се уверяваме, че всички са социални помежду си. Приятелството между кучетата е прекрасно! 🐕🐕"
-    },
-    {
-      id: 26,
-      question: "Имате ли басейн за кучета?",
-      answer: "В момента нямаме басейн, но имаме голям двор с игри и оборудване. Планираме да добавим басейн в бъдеще! Засега кучетата се наслаждават на игри в двора и разходки. 🏊‍♂️"
-    },
-    {
-      id: 27,
-      question: "Как празнувате рождените дни?",
-      answer: "Празнуваме рождените дни с специални лакомства, играчки и много внимание! Можем да направим малка парти с други кучета или индивидуално празненство. Свържете се с нас за специални пожелания! 🎂🎉"
-    },
-    {
-      id: 28,
+      id: 22,
       question: "Приемате ли само кучета или и котки?",
       answer: "В момента приемаме само кучета, но планираме да разширим услугите си и за котки в бъдеще! Нашият екип има опит с различни животни. Следете ни за актуализации! 🐱"
     },
@@ -259,7 +229,7 @@ const ChatBot = () => {
     {
       id: 45,
       question: "Колко често се извеждат навън?",
-      answer: "Извеждаме кучетата навън минимум 4-5 пъти на ден за нужда и игри. За активни кучета можем да увеличаваме честотата. Всяко излизане е под наблюдение! 🚶‍♂️"
+      answer: "Лятото и когато времето е топло и слънчево прекарваме почти цял ден навън. Разбира се, ако някой гост иска да влезе вътре, той е свободен да го направи. Зимата или при по-лошо време излизаме 3-4 пъти на ден."
     },
     {
       id: 46,
@@ -324,7 +294,7 @@ const ChatBot = () => {
     {
       id: 58,
       question: "Как се заплаща - при оставяне или при взимане?",
-      answer: "Плащането се извършва при предаване на кучето. Приемаме плащане в брой, с карта или банков превод. За дълги престои имаме възможност за частично плащане! 💳"
+      answer: "Плащането се извършва при предаване на кучето. Приемаме само плащане в брой и банков превод. За дълги престои имаме възможност за частично плащане! 💳"
     },
     {
       id: 59,
@@ -354,12 +324,12 @@ const ChatBot = () => {
     {
       id: 64,
       question: "Какво трябва да донеса?",
-      answer: "Добре е да донесете: каишка, любима играчка, обичайна храна (ако е необходимо), лекарства (ако приема такива) и всички документи. Одеялото не е задължително! 🎒"
+      answer: "Единствено паспорт на госта и ако има нужда от специални грижи/лекарства също. 🎒"
     },
     {
       id: 65,
       question: "Какво става ако закъснея с прибирането?",
-      answer: "Ако закъснеете, моля уведомете ни веднага! При закъснение над 2 часа се начислява допълнителна такса от 15€. При спешни случаи винаги се опитваме да бъдем разбиращи! ⏰"
+      answer: "При взимане след 12ч на обяд в последния ден от престоя се доплащат €25 за дневни грижи, като кученцето може да остане и до късно вечерта. ⏰"
     },
     {
       id: 66,
@@ -379,7 +349,7 @@ const ChatBot = () => {
     {
       id: 69,
       question: "Кучето ми лае много - това проблем ли е?",
-      answer: "Не е проблем! Разбираме, че лайето е нормално поведение за кучетата. Нашият екип знае как да се справя с различни темпераменти и осигурява спокойна среда! 🐕"
+      answer: "Не е проблем! Разбираме, че лаенето е нормално поведение за кучетата. Нашият екип знае как да се справя с различни темпераменти и осигурява спокойна среда! 🐕"
     },
     {
       id: 70,
@@ -398,18 +368,13 @@ const ChatBot = () => {
     },
     {
       id: 73,
-      question: "Организирате ли кучешки рожден ден?",
-      answer: "Да! Организираме специални рожден дни с лакомства, играчки, парти с други кучета и много внимание! Свържете се с нас за персонализирано празненство! 🎂🎉"
-    },
-    {
-      id: 74,
       question: "Имате ли транспорт от/до София?",
       answer: "Да! Предлагаме транспорт услуги за София и София област. Цената е 50лв в една посока. Имаме безопасни клетки и климатизация! 🚗"
     },
     {
-      id: 75,
+      id: 74,
       question: "Предлагате ли дневна грижа (dog daycare)?",
-      answer: "В момента не предлагаме дневна грижа, но планираме да добавим тази услуга в бъдеще! Засега предлагаме само нощувки. Следете ни за актуализации! 🌅"
+      answer: "Да, предлагаме дневни грижи (€25). 🌅"
     }
   ]
 
@@ -487,6 +452,10 @@ const ChatBot = () => {
     if (userInput.includes('специални режими') || userInput.includes('диета') || userInput.includes('алергии') || userInput.includes('медицински')) {
       return quickQuestions[7].answer
     }
+    // Само къпане (без подстригване в въпроса) -> само цени за къпане
+    if ((userInput.includes('къпане') || userInput.includes('къпането')) && !userInput.includes('подстригване') && !userInput.includes('ресане') && !userInput.includes('стрижка') && !userInput.includes('груминг')) {
+      return "Имаме детайлни цени за къпане: малки кучета (до 5кг) 20€, средни (до 15кг) 25€, големи (до 40кг) 30€, гигантски (над 40кг) 35€. 🛁"
+    }
     if (userInput.includes('къпане') || userInput.includes('груминг') || userInput.includes('фризьор') || userInput.includes('стрижка')) {
       return quickQuestions[8].answer
     }
@@ -526,164 +495,143 @@ const ChatBot = () => {
     if (userInput.includes('уикенд') || userInput.includes('работно време') || userInput.includes('работите ли') || userInput.includes('седмица')) {
       return quickQuestions[20].answer
     }
-    if (userInput.includes('телефон') || userInput.includes('контакт') || userInput.includes('връзка') || userInput.includes('номер')) {
+    if (userInput.includes('котки') || userInput.includes('котка') || userInput.includes('само кучета') || userInput.includes('други животни')) {
       return quickQuestions[21].answer
     }
-    if (userInput.includes('разгледам') || userInput.includes('визита') || userInput.includes('преди престоя') || userInput.includes('оглед')) {
+    if (userInput.includes('малки кученца') || userInput.includes('кученца') || userInput.includes('под 6 месеца') || userInput.includes('малки')) {
       return quickQuestions[22].answer
     }
-    if (userInput.includes('любимият гост') || userInput.includes('любим гост') || userInput.includes('фаворит') || userInput.includes('кой е любимият')) {
+    if (userInput.includes('ограничение') || userInput.includes('килограми') || userInput.includes('размер') || userInput.includes('тегло')) {
       return quickQuestions[23].answer
     }
-    if (userInput.includes('доведе приятел') || userInput.includes('приятел') || userInput.includes('група') || userInput.includes('друго куче')) {
+    if (userInput.includes('максимум') || userInput.includes('колко животни') || userInput.includes('капацитет') || userInput.includes('лимит')) {
       return quickQuestions[24].answer
     }
-    if (userInput.includes('басейн') || userInput.includes('плуване') || userInput.includes('вода')) {
+    if (userInput.includes('служители') || userInput.includes('персонал') || userInput.includes('екип') || userInput.includes('колко хора')) {
       return quickQuestions[25].answer
     }
-    if (userInput.includes('рожден ден') || userInput.includes('рождени дни') || userInput.includes('празнувате') || userInput.includes('парти')) {
+    if (userInput.includes('кастрирано') || userInput.includes('кастрация') || userInput.includes('некастрирано')) {
       return quickQuestions[26].answer
     }
-    if (userInput.includes('котки') || userInput.includes('котка') || userInput.includes('само кучета') || userInput.includes('други животни')) {
+    if (userInput.includes('паспорт') || userInput.includes('документи') || userInput.includes('документ')) {
       return quickQuestions[27].answer
     }
-    if (userInput.includes('малки кученца') || userInput.includes('кученца') || userInput.includes('под 6 месеца') || userInput.includes('малки')) {
+    if (userInput.includes('ваксини') || userInput.includes('ваксина') || userInput.includes('обезпаразитяване') || userInput.includes('паразити')) {
       return quickQuestions[28].answer
     }
-    if (userInput.includes('ограничение') || userInput.includes('килограми') || userInput.includes('размер') || userInput.includes('тегло')) {
+    if (userInput.includes('меню') || userInput.includes('храна') || userInput.includes('ястия') || userInput.includes('хранителни')) {
       return quickQuestions[29].answer
     }
-    if (userInput.includes('максимум') || userInput.includes('колко животни') || userInput.includes('капацитет') || userInput.includes('лимит')) {
+    if (userInput.includes('купички') || userInput.includes('собствена храна') || userInput.includes('донеса храна')) {
       return quickQuestions[30].answer
     }
-    if (userInput.includes('служители') || userInput.includes('персонал') || userInput.includes('екип') || userInput.includes('колко хора')) {
+    if (userInput.includes('чувствителни') || userInput.includes('алергии') || userInput.includes('специална храна')) {
       return quickQuestions[31].answer
     }
-    if (userInput.includes('кастрирано') || userInput.includes('кастрация') || userInput.includes('некастрирано')) {
+    if (userInput.includes('не иска да яде') || userInput.includes('не яде') || userInput.includes('отказва от храна')) {
       return quickQuestions[32].answer
     }
-    if (userInput.includes('паспорт') || userInput.includes('документи') || userInput.includes('документ')) {
+    if (userInput.includes('лекарства по график') || userInput.includes('медикаменти') || userInput.includes('дава лекарства')) {
       return quickQuestions[33].answer
     }
-    if (userInput.includes('ваксини') || userInput.includes('ваксина') || userInput.includes('обезпаразитяване') || userInput.includes('паразити')) {
+    if (userInput.includes('ветеринар на място') || userInput.includes('дежурен ветеринар') || userInput.includes('ветеринарна клиника')) {
       return quickQuestions[34].answer
     }
-    if (userInput.includes('меню') || userInput.includes('храна') || userInput.includes('ястия') || userInput.includes('хранителни')) {
+    if (userInput.includes('спят заедно') || userInput.includes('поотделно') || userInput.includes('индивидуални стаи')) {
       return quickQuestions[35].answer
     }
-    if (userInput.includes('купички') || userInput.includes('собствена храна') || userInput.includes('донеса храна')) {
+    if (userInput.includes('как изглеждат стаите') || userInput.includes('стаите') || userInput.includes('настаняване')) {
       return quickQuestions[36].answer
     }
-    if (userInput.includes('чувствителни') || userInput.includes('алергии') || userInput.includes('специална храна')) {
+    if (userInput.includes('температура') || userInput.includes('климатизация') || userInput.includes('отопление') || userInput.includes('регулира')) {
       return quickQuestions[37].answer
     }
-    if (userInput.includes('не иска да яде') || userInput.includes('не яде') || userInput.includes('отказва от храна')) {
-      return quickQuestions[38].answer
-    }
-    if (userInput.includes('лекарства по график') || userInput.includes('медикаменти') || userInput.includes('дава лекарства')) {
+    if (userInput.includes('разходки извън двора') || userInput.includes('извън двора') || userInput.includes('външни разходки')) {
       return quickQuestions[39].answer
     }
-    if (userInput.includes('ветеринар на място') || userInput.includes('дежурен ветеринар') || userInput.includes('ветеринарна клиника')) {
+    if (userInput.includes('индивидуално внимание') || userInput.includes('галене') || userInput.includes('игри')) {
       return quickQuestions[40].answer
     }
-    if (userInput.includes('спят заедно') || userInput.includes('поотделно') || userInput.includes('индивидуални стаи')) {
+    if (userInput.includes('страхливо') || userInput.includes('страхлив') || userInput.includes('бои се')) {
       return quickQuestions[41].answer
     }
-    if (userInput.includes('как изглеждат стаите') || userInput.includes('стаите') || userInput.includes('настаняване')) {
+    if (userInput.includes('се разбират') || userInput.includes('взаимодействие') || userInput.includes('социализация')) {
       return quickQuestions[42].answer
     }
-    if (userInput.includes('температура') || userInput.includes('климатизация') || userInput.includes('отопление') || userInput.includes('регулира')) {
+    if (userInput.includes('снимки всеки ден') || userInput.includes('ежедневни снимки') || userInput.includes('видеа')) {
       return quickQuestions[43].answer
     }
-    if (userInput.includes('разходки извън двора') || userInput.includes('извън двора') || userInput.includes('външни разходки')) {
-      return quickQuestions[45].answer
-    }
-    if (userInput.includes('индивидуално внимание') || userInput.includes('галене') || userInput.includes('игри')) {
-      return quickQuestions[46].answer
-    }
-    if (userInput.includes('страхливо') || userInput.includes('страхлив') || userInput.includes('бои се')) {
-      return quickQuestions[47].answer
-    }
-    if (userInput.includes('се разбират') || userInput.includes('взаимодействие') || userInput.includes('социализация')) {
-      return quickQuestions[48].answer
-    }
-    if (userInput.includes('снимки всеки ден') || userInput.includes('ежедневни снимки') || userInput.includes('видеа')) {
-      return quickQuestions[49].answer
-    }
     if (userInput.includes('обаждам') || userInput.includes('питам как е') || userInput.includes('контакт')) {
-      return quickQuestions[50].answer
+      return quickQuestions[44].answer
     }
     if (userInput.includes('viber') || userInput.includes('whatsapp') || userInput.includes('актуализации')) {
-      return quickQuestions[51].answer
+      return quickQuestions[45].answer
     }
     if (userInput.includes('видеоразговор') || userInput.includes('видео чат') || userInput.includes('видео обаждане')) {
-      return quickQuestions[52].answer
+      return quickQuestions[46].answer
     }
     if (userInput.includes('цена на нощувката') || userInput.includes('нощувка') || userInput.includes('цена за ден')) {
-      return quickQuestions[53].answer
+      return quickQuestions[47].answer
     }
     if (userInput.includes('какво включва цената') || userInput.includes('включва цената') || userInput.includes('какво включва')) {
-      return quickQuestions[54].answer
+      return quickQuestions[48].answer
     }
     if (userInput.includes('различни пакети') || userInput.includes('пакети') || userInput.includes('vip') || userInput.includes('стандарт')) {
-      return quickQuestions[55].answer
+      return quickQuestions[49].answer
     }
     if (userInput.includes('къпане и подстригване') || userInput.includes('груминг') || userInput.includes('стрижка')) {
-      return quickQuestions[56].answer
+      return quickQuestions[50].answer
     }
     if (userInput.includes('заплаща') || userInput.includes('плащане') || userInput.includes('при оставяне') || userInput.includes('при взимане')) {
-      return quickQuestions[57].answer
+      return quickQuestions[51].answer
     }
     if (userInput.includes('отстъпки за повече кучета') || userInput.includes('повече от едно куче') || userInput.includes('група кучета')) {
-      return quickQuestions[58].answer
+      return quickQuestions[52].answer
     }
     if (userInput.includes('транспорт') || userInput.includes('доставка') || userInput.includes('превоз')) {
-      return quickQuestions[59].answer
+      return quickQuestions[53].answer
     }
     if (userInput.includes('как се приема') || userInput.includes('приемане') || userInput.includes('попълване')) {
-      return quickQuestions[60].answer
+      return quickQuestions[54].answer
     }
     if (userInput.includes('доведа лично') || userInput.includes('лично') || userInput.includes('сам')) {
-      return quickQuestions[61].answer
+      return quickQuestions[55].answer
     }
     if (userInput.includes('часове за приемане') || userInput.includes('работно време') || userInput.includes('кога приемате')) {
-      return quickQuestions[62].answer
+      return quickQuestions[56].answer
     }
     if (userInput.includes('какво трябва да донеса') || userInput.includes('донеса') || userInput.includes('необходими неща')) {
-      return quickQuestions[63].answer
+      return quickQuestions[57].answer
     }
     if (userInput.includes('закъснея с прибирането') || userInput.includes('прибирането') || userInput.includes('взимане')) {
-      return quickQuestions[64].answer
+      return quickQuestions[58].answer
     }
     if (userInput.includes('не се разбира с други') || userInput.includes('агресивно') || userInput.includes('несоциално')) {
-      return quickQuestions[65].answer
+      return quickQuestions[59].answer
     }
     if (userInput.includes('обучение за социализация') || userInput.includes('социализация') || userInput.includes('обучение')) {
-      return quickQuestions[66].answer
+      return quickQuestions[60].answer
     }
     if (userInput.includes('се сбие') || userInput.includes('сбиване') || userInput.includes('агресия')) {
-      return quickQuestions[67].answer
+      return quickQuestions[61].answer
     }
     if (userInput.includes('лае много') || userInput.includes('лай') || userInput.includes('шумно')) {
-      return quickQuestions[68].answer
+      return quickQuestions[62].answer
     }
     if (userInput.includes('тестов престой') || userInput.includes('пробен престой') || userInput.includes('първи път')) {
-      return quickQuestions[69].answer
+      return quickQuestions[63].answer
     }
     if (userInput.includes('груминг услуги') || userInput.includes('къпане') || userInput.includes('подстригване')) {
-      return quickQuestions[70].answer
+      return quickQuestions[64].answer
     }
     if (userInput.includes('снимано професионално') || userInput.includes('фотосесия') || userInput.includes('професионални снимки')) {
-      return quickQuestions[71].answer
-    }
-    if (userInput.includes('кучешки рожден ден') || userInput.includes('рожден ден') || userInput.includes('парти за кучета')) {
-      return quickQuestions[72].answer
+      return quickQuestions[65].answer
     }
     if (userInput.includes('транспорт от софия') || userInput.includes('до софия') || userInput.includes('софия')) {
-      return quickQuestions[73].answer
+      return quickQuestions[66].answer
     }
     if (userInput.includes('дневна грижа') || userInput.includes('dog daycare') || userInput.includes('дневно настаняване')) {
-      return quickQuestions[74].answer
+      return quickQuestions[67].answer
     }
     if (userInput.includes('здравей') || userInput.includes('привет') || userInput.includes('добър ден')) {
       return "Здравейте! 🐾 Радвам се, че сте тук! Как мога да ви помогна с въпросите за нашия луксозен хотел за кучета?"

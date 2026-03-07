@@ -12,9 +12,6 @@ const Footer = () => {
       { name: 'Галерия', path: '/gallery' },
       { name: 'Контакти', path: '/contact' }
     ],
-    services: [
-      { name: 'Транспорт', path: '/services#transport' }
-    ],
     contact: [
       { name: 'Телефон', value: '+359 882 739 396', icon: Phone },
       { name: 'Адрес', value: 'ул. "Германея" 60, 2650 Сапарева баня', icon: MapPin }
@@ -34,7 +31,7 @@ const Footer = () => {
 
       <div className="container-custom relative z-10">
         <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Brand Section */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -90,29 +87,6 @@ const Footer = () => {
               </h4>
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      to={link.path}
-                      className="text-white/90 hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Services Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <h4 className="text-xl font-elegant font-semibold mb-6">
-                Услуги
-              </h4>
-              <ul className="space-y-3">
-                {footerLinks.services.map((link) => (
                   <li key={link.name}>
                     <Link
                       to={link.path}
