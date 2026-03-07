@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom'
-import { Home, Car, ArrowRight, Star } from 'lucide-react'
+import { Home, Car, ArrowRight, Star, Sun } from 'lucide-react'
 
 const ServicesPreview = () => {
   const [ref, inView] = useInView({
@@ -15,7 +15,14 @@ const ServicesPreview = () => {
       title: 'Луксозно настаняване',
       description: 'Комфортни стаи с модерни удобства за най-доброто преживяване на вашите кучета.',
       price: '55€ на нощ',
-      features: ['Индивидуални стаи', 'Климатизация', '24/7 наблюдение']
+      features: ['Индивидуални стаи', 'Подово отопление', 'Климатизация', '24/7 наблюдение']
+    },
+    {
+      icon: Sun,
+      title: 'Дневна ясла',
+      description: 'Дневна грижа за вашите кучета без нощувка – идеално за заети стопани.',
+      price: '25€',
+      features: ['Цялодневна грижа', 'Игри и разходки', 'Индивидуално внимание']
     },
     {
       icon: Car,
@@ -56,7 +63,7 @@ const ServicesPreview = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon
             return (
@@ -93,13 +100,17 @@ const ServicesPreview = () => {
                     ))}
                   </ul>
                   
-                  <motion.button
+                  <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full bg-gradient-to-r from-soft-pink/20 to-luxury-purple/20 text-luxury-purple font-medium py-2 px-4 rounded-lg hover:from-soft-pink/30 hover:to-luxury-purple/30 transition-all duration-300"
                   >
-                    Научи повече
-                  </motion.button>
+                    <Link
+                      to="/services"
+                      className="block w-full text-center bg-gradient-to-r from-soft-pink/20 to-luxury-purple/20 text-luxury-purple font-medium py-2 px-4 rounded-lg hover:from-soft-pink/30 hover:to-luxury-purple/30 transition-all duration-300"
+                    >
+                      Научи повече
+                    </Link>
+                  </motion.div>
                 </div>
               </motion.div>
             )

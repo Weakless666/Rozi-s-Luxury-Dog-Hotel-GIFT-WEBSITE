@@ -310,7 +310,7 @@ const GalleryGrid = () => {
     const merged = [...staticImages, ...uploadedImages]
     return merged.filter((img: { title?: string }) => {
       const t = (img.title || '').toLowerCase()
-      return !t.includes('груминг') && !t.includes('прическа')
+      return !t.includes('груминг') && !t.includes('прическа') && !t.includes('спа')
     })
   }
 

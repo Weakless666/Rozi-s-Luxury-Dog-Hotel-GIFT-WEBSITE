@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Home, Car, Utensils } from 'lucide-react'
+import { Home, Car, Utensils, Sun } from 'lucide-react'
 
 const ServicesList = () => {
   const [ref, inView] = useInView({
@@ -28,7 +28,7 @@ const ServicesList = () => {
     {
       icon: Car,
       title: 'Такси',
-      description: 'Транспорт от и до София',
+      description: 'Транспорт от и до София.',
       features: [
         'Само София и София област',
         '30€ в една посока',
@@ -36,6 +36,19 @@ const ServicesList = () => {
       ],
       price: '30€/посока',
       color: 'from-soft-pink to-luxury-purple',
+      popular: false
+    },
+    {
+      icon: Sun,
+      title: 'Дневна ясла',
+      description: 'Дневна грижа без нощувка – идеално за заети стопани.',
+      features: [
+        'Цялодневна грижа',
+        'Игри и разходки',
+        'Индивидуално внимание'
+      ],
+      price: '25€',
+      color: 'from-premium-gold to-soft-pink',
       popular: false
     },
     {

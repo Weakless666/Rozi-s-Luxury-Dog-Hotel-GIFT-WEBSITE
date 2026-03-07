@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Heart, PawPrint, Star, ArrowRight, Play } from 'lucide-react'
+import { Heart, PawPrint, Star, ArrowRight, Play, Euro } from 'lucide-react'
 import BookingModal from '../../components/BookingModal'
 import { useState } from 'react'
 
@@ -35,7 +35,7 @@ const Hero = () => {
               className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 shadow-lg"
             >
               <Star className="w-5 h-5 text-premium-gold" />
-              <span className="text-luxury-purple font-medium">5-звезден луксозен хотел за кучета</span>
+              <span className="text-luxury-purple font-medium">5-звездно оценен от нашите клиенти</span>
             </motion.div>
 
             <motion.h1
@@ -84,6 +84,16 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
+                <Link to="/services" className="btn-secondary inline-flex items-center space-x-2 text-sm sm:text-base px-4 sm:px-6 py-3 sm:py-4">
+                  <Euro className="w-5 h-5" />
+                  <span>Ценоразпис</span>
+                </Link>
+              </motion.div>
+              
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Link to="/gallery" className="btn-secondary inline-flex items-center space-x-2 text-sm sm:text-base px-4 sm:px-6 py-3 sm:py-4">
                   <Play className="w-5 h-5" />
                   <span>Виж галерията</span>
@@ -100,7 +110,7 @@ const Hero = () => {
             >
               {[
                 { number: '300+', label: 'Щастливи клиенти' },
-                { number: '5★', label: 'Рейтинг' },
+                { number: '5★', label: 'Оценен от клиентите' },
                 { number: '24/7', label: 'Грижа' }
               ].map((stat, index) => (
                 <motion.div
@@ -176,7 +186,7 @@ const Hero = () => {
                     <Star className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-800">5★ Рейтинг</div>
+                    <div className="font-semibold text-gray-800">5★ Оценен от клиентите</div>
                     <div className="text-xs sm:text-sm text-gray-600">От доволни клиенти</div>
                   </div>
                 </div>

@@ -128,8 +128,8 @@ const Testimonials = () => {
             {[
               { number: '300+', label: 'Доволни клиенти' },
               { number: '5/5', label: 'Засега са 5/5' },
-              { number: '1000+', label: 'Щастливи кучета' },
-              { number: '5★', label: 'Отзиви в Google' }
+              { number: '300+', label: 'Щастливи кучета' },
+              { number: '5★', label: '5 звезди отзиви от клиенти' }
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}

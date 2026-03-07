@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Camera, Heart, Star } from 'lucide-react'
+import { Camera } from 'lucide-react'
 
 const GalleryHero = () => {
   const [ref, inView] = useInView({
@@ -56,39 +56,29 @@ const GalleryHero = () => {
             вашите четириноги приятели ще се наслаждават на времето си тук.
           </motion.p>
 
-          {/* Quick stats */}
+          {/* Quick stats - само снимки в галерията */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
+            className="flex justify-center mt-12"
           >
-            {[
-              { icon: Camera, number: '500+', label: 'Снимки в галерията', color: 'from-soft-pink to-luxury-purple' },
-              { icon: Heart, number: '1000+', label: 'Щастливи кучета', color: 'from-luxury-purple to-premium-gold' },
-              { icon: Star, number: '5★', label: 'Рейтинг от клиенти', color: 'from-premium-gold to-soft-pink' }
-            ].map((stat, index) => {
-              const Icon = stat.icon
-              return (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={inView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ delay: 1 + index * 0.1, duration: 0.6 }}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover"
-                >
-                  <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-3xl font-bold text-gradient mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-gray-600 font-medium">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              )
-            })}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ delay: 1, duration: 0.6 }}
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-soft-pink to-luxury-purple rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Camera className="w-8 h-8 text-white" />
+              </div>
+              <div className="text-3xl font-bold text-gradient mb-2">
+                500+
+              </div>
+              <div className="text-gray-600 font-medium">
+                Снимки в галерията
+              </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

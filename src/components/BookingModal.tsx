@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Heart } from 'lucide-react'
+import { X, Heart, Phone } from 'lucide-react'
 import { createPortal } from 'react-dom'
 
 interface BookingModalProps {
@@ -54,11 +54,11 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.8, opacity: 0 }}
-          className="bg-white rounded-3xl max-w-2xl w-full shadow-2xl mx-2 sm:mx-4"
+          className="bg-white rounded-3xl max-w-2xl w-full shadow-2xl mx-2 sm:mx-4 max-h-[90vh] flex flex-col"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-soft-pink to-luxury-purple p-6 text-white relative">
+          <div className="bg-gradient-to-r from-soft-pink to-luxury-purple p-6 text-white relative flex-shrink-0">
             <button
               onClick={onClose}
               className="absolute top-4 right-4 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
@@ -81,39 +81,53 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
             </div>
           </div>
 
-          {/* Content */}
-          <div className="p-8 text-center">
+          {/* Content - scrollable on mobile */}
+          <div className="p-6 sm:p-8 text-center overflow-y-auto flex-1 min-h-0">
             <div className="w-20 h-20 bg-gradient-to-br from-pink-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <span className="text-4xl">📸</span>
-                      </div>
-                      
+            </div>
+
             <h3 className="text-2xl font-handwriting font-bold text-gray-800 mb-4">
               Резервация чрез Instagram
-                    </h3>
-                    
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              За да направите резервация, моля свържете се с нас директно в Instagram. 
+            </h3>
+
+            <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+              За да направите резервация, моля свържете се с нас директно в Instagram.
               Там ще можете да ни напишете съобщение с детайлите за вашия любимец и желаните дати.
             </p>
-            
-            <div className="bg-gradient-to-r from-pink-50 to-purple-50 border border-pink-200 rounded-xl p-6 mb-8">
+
+            <p className="text-base text-gray-700 mb-6">
+              Можете да се свържете с нас и по телефон:{' '}
+              <a href="tel:+359882739396" className="text-luxury-purple font-semibold hover:underline whitespace-nowrap">
+                +359 882 739 396
+              </a>
+            </p>
+
+            <div className="bg-gradient-to-r from-pink-50 to-purple-50 border border-pink-200 rounded-xl p-6 mb-6">
               <h4 className="font-semibold text-pink-800 mb-3">Какво да включите в съобщението:</h4>
               <ul className="text-sm text-pink-700 space-y-2 text-left">
                 <li>• Име и телефон за контакт</li>
                 <li>• Име и порода на кучето</li>
                 <li>• Желани дати за настаняване</li>
                 <li>• Специални изисквания или нужди</li>
-                      </ul>
-                    </div>
+              </ul>
+            </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button
+            {/* Buttons - visible and always at bottom of scroll */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2 pb-2">
+              <a
+                href="tel:+359882739396"
+                className="inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-xl bg-gray-100 text-gray-800 font-medium hover:bg-gray-200 transition-colors"
+              >
+                <Phone className="w-5 h-5" />
+                <span>Обадете се</span>
+              </a>
+              <button
                 onClick={onClose}
-                    className="px-6 py-3 text-gray-600 hover:text-gray-800 transition-colors"
-                  >
+                className="px-6 py-3 text-gray-600 hover:text-gray-800 transition-colors"
+              >
                 Отказ
-                  </button>
-                  
+              </button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -123,7 +137,7 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
                 <span className="text-xl">📸</span>
                 <span>Отиди в Instagram</span>
               </motion.button>
-                </div>
+            </div>
           </div>
         </motion.div>
       </motion.div>
