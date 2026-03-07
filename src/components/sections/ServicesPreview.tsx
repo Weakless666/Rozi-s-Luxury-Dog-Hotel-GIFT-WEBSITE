@@ -91,7 +91,7 @@ const ServicesPreview = () => {
                     {service.price}
                   </div>
                   
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center space-x-2 text-sm text-gray-600">
                         <div className="w-1.5 h-1.5 bg-soft-pink rounded-full"></div>
@@ -99,18 +99,6 @@ const ServicesPreview = () => {
                       </li>
                     ))}
                   </ul>
-                  
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Link
-                      to="/services"
-                      className="block w-full text-center bg-gradient-to-r from-soft-pink/20 to-luxury-purple/20 text-luxury-purple font-medium py-2 px-4 rounded-lg hover:from-soft-pink/30 hover:to-luxury-purple/30 transition-all duration-300"
-                    >
-                      Научи повече
-                    </Link>
-                  </motion.div>
                 </div>
               </motion.div>
             )
