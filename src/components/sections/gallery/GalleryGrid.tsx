@@ -299,8 +299,22 @@ const GalleryGrid = () => {
       likes: 41,
       date: '2024-01-01',
       imageUrl: '/images/activity12.png'
-    }
-
+    },
+    // Допълнителни кучета (dog14–dog18)
+    { id: 35, title: 'Наши гости', description: 'Щастливи кучета в хотела', category: 'dogs', type: 'image', likes: 20, date: '2024-01-02', imageUrl: '/images/dog14.png' },
+    { id: 36, title: 'Любимци при нас', description: 'Добре грижа и внимание', category: 'dogs', type: 'image', likes: 23, date: '2024-01-03', imageUrl: '/images/dog15.png' },
+    { id: 37, title: 'Момент в двора', description: 'Игри и разходки на открито', category: 'dogs', type: 'image', likes: 25, date: '2024-01-04', imageUrl: '/images/dog16.png' },
+    { id: 38, title: 'Релакс с гостите', description: 'Спокойни часове в хотела', category: 'dogs', type: 'image', likes: 19, date: '2024-01-05', imageUrl: '/images/dog17.png' },
+    { id: 39, title: 'Щастлив гост', description: 'Един от нашите любими гости', category: 'dogs', type: 'image', likes: 28, date: '2024-01-06', imageUrl: '/images/dog18.png' },
+    // Хранене
+    { id: 40, title: 'Специализирано хранене', description: 'Качествена храна за нашите гости', category: 'activities', type: 'image', likes: 22, date: '2024-01-07', imageUrl: '/images/food1.png' },
+    // Социализация (socalization1–6)
+    { id: 41, title: 'Социализация', description: 'Кучетата се запознават и играят заедно', category: 'activities', type: 'image', likes: 30, date: '2024-01-08', imageUrl: '/images/socalization1.png' },
+    { id: 42, title: 'Игри между гости', description: 'Социализация в безопасна среда', category: 'activities', type: 'image', likes: 27, date: '2024-01-09', imageUrl: '/images/socalization2.png' },
+    { id: 43, title: 'Групово играене', description: 'Щастливи моменти с приятели', category: 'activities', type: 'image', likes: 33, date: '2024-01-10', imageUrl: '/images/socalization3.png' },
+    { id: 44, title: 'Социализация в двора', description: 'Запознанство и игри на открито', category: 'activities', type: 'image', likes: 26, date: '2024-01-11', imageUrl: '/images/socalization4.png' },
+    { id: 45, title: 'Другарство между кучета', description: 'Нашите гости се разбират отлично', category: 'activities', type: 'image', likes: 29, date: '2024-01-12', imageUrl: '/images/socalization5.png' },
+    { id: 46, title: 'Общи игри', description: 'Екипът следи за безопасна социализация', category: 'activities', type: 'image', likes: 24, date: '2024-01-13', imageUrl: '/images/socalization6.png' }
   ]
 
     // Get uploaded images from localStorage
