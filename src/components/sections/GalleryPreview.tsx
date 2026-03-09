@@ -34,14 +34,14 @@ const GalleryPreview = () => {
       title: 'Щастливи кучета заедно',
       description: 'Социализация и игри между нашите гости',
       category: 'dogs',
-      imageUrl: '/images/dog5.png'
+      imageUrl: '/images/dog19.png'
     },
     {
       id: 4,
       title: 'Социализация',
       description: 'Кучетата се учат да играят заедно',
       category: 'activities',
-      imageUrl: '/images/socalization1.png'
+      imageUrl: '/images/dog20.png'
     }
   ]
 

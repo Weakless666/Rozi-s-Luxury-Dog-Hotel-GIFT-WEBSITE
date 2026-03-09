@@ -179,17 +179,14 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.2, duration: 0.6 }}
-                className="absolute bottom-4 right-4 sm:-bottom-6 sm:-right-6 bg-white rounded-2xl p-3 sm:p-4 shadow-xl max-w-[85%] sm:max-w-none"
+                className="absolute bottom-4 right-4 sm:-bottom-6 sm:-right-6 rounded-2xl overflow-hidden shadow-xl w-24 h-24 sm:w-32 sm:h-32"
               >
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-premium-gold to-soft-pink rounded-full flex items-center justify-center">
-                    <Star className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-800">5★ Оценен от клиентите</div>
-                    <div className="text-xs sm:text-sm text-gray-600">От доволни клиенти</div>
-                  </div>
-                </div>
+                <img
+                  src="/images/hero.png"
+                  alt="Гост в Rozi's Luxury Dog Hotel"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </motion.div>
             </div>
           </motion.div>

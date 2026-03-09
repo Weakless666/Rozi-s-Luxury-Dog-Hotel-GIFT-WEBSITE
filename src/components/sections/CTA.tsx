@@ -15,13 +15,6 @@ const CTA = () => {
       description: '+359 882 739 396',
       action: 'tel:+359882739396',
       color: 'from-soft-pink to-luxury-purple'
-    },
-    {
-      icon: Mail,
-      title: 'Изпратете имейл',
-      description: 'info@rozis-dog-hotel.com',
-      action: 'mailto:info@rozis-dog-hotel.com',
-      color: 'from-luxury-purple to-premium-gold'
     }
   ]
 

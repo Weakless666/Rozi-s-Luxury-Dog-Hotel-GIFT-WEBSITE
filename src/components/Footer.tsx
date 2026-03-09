@@ -24,7 +24,6 @@ const Footer = () => {
       <div className="absolute inset-0 opacity-10">
         <div className="paw-bg absolute inset-0"></div>
         <div className="absolute top-10 left-10 text-6xl opacity-20">🐾</div>
-        <div className="absolute top-20 right-20 text-4xl opacity-20">💕</div>
         <div className="absolute bottom-10 left-1/4 text-5xl opacity-20">🐕</div>
         <div className="absolute bottom-20 right-10 text-3xl opacity-20">✨</div>
       </div>
