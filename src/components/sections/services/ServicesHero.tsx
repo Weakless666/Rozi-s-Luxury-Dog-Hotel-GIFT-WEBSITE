@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Star, Heart } from 'lucide-react'
+import { Star } from 'lucide-react'
 
 const ServicesHero = () => {
   const [ref, inView] = useInView({
@@ -31,63 +31,10 @@ const ServicesHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 shadow-lg"
+            className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg"
           >
             <Star className="w-5 h-5 text-premium-gold" />
             <span className="text-luxury-purple font-medium">Нашите услуги</span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-handwriting font-bold mb-6"
-          >
-            <span className="text-gradient">Луксозни услуги</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
-          >
-            Предлагаме пълен спектър от <span className="text-luxury-purple font-semibold">професионални услуги</span>
-            {' '}за вашите четириноги приятели, от луксозно настаняване до специализирана грижа.
-          </motion.p>
-
-          {/* Quick stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12"
-          >
-            {[
-              { icon: Heart, number: '24/7', label: 'Грижа и наблюдение', color: 'from-luxury-purple to-premium-gold' },
-              { icon: Star, number: '100%', label: 'Доволни клиенти', color: 'from-premium-gold to-soft-pink' }
-            ].map((stat, index) => {
-              const Icon = stat.icon
-              return (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={inView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ delay: 1 + index * 0.1, duration: 0.6 }}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover"
-                >
-                  <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-3xl font-bold text-gradient mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-gray-600 font-medium">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              )
-            })}
           </motion.div>
         </motion.div>
       </div>
