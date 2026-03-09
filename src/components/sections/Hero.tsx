@@ -138,31 +138,20 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="relative"
           >
-            <div className="relative">
-              {/* Main image placeholder */}
-              <div className="w-full h-96 lg:h-[500px] bg-gradient-to-br from-soft-pink/30 to-luxury-purple/30 rounded-3xl shadow-2xl flex items-center justify-center relative overflow-hidden">
-                <div className="text-center">
-                  <PawPrint className="w-24 h-24 text-white/60 mx-auto mb-4" />
-                  <p className="text-white/80 text-lg font-medium">
-                    Красиви снимки на щастливи кучета
-                  </p>
-                </div>
-                
-                {/* Floating decorations */}
-                <div className="absolute top-4 right-4 w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
-                  <Heart className="w-8 h-8 text-soft-pink animate-pulse" />
-                </div>
-                <div className="absolute bottom-4 left-4 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                  <PawPrint className="w-6 h-6 text-luxury-purple" />
-                </div>
-              </div>
+            <div className="relative w-full h-96 lg:h-[500px] rounded-3xl shadow-2xl overflow-hidden">
+              <img
+                src="/images/hero.png"
+                alt="Гости в Rozi's Luxury Dog Hotel"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
 
-              {/* Floating cards */}
+              {/* Floating card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.6 }}
-                className="absolute top-4 left-4 sm:-top-6 sm:-left-6 bg-white rounded-2xl p-3 sm:p-4 shadow-xl max-w-[85%] sm:max-w-none"
+                className="absolute top-4 left-4 sm:-top-6 sm:-left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-3 sm:p-4 shadow-xl max-w-[85%] sm:max-w-none"
               >
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-soft-pink to-luxury-purple rounded-full flex items-center justify-center">
@@ -173,20 +162,6 @@ const Hero = () => {
                     <div className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">Професионално обслужване</div>
                   </div>
                 </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2, duration: 0.6 }}
-                className="absolute bottom-4 right-4 sm:-bottom-6 sm:-right-6 rounded-2xl overflow-hidden shadow-xl w-24 h-24 sm:w-32 sm:h-32"
-              >
-                <img
-                  src="/images/hero.png"
-                  alt="Гост в Rozi's Luxury Dog Hotel"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
               </motion.div>
             </div>
           </motion.div>
