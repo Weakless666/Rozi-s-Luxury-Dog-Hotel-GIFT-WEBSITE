@@ -1,56 +1,27 @@
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
-import { Heart, Play, X } from 'lucide-react'
+import { Heart, Play, X, Camera } from 'lucide-react'
+import {
+  getFilteredGalleryImages,
+  type GalleryCategoryId,
+  type GalleryImage
+} from '../../../data/galleryData'
 
-const GalleryGrid = () => {
+interface GalleryGridProps {
+  activeCategory: GalleryCategoryId
+}
+
+const GalleryGrid = ({ activeCategory }: GalleryGridProps) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   })
 
-  const [selectedImage, setSelectedImage] = useState<any>(null)
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
+  const galleryImages = getFilteredGalleryImages(activeCategory)
 
-  const getGalleryImages = () => {
-    const staticImages = [
-      {
-        id: 1,
-        title: 'Щастливи гости',
-        description: 'Нашите кучета се наслаждават на престоя',
-        category: 'dogs',
-        type: 'image',
-        imageUrl: '/images/dog19.png'
-      },
-      {
-        id: 2,
-        title: 'Игри и забавления',
-        description: 'Весели моменти в двора',
-        category: 'dogs',
-        type: 'image',
-        imageUrl: '/images/dog20.png'
-      },
-      {
-        id: 3,
-        title: 'Игри в двора',
-        description: 'Активни игри и упражнения',
-        category: 'activities',
-        type: 'image',
-        imageUrl: '/images/activity1.png'
-      }
-    ]
-
-    const seen = new Set<string>()
-    return staticImages.filter((img) => {
-      const url = img.imageUrl
-      if (!url || seen.has(url)) return false
-      seen.add(url)
-      return true
-    })
-  }
-
-  const [galleryImages] = useState(getGalleryImages())
-
-  const openModal = (image: any) => {
+  const openModal = (image: GalleryImage) => {
     setSelectedImage(image)
   }
 
@@ -59,7 +30,7 @@ const GalleryGrid = () => {
   }
 
   return (
-    <section className="section-padding bg-gradient-to-br from-soft-lavender/30 to-light-peach/30">
+    <section className="section-padding bg-gradient-to-br from-soft-lavender/30 to-light-peach/30 pt-0">
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -76,59 +47,72 @@ const GalleryGrid = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {galleryImages.map((image, index) => (
+        <AnimatePresence mode="wait">
+          {galleryImages.length === 0 ? (
             <motion.div
-              key={`${image.imageUrl}-${index}`}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 card-hover cursor-pointer"
-              onClick={() => openModal(image)}
+              key="empty"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="text-center py-16 bg-white/60 rounded-2xl"
             >
-              <div className="relative overflow-hidden" style={{ height: '300px' }}>
-                <img
-                  src={image.imageUrl}
-                  alt={image.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement
-                    target.style.display = 'none'
-                    const parent = target.parentElement
-                    if (parent) {
-                      parent.innerHTML = `
-                        <div class="w-full h-full bg-gradient-to-br from-soft-pink/30 via-luxury-purple/30 to-premium-gold/30 flex items-center justify-center">
-                          <div class="text-center">
-                            <div class="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                              ${image.type === 'video' ?
-                                '<svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>' :
-                                '<svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>'
-                              }
-                            </div>
-                            <p class="text-white/80 font-medium text-sm">${image.title}</p>
-                          </div>
-                        </div>
-                      `
-                    }
-                  }}
-                />
-
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center"
-                  >
-                    {image.type === 'video' ? (
-                      <Play className="w-6 h-6 text-white ml-1" />
-                    ) : (
-                      <Heart className="w-6 h-6 text-white" />
-                    )}
-                  </motion.div>
-                </div>
-              </div>
+              <Camera className="w-12 h-12 text-luxury-purple mx-auto mb-4 opacity-60" />
+              <p className="text-gray-600 text-lg">Все още няма снимки в тази категория.</p>
             </motion.div>
-          ))}
-        </div>
+          ) : (
+            <motion.div
+              key={activeCategory}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            >
+              {galleryImages.map((image, index) => (
+                <motion.div
+                  key={`${image.imageUrl}-${image.id}`}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: index * 0.05, duration: 0.4 }}
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 card-hover cursor-pointer"
+                  onClick={() => openModal(image)}
+                >
+                  <div className="relative overflow-hidden" style={{ height: '300px' }}>
+                    <img
+                      src={image.imageUrl}
+                      alt={image.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement
+                        target.style.display = 'none'
+                        const parent = target.parentElement
+                        if (parent) {
+                          parent.innerHTML = `
+                            <div class="w-full h-full bg-gradient-to-br from-soft-pink/30 via-luxury-purple/30 to-premium-gold/30 flex items-center justify-center">
+                              <div class="text-center px-4">
+                                <div class="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                                  <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                </div>
+                                <p class="text-white/80 font-medium text-sm">${image.title}</p>
+                              </div>
+                            </div>
+                          `
+                        }
+                      }}
+                    />
+
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <Heart className="w-6 h-6 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {selectedImage && (
           <motion.div
@@ -146,6 +130,7 @@ const GalleryGrid = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <button
+                type="button"
                 onClick={closeModal}
                 className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
               >
@@ -156,26 +141,6 @@ const GalleryGrid = () => {
                 src={selectedImage.imageUrl}
                 alt={selectedImage.title}
                 className="max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement
-                  target.style.display = 'none'
-                  const parent = target.parentElement
-                  if (parent) {
-                    parent.innerHTML = `
-                        <div class="w-full h-full bg-gradient-to-br from-soft-pink/30 via-luxury-purple/30 to-premium-gold/30 flex items-center justify-center min-h-[50vh]">
-                          <div class="text-center">
-                            <div class="w-20 h-20 bg-white/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                              ${selectedImage.type === 'video' ?
-                                '<svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>' :
-                                '<svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>'
-                              }
-                            </div>
-                            <p class="text-white/80 font-medium">${selectedImage.title}</p>
-                          </div>
-                        </div>
-                      `
-                  }
-                }}
               />
             </motion.div>
           </motion.div>

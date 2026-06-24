@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Heart, PawPrint, Star, ArrowRight, Play, Euro } from 'lucide-react'
+import { Heart, Star, ArrowRight, Play, Euro, Users } from 'lucide-react'
 import BookingModal from '../../components/BookingModal'
 import { useState } from 'react'
 
@@ -65,38 +65,46 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start px-4 sm:px-0"
+              className="grid grid-cols-2 gap-3 max-w-md mx-auto lg:mx-0 lg:max-w-lg px-4 sm:px-0"
             >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <button 
+              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="w-full">
+                <button
+                  type="button"
                   onClick={() => setIsBookingOpen(true)}
-                  className="btn-primary inline-flex items-center space-x-2 text-sm sm:text-base px-4 sm:px-6 py-3 sm:py-4"
+                  className="btn-primary w-full inline-flex items-center justify-center gap-2 text-xs sm:text-sm px-3 sm:px-5 py-3 sm:py-3.5"
                 >
                   <span>Резервирай сега</span>
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-4 h-4 shrink-0" />
                 </button>
               </motion.div>
-              
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link to="/services" className="btn-secondary inline-flex items-center space-x-2 text-sm sm:text-base px-4 sm:px-6 py-3 sm:py-4">
-                  <Euro className="w-5 h-5" />
+
+              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="w-full">
+                <Link
+                  to="/services"
+                  className="btn-secondary w-full inline-flex items-center justify-center gap-2 text-xs sm:text-sm px-3 sm:px-5 py-3 sm:py-3.5"
+                >
+                  <Euro className="w-4 h-4 shrink-0" />
                   <span>Ценоразпис</span>
                 </Link>
               </motion.div>
-              
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link to="/gallery" className="btn-secondary inline-flex items-center space-x-2 text-sm sm:text-base px-4 sm:px-6 py-3 sm:py-4">
-                  <Play className="w-5 h-5" />
+
+              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="w-full">
+                <Link
+                  to="/gallery"
+                  className="btn-secondary w-full inline-flex items-center justify-center gap-2 text-xs sm:text-sm px-3 sm:px-5 py-3 sm:py-3.5"
+                >
+                  <Play className="w-4 h-4 shrink-0" />
                   <span>Виж галерията</span>
+                </Link>
+              </motion.div>
+
+              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="w-full">
+                <Link
+                  to="/about"
+                  className="btn-secondary w-full inline-flex items-center justify-center gap-2 text-xs sm:text-sm px-3 sm:px-5 py-3 sm:py-3.5"
+                >
+                  <Users className="w-4 h-4 shrink-0" />
+                  <span>За нас</span>
                 </Link>
               </motion.div>
             </motion.div>
