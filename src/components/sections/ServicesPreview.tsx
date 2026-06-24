@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom'
-import { Home, Car, ArrowRight, Star, Sun } from 'lucide-react'
+import { Home, Car, ArrowRight, Sun } from 'lucide-react'
 
 const ServicesPreview = () => {
   const [ref, inView] = useInView({
@@ -41,28 +41,7 @@ const ServicesPreview = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
         >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 shadow-lg"
-          >
-            <Star className="w-5 h-5 text-premium-gold" />
-            <span className="text-luxury-purple font-medium">Нашите услуги</span>
-          </motion.div>
-
-          <h2 className="text-4xl md:text-5xl font-handwriting font-bold text-gray-800 mb-6">
-            <span className="text-gradient">Луксозни услуги</span> за вашите любимци
-          </h2>
-
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Предлагаме пълен спектър от професионални услуги, които ще направят 
-            престоя на вашите кучета незабравим и приятен.
-          </p>
-        </motion.div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon
@@ -104,6 +83,7 @@ const ServicesPreview = () => {
             )
           })}
         </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}

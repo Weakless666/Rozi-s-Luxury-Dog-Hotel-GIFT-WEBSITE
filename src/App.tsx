@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import { motion } from 'framer-motion'
 import { useState, useEffect, Suspense, lazy } from 'react'
 import Navbar from './components/Navbar'
@@ -70,6 +71,7 @@ function App() {
               onCustomize={() => {}}
             />
             <ChatBot />
+            <Analytics />
           </>
         )}
       </div>
