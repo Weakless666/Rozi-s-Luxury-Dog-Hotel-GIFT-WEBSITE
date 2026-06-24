@@ -42,12 +42,21 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-handwriting font-bold mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-handwriting font-bold mb-3"
             >
               <span className="text-gradient font-latin">Rozi's Luxury</span>
               <br />
               <span className="text-luxury-purple">Dog Hotel</span>
             </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="text-lg sm:text-xl text-luxury-purple/90 font-medium mb-6 px-4 sm:px-0"
+            >
+              Луксозен хотел за кучета в Сапарева баня
+            </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}

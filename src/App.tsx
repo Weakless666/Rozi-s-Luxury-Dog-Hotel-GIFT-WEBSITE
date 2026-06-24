@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
 import CookieConsent from './components/CookieConsent'
 import ChatBot from './components/ChatBot'
+import SeoManager from './components/SeoManager'
 
 // Lazy load pages for code splitting
 const Home = lazy(() => import('./pages/Home'))
@@ -33,6 +34,7 @@ function App() {
 
   return (
     <Router>
+      <SeoManager />
       <div className="min-h-screen bg-gradient-to-br from-warm-white via-soft-lavender to-light-peach">
         <LoadingScreen 
           isLoading={isLoading} 
