@@ -19,53 +19,44 @@ export const galleryCategories: {
   { id: 'food', name: 'Храна' }
 ]
 
+/**
+ * Именуване на нови файлове в public/images/:
+ * - Двор:     yard-06.jpg, yard-07.jpg, ...
+ * - Вътре:    inside-17.jpg, inside-18.jpg, ...
+ * - Храна:    food-06.jpg, food-07.jpg, ...
+ */
 export const galleryImages: GalleryImage[] = [
-  // Двор
-  { id: 1, title: 'Щастлив момент с Боби', category: 'yard', type: 'image', imageUrl: '/images/dog1.png' },
-  { id: 2, title: 'Щастлив момент с Макс', category: 'yard', type: 'image', imageUrl: '/images/dog2.png' },
-  { id: 3, title: 'Игри с топка', category: 'yard', type: 'image', imageUrl: '/images/dog3.png' },
-  { id: 4, title: 'Релакс след игра', category: 'yard', type: 'image', imageUrl: '/images/dog4.png' },
-  { id: 5, title: 'Щастливи кучета заедно', category: 'yard', type: 'image', imageUrl: '/images/dog5.png' },
-  { id: 6, title: 'Игри в градината', category: 'yard', type: 'image', imageUrl: '/images/dog6.png' },
-  { id: 7, title: 'Весели моменти', category: 'yard', type: 'image', imageUrl: '/images/dog7.png' },
-  { id: 8, title: 'Игри с играчки', category: 'yard', type: 'image', imageUrl: '/images/dog8.png' },
-  { id: 9, title: 'Релакс в двора', category: 'yard', type: 'image', imageUrl: '/images/dog9.png' },
-  { id: 10, title: 'Активни игри', category: 'yard', type: 'image', imageUrl: '/images/dog10.png' },
-  { id: 11, title: 'Щастливи моменти', category: 'yard', type: 'image', imageUrl: '/images/dog11.png' },
-  { id: 13, title: 'Специални моменти', category: 'yard', type: 'image', imageUrl: '/images/dog13.png' },
-  { id: 23, title: 'Игри в двора', category: 'yard', type: 'image', imageUrl: '/images/activity1.png' },
-  { id: 24, title: 'Тренировка', category: 'yard', type: 'image', imageUrl: '/images/activity2.png' },
-  { id: 25, title: 'Социализация', category: 'yard', type: 'image', imageUrl: '/images/activity3.png' },
-  { id: 26, title: 'Активни игри', category: 'yard', type: 'image', imageUrl: '/images/activity4.png' },
-  { id: 27, title: 'Игри с играчки', category: 'yard', type: 'image', imageUrl: '/images/activity5.png' },
-  { id: 28, title: 'Релакс в двора', category: 'yard', type: 'image', imageUrl: '/images/activity6.png' },
-  { id: 29, title: 'Весели моменти', category: 'yard', type: 'image', imageUrl: '/images/activity7.png' },
-  { id: 30, title: 'Игри в градината', category: 'yard', type: 'image', imageUrl: '/images/activity8.png' },
-  { id: 31, title: 'Активни упражнения', category: 'yard', type: 'image', imageUrl: '/images/activity9.png' },
-  { id: 35, title: 'Наши гости', category: 'yard', type: 'image', imageUrl: '/images/dog14.png' },
-  { id: 36, title: 'Любимци при нас', category: 'yard', type: 'image', imageUrl: '/images/dog15.png' },
-  { id: 37, title: 'Момент в двора', category: 'yard', type: 'image', imageUrl: '/images/dog16.png' },
-  { id: 38, title: 'Релакс с гостите', category: 'yard', type: 'image', imageUrl: '/images/dog17.png' },
-  { id: 39, title: 'Щастлив гост', category: 'yard', type: 'image', imageUrl: '/images/dog18.png' },
-  { id: 47, title: 'Гости на терасата', category: 'yard', type: 'image', imageUrl: '/images/dog19.png' },
-  { id: 48, title: 'Игри в басейна', category: 'yard', type: 'image', imageUrl: '/images/dog20.png' },
-  { id: 41, title: 'Социализация', category: 'yard', type: 'image', imageUrl: '/images/socalization1.png' },
-  { id: 42, title: 'Игри между гости', category: 'yard', type: 'image', imageUrl: '/images/socalization2.png' },
-  { id: 43, title: 'Групово играене', category: 'yard', type: 'image', imageUrl: '/images/socalization3.png' },
-  { id: 44, title: 'Социализация в двора', category: 'yard', type: 'image', imageUrl: '/images/socalization4.png' },
-  { id: 45, title: 'Другарство между кучета', category: 'yard', type: 'image', imageUrl: '/images/socalization5.png' },
-  { id: 46, title: 'Общи игри', category: 'yard', type: 'image', imageUrl: '/images/socalization6.png' },
+  // Двор (yard-01 … yard-05)
+  { id: 1, title: 'Социализация в двора', category: 'yard', type: 'image', imageUrl: '/images/yard-01.jpg' },
+  { id: 2, title: 'Весел момент на тревата', category: 'yard', type: 'image', imageUrl: '/images/yard-02.jpg' },
+  { id: 3, title: 'Игри между гости', category: 'yard', type: 'image', imageUrl: '/images/yard-03.jpg' },
+  { id: 4, title: 'Охлаждане в басейна', category: 'yard', type: 'image', imageUrl: '/images/yard-04.jpg' },
+  { id: 5, title: 'Гости на терасата', category: 'yard', type: 'image', imageUrl: '/images/yard-05.jpg' },
 
-  // Вътре в хотела
-  { id: 12, title: 'Игри в стаята', category: 'inside', type: 'image', imageUrl: '/images/dog12.png' },
-  { id: 14, title: 'Луксозна стая', category: 'inside', type: 'image', imageUrl: '/images/room1.png' },
-  { id: 15, title: 'Релакс в стаята', category: 'inside', type: 'image', imageUrl: '/images/room2.png' },
-  { id: 32, title: 'Игри в стаята', category: 'inside', type: 'image', imageUrl: '/images/activity10.png' },
-  { id: 33, title: 'Специални моменти', category: 'inside', type: 'image', imageUrl: '/images/activity11.png' },
-  { id: 34, title: 'Щастливи игри', category: 'inside', type: 'image', imageUrl: '/images/activity12.png' },
+  // Вътре в хотела (inside-01 … inside-16)
+  { id: 6, title: 'Луксозни стаи за гости', category: 'inside', type: 'image', imageUrl: '/images/inside-01.jpg' },
+  { id: 7, title: 'Модерен интериор', category: 'inside', type: 'image', imageUrl: '/images/inside-02.jpg' },
+  { id: 8, title: 'Зона за релакс', category: 'inside', type: 'image', imageUrl: '/images/inside-03.jpg' },
+  { id: 9, title: 'Уютна стая за почивка', category: 'inside', type: 'image', imageUrl: '/images/inside-04.jpg' },
+  { id: 10, title: 'Детайли от стаята', category: 'inside', type: 'image', imageUrl: '/images/inside-05.jpg' },
+  { id: 11, title: 'Любопитен поглед от стаята', category: 'inside', type: 'image', imageUrl: '/images/inside-06.jpg' },
+  { id: 12, title: 'Добре дошли в стаята', category: 'inside', type: 'image', imageUrl: '/images/inside-07.jpg' },
+  { id: 13, title: 'Спокоен сън', category: 'inside', type: 'image', imageUrl: '/images/inside-08.jpg' },
+  { id: 14, title: 'Щастлив гост', category: 'inside', type: 'image', imageUrl: '/images/inside-09.jpg' },
+  { id: 15, title: 'Релакс на дивана', category: 'inside', type: 'image', imageUrl: '/images/inside-10.jpg' },
+  { id: 16, title: 'Уют и топлина', category: 'inside', type: 'image', imageUrl: '/images/inside-11.jpg' },
+  { id: 17, title: 'Усмивка в хотела', category: 'inside', type: 'image', imageUrl: '/images/inside-12.jpg' },
+  { id: 18, title: 'Наш любим гост', category: 'inside', type: 'image', imageUrl: '/images/inside-13.jpg' },
+  { id: 19, title: 'Комфорт и грижа', category: 'inside', type: 'image', imageUrl: '/images/inside-14.jpg' },
+  { id: 20, title: 'Време за храна', category: 'inside', type: 'image', imageUrl: '/images/inside-15.jpg' },
+  { id: 21, title: 'Свежа и чиста грижа', category: 'inside', type: 'image', imageUrl: '/images/inside-16.jpg' },
 
-  // Храна
-  { id: 40, title: 'Качествена храна', category: 'food', type: 'image', imageUrl: '/images/food1.png' }
+  // Храна (food-01 … food-05)
+  { id: 22, title: 'Балансирано меню', category: 'food', type: 'image', imageUrl: '/images/food-01.jpg' },
+  { id: 23, title: 'Свежа и питателна храна', category: 'food', type: 'image', imageUrl: '/images/food-02.jpg' },
+  { id: 24, title: 'Приготвяне на храна', category: 'food', type: 'image', imageUrl: '/images/food-03.jpg' },
+  { id: 25, title: 'Разнообразно меню', category: 'food', type: 'image', imageUrl: '/images/food-04.jpg' },
+  { id: 26, title: 'Качествени продукти', category: 'food', type: 'image', imageUrl: '/images/food-05.jpg' }
 ]
 
 export function getFilteredGalleryImages(category: GalleryCategoryId): GalleryImage[] {

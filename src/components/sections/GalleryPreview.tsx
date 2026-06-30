@@ -13,35 +13,34 @@ const GalleryPreview = () => {
     setSelectedImage(null)
   }
 
-  // Real gallery images from the gallery
   const galleryImages = [
     {
       id: 1,
-      title: 'Щастлив момент с Боби',
-      description: 'Златен ретривър Боби се наслаждава на игрите в двора',
-      category: 'dogs',
-      imageUrl: '/images/dog1.png'
+      title: 'Социализация в двора',
+      description: 'Гостите се запознават и играят заедно на тревата',
+      category: 'yard',
+      imageUrl: '/images/yard-01.jpg'
     },
     {
       id: 2,
-      title: 'Игри в двора',
-      description: 'Активни игри и упражнения за поддържане на здравето',
-      category: 'activities',
-      imageUrl: '/images/activity1.png'
+      title: 'Охлаждане в басейна',
+      description: 'Освежаващи моменти през лятото',
+      category: 'yard',
+      imageUrl: '/images/yard-04.jpg'
     },
     {
       id: 3,
-      title: 'Щастливи кучета заедно',
-      description: 'Социализация и игри между нашите гости',
-      category: 'dogs',
-      imageUrl: '/images/dog19.png'
+      title: 'Гости на терасата',
+      description: 'Красив изглед и спокойствие',
+      category: 'yard',
+      imageUrl: '/images/yard-05.jpg'
     },
     {
       id: 4,
-      title: 'Социализация',
-      description: 'Кучетата се учат да играят заедно',
-      category: 'activities',
-      imageUrl: '/images/dog20.png'
+      title: 'Луксозни стаи за гости',
+      description: 'Модерни и уютни помещения',
+      category: 'inside',
+      imageUrl: '/images/inside-01.jpg'
     }
   ]
 

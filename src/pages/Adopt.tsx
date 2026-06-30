@@ -180,7 +180,7 @@ const Adopt = () => {
                 >
                   <div className="relative">
                     <img
-                      src={dog.images[0] || '/images/dog1.png'}
+                      src={dog.images[0] || '/images/yard-01.jpg'}
                       alt={dog.name}
                       className="w-full h-64 object-cover"
                     />
@@ -287,7 +287,7 @@ const Adopt = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
                   <img
-                    src={selectedDog.images[0] || '/images/dog1.png'}
+                    src={selectedDog.images[0] || '/images/yard-01.jpg'}
                     alt={selectedDog.name}
                     className="w-full h-64 object-cover rounded-2xl mb-4"
                   />
