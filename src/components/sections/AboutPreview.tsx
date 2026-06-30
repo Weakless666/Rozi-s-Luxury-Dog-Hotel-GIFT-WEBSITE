@@ -53,9 +53,8 @@ const AboutPreview = () => {
             </h2>
 
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              В <span className="font-latin">Rozi's</span> Luxury Dog Hotel вярваме, че всеки четириног приятел заслужава най-доброто. 
-              Нашият хотел е създаден с любов и внимание към детайла, за да осигури на вашите любимци 
-              не само комфорт, но и истинско щастие.
+              <strong>Луксозен хотел за кучета</strong> в Сапарева баня – създаден с любов и внимание към детайла, 
+              за да осигури на вашите любимци не само комфорт, но и истинско щастие.
             </p>
 
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
