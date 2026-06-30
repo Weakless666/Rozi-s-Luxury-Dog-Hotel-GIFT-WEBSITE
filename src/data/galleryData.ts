@@ -21,19 +21,28 @@ export const galleryCategories: {
 
 /**
  * Именуване на нови файлове в public/images/:
- * - Двор:     yard-06.jpg, yard-07.jpg, ...
- * - Вътре:    inside-17.jpg, inside-18.jpg, ...
- * - Храна:    food-06.jpg, food-07.jpg, ...
+ * - Двор:     yard-08.jpg, ...
+ * - Вътре:    inside-18.jpg, ...
+ * - Храна:    food-06.jpg, ...
  */
 export const galleryImages: GalleryImage[] = [
-  // Двор (yard-01 … yard-05)
+  // Двор (yard-01 … yard-07)
   { id: 1, title: 'Социализация в двора', category: 'yard', type: 'image', imageUrl: '/images/yard-01.jpg' },
   { id: 2, title: 'Весел момент на тревата', category: 'yard', type: 'image', imageUrl: '/images/yard-02.jpg' },
   { id: 3, title: 'Игри между гости', category: 'yard', type: 'image', imageUrl: '/images/yard-03.jpg' },
   { id: 4, title: 'Охлаждане в басейна', category: 'yard', type: 'image', imageUrl: '/images/yard-04.jpg' },
   { id: 5, title: 'Гости на терасата', category: 'yard', type: 'image', imageUrl: '/images/yard-05.jpg' },
+  { id: 27, title: 'Игри с топка', category: 'yard', type: 'image', imageUrl: '/images/yard-06.jpg' },
+  { id: 28, title: 'Радостни моменти в двора', category: 'yard', type: 'image', imageUrl: '/images/yard-07.jpg' },
 
-  // Вътре в хотела (inside-01 … inside-16)
+  // Храна (food-01 … food-05)
+  { id: 23, title: 'Балансирано меню', category: 'food', type: 'image', imageUrl: '/images/food-01.jpg' },
+  { id: 24, title: 'Свежа и питателна храна', category: 'food', type: 'image', imageUrl: '/images/food-02.jpg' },
+  { id: 25, title: 'Приготвяне на храна', category: 'food', type: 'image', imageUrl: '/images/food-03.jpg' },
+  { id: 26, title: 'Разнообразно меню', category: 'food', type: 'image', imageUrl: '/images/food-04.jpg' },
+  { id: 29, title: 'Качествени продукти', category: 'food', type: 'image', imageUrl: '/images/food-05.jpg' },
+
+  // Вътре в хотела (inside-01 … inside-17) — показват се последни при „Всички“
   { id: 6, title: 'Луксозни стаи за гости', category: 'inside', type: 'image', imageUrl: '/images/inside-01.jpg' },
   { id: 7, title: 'Модерен интериор', category: 'inside', type: 'image', imageUrl: '/images/inside-02.jpg' },
   { id: 8, title: 'Зона за релакс', category: 'inside', type: 'image', imageUrl: '/images/inside-03.jpg' },
@@ -50,22 +59,30 @@ export const galleryImages: GalleryImage[] = [
   { id: 19, title: 'Комфорт и грижа', category: 'inside', type: 'image', imageUrl: '/images/inside-14.jpg' },
   { id: 20, title: 'Време за храна', category: 'inside', type: 'image', imageUrl: '/images/inside-15.jpg' },
   { id: 21, title: 'Свежа и чиста грижа', category: 'inside', type: 'image', imageUrl: '/images/inside-16.jpg' },
-
-  // Храна (food-01 … food-05)
-  { id: 22, title: 'Балансирано меню', category: 'food', type: 'image', imageUrl: '/images/food-01.jpg' },
-  { id: 23, title: 'Свежа и питателна храна', category: 'food', type: 'image', imageUrl: '/images/food-02.jpg' },
-  { id: 24, title: 'Приготвяне на храна', category: 'food', type: 'image', imageUrl: '/images/food-03.jpg' },
-  { id: 25, title: 'Разнообразно меню', category: 'food', type: 'image', imageUrl: '/images/food-04.jpg' },
-  { id: 26, title: 'Качествени продукти', category: 'food', type: 'image', imageUrl: '/images/food-05.jpg' }
+  { id: 22, title: 'Весел момент в хотела', category: 'inside', type: 'image', imageUrl: '/images/inside-17.jpg' }
 ]
+
+const galleryCategoryOrder: Record<Exclude<GalleryCategoryId, 'all'>, number> = {
+  yard: 0,
+  food: 1,
+  inside: 2
+}
 
 export function getFilteredGalleryImages(category: GalleryCategoryId): GalleryImage[] {
   const seen = new Set<string>()
 
-  return galleryImages.filter((img) => {
+  const filtered = galleryImages.filter((img) => {
     if (category !== 'all' && img.category !== category) return false
     if (seen.has(img.imageUrl)) return false
     seen.add(img.imageUrl)
     return true
   })
+
+  if (category === 'all') {
+    return [...filtered].sort(
+      (a, b) => galleryCategoryOrder[a.category] - galleryCategoryOrder[b.category]
+    )
+  }
+
+  return filtered
 }
