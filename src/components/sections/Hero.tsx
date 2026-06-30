@@ -155,28 +155,30 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="relative"
           >
-            <div className="relative w-full h-96 lg:h-[500px] rounded-3xl shadow-2xl overflow-hidden">
-              <img
-                src="/images/hero.png"
-                alt="Гости в Rozi's Luxury Dog Hotel"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
+            <div className="relative w-full h-96 lg:h-[500px] rounded-3xl shadow-2xl">
+              <div className="absolute inset-0 rounded-3xl overflow-hidden">
+                <img
+                  src="/images/hero.png"
+                  alt="Гости в Rozi's Luxury Dog Hotel"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
 
               {/* Floating card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.6 }}
-                className="absolute top-4 left-4 sm:-top-6 sm:-left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-3 sm:p-4 shadow-xl max-w-[85%] sm:max-w-none"
+                className="absolute top-4 left-4 z-10 bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-3.5 shadow-xl max-w-[calc(100%-2rem)] sm:max-w-none"
               >
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-soft-pink to-luxury-purple rounded-full flex items-center justify-center">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 shrink-0 bg-gradient-to-br from-soft-pink to-luxury-purple rounded-full flex items-center justify-center">
                     <Heart className="w-5 h-5 text-white" />
                   </div>
-                  <div>
-                    <div className="font-semibold text-gray-800">24/7 Грижа</div>
-                    <div className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">Професионално обслужване</div>
+                  <div className="min-w-0">
+                    <div className="font-semibold text-gray-800 text-sm sm:text-base leading-snug">24/7 грижа</div>
+                    <div className="text-xs sm:text-sm text-gray-600 leading-snug">Професионално обслужване</div>
                   </div>
                 </div>
               </motion.div>
