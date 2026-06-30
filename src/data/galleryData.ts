@@ -42,10 +42,8 @@ export const galleryImages: GalleryImage[] = [
   { id: 26, title: 'Разнообразно меню', category: 'food', type: 'image', imageUrl: '/images/food-04.jpg' },
   { id: 29, title: 'Качествени продукти', category: 'food', type: 'image', imageUrl: '/images/food-05.jpg' },
 
-  // Вътре в хотела (inside-01 … inside-17) — показват се последни при „Всички“
+  // Вътре в хотела — показват се последни при „Всички“; inside-02/03 са най-отзад
   { id: 6, title: 'Луксозни стаи за гости', category: 'inside', type: 'image', imageUrl: '/images/inside-01.jpg' },
-  { id: 7, title: 'Модерен интериор', category: 'inside', type: 'image', imageUrl: '/images/inside-02.jpg' },
-  { id: 8, title: 'Зона за релакс', category: 'inside', type: 'image', imageUrl: '/images/inside-03.jpg' },
   { id: 9, title: 'Уютна стая за почивка', category: 'inside', type: 'image', imageUrl: '/images/inside-04.jpg' },
   { id: 10, title: 'Детайли от стаята', category: 'inside', type: 'image', imageUrl: '/images/inside-05.jpg' },
   { id: 11, title: 'Любопитен поглед от стаята', category: 'inside', type: 'image', imageUrl: '/images/inside-06.jpg' },
@@ -59,7 +57,9 @@ export const galleryImages: GalleryImage[] = [
   { id: 19, title: 'Комфорт и грижа', category: 'inside', type: 'image', imageUrl: '/images/inside-14.jpg' },
   { id: 20, title: 'Време за храна', category: 'inside', type: 'image', imageUrl: '/images/inside-15.jpg' },
   { id: 21, title: 'Свежа и чиста грижа', category: 'inside', type: 'image', imageUrl: '/images/inside-16.jpg' },
-  { id: 22, title: 'Весел момент в хотела', category: 'inside', type: 'image', imageUrl: '/images/inside-17.jpg' }
+  { id: 22, title: 'Весел момент в хотела', category: 'inside', type: 'image', imageUrl: '/images/inside-17.jpg' },
+  { id: 7, title: 'Модерен интериор', category: 'inside', type: 'image', imageUrl: '/images/inside-02.jpg' },
+  { id: 8, title: 'Зона за релакс', category: 'inside', type: 'image', imageUrl: '/images/inside-03.jpg' }
 ]
 
 const galleryCategoryOrder: Record<Exclude<GalleryCategoryId, 'all'>, number> = {
@@ -79,9 +79,12 @@ export function getFilteredGalleryImages(category: GalleryCategoryId): GalleryIm
   })
 
   if (category === 'all') {
-    return [...filtered].sort(
-      (a, b) => galleryCategoryOrder[a.category] - galleryCategoryOrder[b.category]
-    )
+    return [...filtered].sort((a, b) => {
+      const categoryDiff = galleryCategoryOrder[a.category] - galleryCategoryOrder[b.category]
+      if (categoryDiff !== 0) return categoryDiff
+      return galleryImages.findIndex((img) => img.imageUrl === a.imageUrl) -
+        galleryImages.findIndex((img) => img.imageUrl === b.imageUrl)
+    })
   }
 
   return filtered
