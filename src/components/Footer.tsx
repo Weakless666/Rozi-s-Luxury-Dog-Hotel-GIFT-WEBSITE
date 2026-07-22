@@ -175,9 +175,14 @@ const Footer = () => {
                 <Heart className="w-4 h-4 text-soft-pink animate-pulse" />
                 <span>за нашите четириноги приятели</span>
               </div>
-              <div className="text-xs text-white/60">
-                Made By: <span className="font-semibold text-soft-pink">Weakless666</span>
-              </div>
+              <a
+                href="https://weakless.pro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-semibold text-soft-pink hover:text-white transition-colors"
+              >
+                Weakless.pro
+              </a>
             </div>
           </div>
         </motion.div>
