@@ -1,13 +1,8 @@
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom'
 import { Home, Car, ArrowRight, Sun } from 'lucide-react'
 
 const ServicesPreview = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  })
 
   const services = [
     {
@@ -37,9 +32,8 @@ const ServicesPreview = () => {
     <section className="section-padding bg-gradient-to-br from-soft-lavender/30 to-light-peach/30">
       <div className="container-custom">
         <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -48,8 +42,8 @@ const ServicesPreview = () => {
             return (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 50 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                initial={false}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 card-hover group"
               >
@@ -86,8 +80,8 @@ const ServicesPreview = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
           className="text-center mt-12"
         >

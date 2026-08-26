@@ -40,7 +40,7 @@ const Navbar = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
+          <Link to="/" className="flex items-center space-x-2 group" aria-label="Rozi's Luxury Dog Hotel – начало">
             <motion.div
               whileHover={{ scale: 1.1, rotate: 5 }}
               className="relative"
@@ -51,9 +51,9 @@ const Navbar = () => {
               <Heart className="w-4 h-4 text-soft-pink absolute -top-1 -right-1 animate-pulse" />
             </motion.div>
             <div className="hidden sm:block">
-              <h1 className="text-lg sm:text-xl md:text-2xl font-handwriting font-bold text-gradient">
+              <span className="block text-lg sm:text-xl md:text-2xl font-handwriting font-bold text-gradient">
                 <span className="font-latin">Rozi's</span> Luxury
-              </h1>
+              </span>
               <p className="text-xs sm:text-sm text-luxury-purple font-medium">
                 Dog Hotel
               </p>

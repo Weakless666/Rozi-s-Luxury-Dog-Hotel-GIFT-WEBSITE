@@ -1,12 +1,7 @@
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { Phone, Mail, ArrowRight, Heart } from 'lucide-react'
+import { Phone, ArrowRight, Heart } from 'lucide-react'
 
 const CTA = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  })
 
   const ctaOptions = [
     {
@@ -31,15 +26,14 @@ const CTA = () => {
 
       <div className="container-custom relative z-10">
         <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center text-white mb-16"
         >
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            initial={false}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-6"
           >
@@ -47,18 +41,18 @@ const CTA = () => {
             <span className="font-medium">Готови ли сте?</span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-handwriting font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-handwriting font-bold mb-6 drop-shadow-md">
             Дайте на вашия <span className="bg-soft-pink/80 text-white px-2 py-0.5 rounded font-sans font-semibold not-italic">четириног</span> любимец най-доброто!
           </h2>
 
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-8">
+          <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed mb-8 drop-shadow">
             Не чакайте повече! Резервирайте място за вашия четириног приятел 
             и му осигурете незабравимо преживяване в луксозния ни хотел.
           </p>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            initial={false}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
@@ -80,8 +74,8 @@ const CTA = () => {
 
         {/* CTA Options */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
@@ -90,8 +84,8 @@ const CTA = () => {
             return (
               <motion.div
                 key={option.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                initial={false}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 + index * 0.1, duration: 0.6 }}
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 text-center group"

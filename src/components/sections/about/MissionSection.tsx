@@ -1,13 +1,8 @@
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 import { Heart, Target, Eye, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const MissionSection = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  })
 
   const missionPoints = [
     {
@@ -42,15 +37,14 @@ const MissionSection = () => {
 
       <div className="container-custom relative z-10">
         <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center text-white mb-16"
         >
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            initial={false}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-6"
           >
@@ -74,8 +68,8 @@ const MissionSection = () => {
             return (
               <motion.div
                 key={point.title}
-                initial={{ opacity: 0, y: 50 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                initial={false}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2, duration: 0.6 }}
                 className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 card-hover text-center"
               >
@@ -97,8 +91,8 @@ const MissionSection = () => {
 
         {/* Call to action */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.8 }}
           className="text-center bg-white/20 backdrop-blur-sm rounded-2xl p-8"
         >

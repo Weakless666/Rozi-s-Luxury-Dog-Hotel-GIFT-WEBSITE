@@ -27,6 +27,19 @@ function setCanonical(url: string) {
   element.setAttribute('href', url)
 }
 
+function setHreflang(lang: string, href: string) {
+  let element = document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`)
+
+  if (!element) {
+    element = document.createElement('link')
+    element.setAttribute('rel', 'alternate')
+    element.setAttribute('hreflang', lang)
+    document.head.appendChild(element)
+  }
+
+  element.setAttribute('href', href)
+}
+
 const SeoManager = () => {
   const { pathname } = useLocation()
 
@@ -43,6 +56,8 @@ const SeoManager = () => {
     setMetaTag('twitter:title', seo.title, true)
     setMetaTag('twitter:description', seo.description, true)
     setCanonical(canonicalUrl)
+    setHreflang('bg', canonicalUrl)
+    setHreflang('x-default', canonicalUrl)
   }, [pathname])
 
   return null

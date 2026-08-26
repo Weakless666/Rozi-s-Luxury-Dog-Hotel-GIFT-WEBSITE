@@ -1,13 +1,8 @@
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
 import { Send, CheckCircle, User, Calendar, MessageSquare, Heart } from 'lucide-react'
 
 const ContactForm = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  })
 
   const [formData, setFormData] = useState({
     name: '',
@@ -77,15 +72,14 @@ const ContactForm = () => {
     <section className="section-padding bg-gradient-to-br from-soft-lavender/30 to-light-peach/30">
       <div className="container-custom">
         <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            initial={false}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 shadow-lg"
           >
@@ -105,15 +99,15 @@ const ContactForm = () => {
 
         <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            initial={false}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
             className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
           >
             {/* Success message */}
             {submitStatus === 'success' && (
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={false}
                 animate={{ opacity: 1, scale: 1 }}
                 className="mb-6 p-4 bg-green-100 border border-green-400 rounded-xl flex items-center space-x-3"
               >

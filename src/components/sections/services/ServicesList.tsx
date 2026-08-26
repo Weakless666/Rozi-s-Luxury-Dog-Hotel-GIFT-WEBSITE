@@ -1,12 +1,7 @@
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 import { Home, Car, Utensils, Sun } from 'lucide-react'
 
 const ServicesList = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  })
 
   const services = [
     {
@@ -71,10 +66,18 @@ const ServicesList = () => {
   return (
     <section className="section-padding bg-white/50">
       <div className="container-custom">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-handwriting font-bold mb-4">
+            <span className="text-gradient">Услуги и цени</span>
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Луксозно настаняване, дневна ясла, транспорт и специализирано хранене в Сапарева баня.
+          </p>
+        </div>
+
         <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -83,8 +86,8 @@ const ServicesList = () => {
               return (
                 <motion.div
                   key={service.title}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  initial={false}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                   className={`bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 card-hover relative ${
                     service.popular ? 'ring-2 ring-soft-pink' : ''

@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
-import { Heart, Play, X, Camera } from 'lucide-react'
+import { Heart, X, Camera } from 'lucide-react'
 import {
   getFilteredGalleryImages,
   type GalleryCategoryId,
@@ -13,10 +12,6 @@ interface GalleryGridProps {
 }
 
 const GalleryGrid = ({ activeCategory }: GalleryGridProps) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  })
 
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
   const galleryImages = getFilteredGalleryImages(activeCategory)
@@ -33,9 +28,8 @@ const GalleryGrid = ({ activeCategory }: GalleryGridProps) => {
     <section className="section-padding bg-gradient-to-br from-soft-lavender/30 to-light-peach/30 pt-0">
       <div className="container-custom">
         <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
@@ -51,7 +45,7 @@ const GalleryGrid = ({ activeCategory }: GalleryGridProps) => {
           {galleryImages.length === 0 ? (
             <motion.div
               key="empty"
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               className="text-center py-16 bg-white/60 rounded-2xl"
@@ -62,7 +56,7 @@ const GalleryGrid = ({ activeCategory }: GalleryGridProps) => {
           ) : (
             <motion.div
               key={activeCategory}
-              initial={{ opacity: 0 }}
+              initial={false}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
@@ -71,7 +65,7 @@ const GalleryGrid = ({ activeCategory }: GalleryGridProps) => {
               {galleryImages.map((image, index) => (
                 <motion.div
                   key={`${image.imageUrl}-${image.id}`}
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={false}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.05, duration: 0.4 }}
                   className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 card-hover cursor-pointer"
@@ -116,7 +110,7 @@ const GalleryGrid = ({ activeCategory }: GalleryGridProps) => {
 
         {selectedImage && (
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-auto"

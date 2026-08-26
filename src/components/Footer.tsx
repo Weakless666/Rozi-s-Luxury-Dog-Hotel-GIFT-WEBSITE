@@ -32,12 +32,7 @@ const Footer = () => {
         <div className="py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Brand Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-1"
-            >
+            <div className="lg:col-span-1">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
                   <PawPrint className="w-6 h-6 text-white" />
@@ -73,14 +68,10 @@ const Footer = () => {
                   <Facebook className="w-5 h-5" />
                 </motion.a>
               </div>
-            </motion.div>
+            </div>
 
             {/* Company Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
+            <div>
               <h4 className="text-xl font-elegant font-semibold mb-6">
                 Компания
               </h4>
@@ -96,14 +87,10 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
 
             {/* Contact Info */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
+            <div>
               <h4 className="text-xl font-elegant font-semibold mb-6">
                 Контакти
               </h4>
@@ -141,17 +128,12 @@ const Footer = () => {
                   )
                 })}
               </ul>
-            </motion.div>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="border-t border-white/20 py-6"
-        >
+        <div className="border-t border-white/20 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
               <p className="text-white/80 text-sm">
@@ -185,7 +167,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </footer>
   )

@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 import { Camera, Home, TreePine, Utensils } from 'lucide-react'
 import { galleryCategories, type GalleryCategoryId } from '../../../data/galleryData'
 
@@ -16,18 +15,13 @@ interface GalleryCategoriesProps {
 }
 
 const GalleryCategories = ({ activeCategory, onCategoryChange }: GalleryCategoriesProps) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  })
 
   return (
     <section className="section-padding bg-white/50 pb-8">
       <div className="container-custom">
         <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="flex flex-wrap justify-center gap-3"
         >
@@ -39,8 +33,8 @@ const GalleryCategories = ({ activeCategory, onCategoryChange }: GalleryCategori
               <motion.button
                 key={category.id}
                 type="button"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
+                initial={false}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.05, duration: 0.4 }}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}

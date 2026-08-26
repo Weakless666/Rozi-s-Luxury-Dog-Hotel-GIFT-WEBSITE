@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 import { Phone, Clock, MessageCircle, Star, Heart, Facebook, Instagram } from 'lucide-react'
 
 // Viber icon component
@@ -10,10 +9,6 @@ const ViberIcon = ({ className }: { className?: string }) => (
 )
 
 const ContactInfo = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  })
 
   const contactMethods = [
     {
@@ -62,15 +57,14 @@ const ContactInfo = () => {
     <section className="section-padding bg-white/50">
       <div className="container-custom">
         <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            initial={false}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             className="inline-flex items-center space-x-2 bg-gradient-to-r from-soft-pink/20 to-luxury-purple/20 rounded-full px-6 py-3 mb-6 shadow-lg"
           >
@@ -95,8 +89,8 @@ const ContactInfo = () => {
             return (
               <motion.div
                 key={method.title}
-                initial={{ opacity: 0, y: 50 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                initial={false}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 card-hover text-center"
               >
@@ -140,8 +134,8 @@ const ContactInfo = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Working hours */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            initial={false}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
             className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
           >
@@ -162,8 +156,8 @@ const ContactInfo = () => {
 
           {/* Why choose us */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            initial={false}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
             className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
           >

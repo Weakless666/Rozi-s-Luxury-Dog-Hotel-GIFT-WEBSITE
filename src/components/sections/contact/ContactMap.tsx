@@ -1,12 +1,7 @@
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 import { MapPin, Navigation, Phone } from 'lucide-react'
 
 const ContactMap = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  })
 
   return (
     <section className="section-padding bg-white/50">
@@ -14,8 +9,8 @@ const ContactMap = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Map placeholder */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            initial={false}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
             className="lg:col-span-2"
           >
@@ -60,8 +55,8 @@ const ContactMap = () => {
 
           {/* Contact details */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            initial={false}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
             className="space-y-6"
           >
