@@ -25,7 +25,7 @@ const defaultDescription =
 
 export const routeSeo: Record<string, PageSeo> = {
   '/': {
-    title: 'Луксозен хотел за кучета Сапарева баня | Хотел за кучета – Rozi\'s',
+    title: 'Луксозен хотел за кучета Сапарева баня | Rozi\'s',
     description: defaultDescription,
     keywords: DEFAULT_KEYWORDS
   },

@@ -9,7 +9,11 @@
     <link rel="alternate" hreflang="x-default" href="https://www.rozi-dog-hotel.eu/" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Луксозен хотел за кучета Сапарева баня | Хотел за кучета – Rozi's</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' ws: wss: https://va.vercel-scripts.com https://vitals.vercel-insights.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'"
+    />
+    <title>Луксозен хотел за кучета Сапарева баня | Rozi's</title>
     <meta name="description" content="Луксозен хотел за кучета в Сапарева баня – настаняване, дневна ясла, транспорт и 24/7 грижа. Вашият хотел за кучета – Rozi's Luxury Dog Hotel." />
     <meta name="keywords" content="хотел за кучета, хотел за кучета Сапарева баня, настаняване на кучета, дневна ясла за кучета, грижа за кучета, луксозен хотел за кучета, кучешки хотел, Сапарева баня, Кюстендил, България" />
     <meta name="author" content="Rozi's Luxury Dog Hotel" />
@@ -20,7 +24,7 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.rozi-dog-hotel.eu/" />
-    <meta property="og:title" content="Луксозен хотел за кучета Сапарева баня | Хотел за кучета" />
+    <meta property="og:title" content="Луксозен хотел за кучета Сапарева баня | Rozi's" />
     <meta property="og:description" content="Луксозен хотел за кучета в Сапарева баня – настаняване, дневна ясла и 24/7 грижа. Вашият хотел за кучета." />
     <meta property="og:image" content="https://www.rozi-dog-hotel.eu/images/hero.png" />
     <meta property="og:image:width" content="1200" />
@@ -30,17 +34,35 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://www.rozi-dog-hotel.eu/" />
-    <meta name="twitter:title" content="Луксозен хотел за кучета Сапарева баня | Хотел за кучета" />
+    <meta name="twitter:title" content="Луксозен хотел за кучета Сапарева баня | Rozi's" />
     <meta name="twitter:description" content="Луксозен хотел за кучета в Сапарева баня – настаняване, дневна ясла и 24/7 грижа." />
     <meta name="twitter:image" content="https://www.rozi-dog-hotel.eu/images/hero.png" />
 
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <style>
+      #static-seo {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      id="font-css"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      media="print"
+    >
 
-    <script type="application/ld+json">
+    <script type="application/ld+json" defer>
     {
       "@context": "https://schema.org",
       "@type": ["LocalBusiness", "PetBoarding"],
@@ -119,7 +141,7 @@
     }
     </script>
 
-    <script type="application/ld+json">
+    <script type="application/ld+json" defer>
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -145,7 +167,20 @@
     </script>
   </head>
   <body>
+    <div id="static-seo">
+      <h1>Луксозен хотел за кучета в Сапарева баня</h1>
+      <p>
+        <a href="/contact">Contact us</a>
+        <a href="tel:+359882739396">Book now</a>
+      </p>
+      <p>
+        <a href="/privacy-policy">Privacy Policy</a>
+      </p>
+    </div>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script defer>
+      document.getElementById('font-css').media = 'all'
+    </script>
+    <script type="module" defer src="/src/main.tsx"></script>
   </body>
 </html>

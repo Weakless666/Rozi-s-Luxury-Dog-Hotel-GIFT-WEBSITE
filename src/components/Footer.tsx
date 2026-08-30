@@ -141,7 +141,7 @@ const Footer = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-white/80 text-sm">
                 <Link to="/privacy-policy" className="hover:text-white transition-colors">
-                  Политика за поверителност
+                  Политика за поверителност / Privacy Policy
                 </Link>
                 <Link to="/terms-of-service" className="hover:text-white transition-colors">
                   Условия за ползване
