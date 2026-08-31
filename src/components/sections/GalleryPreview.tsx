@@ -117,10 +117,12 @@ const GalleryPreview = () => {
             >
               {/* Close button */}
               <button
+                type="button"
                 onClick={closeModal}
+                aria-label="Затвори изображението"
                 className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
               >
-                <X className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
+                <X className="w-4 h-4 sm:w-6 sm:h-6 text-white" aria-hidden="true" />
               </button>
 
               {/* Modal content - just the image */}

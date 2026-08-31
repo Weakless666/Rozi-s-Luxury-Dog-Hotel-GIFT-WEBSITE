@@ -54,18 +54,20 @@ const Footer = () => {
                   href="https://www.instagram.com/rozis_luxury_dog_hotel/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Instagram – Rozi's Luxury Dog Hotel"
                   className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <Instagram className="w-5 h-5" aria-hidden="true" />
                 </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   href="https://www.facebook.com/profile.php?id=100058613121575"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Facebook – Rozi's Luxury Dog Hotel"
                   className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
                 >
-                  <Facebook className="w-5 h-5" />
+                  <Facebook className="w-5 h-5" aria-hidden="true" />
                 </motion.a>
               </div>
             </div>
@@ -161,7 +163,7 @@ const Footer = () => {
                 href="https://weakless.pro"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-semibold text-soft-pink hover:text-white transition-colors"
+                className="text-xs font-semibold text-white hover:text-soft-pink transition-colors"
               >
                 Weakless.pro
               </a>

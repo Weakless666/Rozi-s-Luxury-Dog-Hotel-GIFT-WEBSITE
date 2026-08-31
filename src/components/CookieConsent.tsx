@@ -134,9 +134,10 @@ const CookieConsent = ({ onAccept, onReject, onCustomize }: CookieConsentProps) 
                   <h3 className="text-xl font-semibold text-gray-800">Настройки за бисквитки</h3>
                   <button
                     onClick={() => setShowSettings(false)}
+                    aria-label="Затвори настройките за бисквитки"
                     className="p-2 hover:bg-gray-100 rounded-full transition-colors"
                   >
-                    <X className="w-5 h-5 text-gray-600" />
+                    <X className="w-5 h-5 text-gray-600" aria-hidden="true" />
                   </button>
                 </div>
 
@@ -161,11 +162,13 @@ const CookieConsent = ({ onAccept, onReject, onCustomize }: CookieConsentProps) 
                       </p>
                     </div>
                     <button
-                      onClick={() => setPreferences(prev => ({ ...prev, functional: !prev.functional }))}
-                      className={`w-12 h-6 rounded-full relative transition-colors ${
-                        preferences.functional ? 'bg-gradient-to-r from-soft-pink to-luxury-purple' : 'bg-gray-300'
-                      }`}
-                    >
+                    onClick={() => setPreferences(prev => ({ ...prev, functional: !prev.functional }))}
+                    aria-pressed={preferences.functional}
+                    aria-label="Функционални бисквитки"
+                    className={`w-12 h-6 rounded-full relative transition-colors ${
+                      preferences.functional ? 'bg-gradient-to-r from-soft-pink to-luxury-purple' : 'bg-gray-300'
+                    }`}
+                  >
                       <div className={`w-6 h-6 bg-white rounded-full absolute top-0 transition-transform ${
                         preferences.functional ? 'translate-x-6' : 'translate-x-0'
                       }`}></div>
@@ -180,11 +183,13 @@ const CookieConsent = ({ onAccept, onReject, onCustomize }: CookieConsentProps) 
                       </p>
                     </div>
                     <button
-                      onClick={() => setPreferences(prev => ({ ...prev, analytics: !prev.analytics }))}
-                      className={`w-12 h-6 rounded-full relative transition-colors ${
-                        preferences.analytics ? 'bg-gradient-to-r from-soft-pink to-luxury-purple' : 'bg-gray-300'
-                      }`}
-                    >
+                    onClick={() => setPreferences(prev => ({ ...prev, analytics: !prev.analytics }))}
+                    aria-pressed={preferences.analytics}
+                    aria-label="Аналитични бисквитки"
+                    className={`w-12 h-6 rounded-full relative transition-colors ${
+                      preferences.analytics ? 'bg-gradient-to-r from-soft-pink to-luxury-purple' : 'bg-gray-300'
+                    }`}
+                  >
                       <div className={`w-6 h-6 bg-white rounded-full absolute top-0 transition-transform ${
                         preferences.analytics ? 'translate-x-6' : 'translate-x-0'
                       }`}></div>
@@ -199,11 +204,13 @@ const CookieConsent = ({ onAccept, onReject, onCustomize }: CookieConsentProps) 
                       </p>
                     </div>
                     <button
-                      onClick={() => setPreferences(prev => ({ ...prev, marketing: !prev.marketing }))}
-                      className={`w-12 h-6 rounded-full relative transition-colors ${
-                        preferences.marketing ? 'bg-gradient-to-r from-soft-pink to-luxury-purple' : 'bg-gray-300'
-                      }`}
-                    >
+                    onClick={() => setPreferences(prev => ({ ...prev, marketing: !prev.marketing }))}
+                    aria-pressed={preferences.marketing}
+                    aria-label="Маркетингови бисквитки"
+                    className={`w-12 h-6 rounded-full relative transition-colors ${
+                      preferences.marketing ? 'bg-gradient-to-r from-soft-pink to-luxury-purple' : 'bg-gray-300'
+                    }`}
+                  >
                       <div className={`w-6 h-6 bg-white rounded-full absolute top-0 transition-transform ${
                         preferences.marketing ? 'translate-x-6' : 'translate-x-0'
                       }`}></div>

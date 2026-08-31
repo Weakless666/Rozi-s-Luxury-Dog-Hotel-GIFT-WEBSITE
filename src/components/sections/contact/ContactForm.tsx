@@ -129,55 +129,62 @@ const ContactForm = () => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="contact-name" className="block text-sm font-medium text-gray-700 mb-2">
                       Име и фамилия *
                     </label>
                     <input
+                      id="contact-name"
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
+                      autoComplete="name"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-soft-pink focus:border-transparent transition-all duration-300"
                       placeholder="Вашето име"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="contact-email" className="block text-sm font-medium text-gray-700 mb-2">
                       Имейл *
                     </label>
                     <input
+                      id="contact-email"
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       required
+                      autoComplete="email"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-soft-pink focus:border-transparent transition-all duration-300"
                       placeholder="your@email.com"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="contact-phone" className="block text-sm font-medium text-gray-700 mb-2">
                       Телефон *
                     </label>
                     <input
+                      id="contact-phone"
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
                       required
+                      autoComplete="tel"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-soft-pink focus:border-transparent transition-all duration-300"
                       placeholder="+359 882 739 396"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="contact-service" className="block text-sm font-medium text-gray-700 mb-2">
                       Услуга *
                     </label>
                     <select
+                      id="contact-service"
                       name="service"
                       value={formData.service}
                       onChange={handleInputChange}
@@ -202,10 +209,11 @@ const ContactForm = () => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="dog-name" className="block text-sm font-medium text-gray-700 mb-2">
                       Име на кучето *
                     </label>
                     <input
+                      id="dog-name"
                       type="text"
                       name="dogName"
                       value={formData.dogName}
@@ -217,10 +225,11 @@ const ContactForm = () => {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="dog-breed" className="block text-sm font-medium text-gray-700 mb-2">
                       Порода
                     </label>
                     <input
+                      id="dog-breed"
                       type="text"
                       name="dogBreed"
                       value={formData.dogBreed}
@@ -231,10 +240,11 @@ const ContactForm = () => {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="dog-age" className="block text-sm font-medium text-gray-700 mb-2">
                       Възраст
                     </label>
                     <input
+                      id="dog-age"
                       type="text"
                       name="dogAge"
                       value={formData.dogAge}
@@ -255,10 +265,11 @@ const ContactForm = () => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="check-in" className="block text-sm font-medium text-gray-700 mb-2">
                       Дата на настаняване *
                     </label>
                     <input
+                      id="check-in"
                       type="date"
                       name="checkIn"
                       value={formData.checkIn}
@@ -269,10 +280,11 @@ const ContactForm = () => {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="check-out" className="block text-sm font-medium text-gray-700 mb-2">
                       Дата на напускане *
                     </label>
                     <input
+                      id="check-out"
                       type="date"
                       name="checkOut"
                       value={formData.checkOut}
@@ -286,10 +298,11 @@ const ContactForm = () => {
 
               {/* Message */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="contact-message" className="block text-sm font-medium text-gray-700 mb-2">
                   Допълнителна информация
                 </label>
                 <textarea
+                  id="contact-message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}

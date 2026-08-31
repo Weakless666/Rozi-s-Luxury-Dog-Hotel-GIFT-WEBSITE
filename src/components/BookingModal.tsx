@@ -60,10 +60,12 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
           {/* Header */}
           <div className="bg-gradient-to-r from-soft-pink to-luxury-purple p-6 text-white relative flex-shrink-0">
             <button
+              type="button"
               onClick={onClose}
+              aria-label="Затвори резервацията"
               className="absolute top-4 right-4 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
             >
-              <X className="w-5 h-5" />
+              <X className="w-5 h-5" aria-hidden="true" />
             </button>
             
             <div className="flex items-center space-x-3">

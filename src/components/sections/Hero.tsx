@@ -7,12 +7,12 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with gradient and decorations */}
       <div className="absolute inset-0 bg-gradient-to-br from-warm-white via-soft-lavender to-light-peach">
-        <div className="absolute inset-0 paw-bg opacity-30"></div>
-        <div className="absolute top-20 left-10 text-8xl opacity-20 floating">🐕</div>
-        <div className="absolute top-40 right-20 text-6xl opacity-20 floating" style={{ animationDelay: '2s' }}>🐾</div>
-        <div className="absolute bottom-40 left-1/4 text-7xl opacity-20 floating" style={{ animationDelay: '4s' }}>💕</div>
-        <div className="absolute bottom-20 right-1/3 text-5xl opacity-20 floating" style={{ animationDelay: '1s' }}>✨</div>
-        <div className="absolute top-1/2 left-5 text-4xl opacity-20 floating" style={{ animationDelay: '3s' }}>🌸</div>
+        <div className="absolute inset-0 paw-bg opacity-30" aria-hidden="true"></div>
+        <div className="absolute top-20 left-10 text-8xl opacity-20 floating" aria-hidden="true">🐕</div>
+        <div className="absolute top-40 right-20 text-6xl opacity-20 floating" style={{ animationDelay: '2s' }} aria-hidden="true">🐾</div>
+        <div className="absolute bottom-40 left-1/4 text-7xl opacity-20 floating" style={{ animationDelay: '4s' }} aria-hidden="true">💕</div>
+        <div className="absolute bottom-20 right-1/3 text-5xl opacity-20 floating" style={{ animationDelay: '1s' }} aria-hidden="true">✨</div>
+        <div className="absolute top-1/2 left-5 text-4xl opacity-20 floating" style={{ animationDelay: '3s' }} aria-hidden="true">🌸</div>
       </div>
 
       <div className="container-custom relative z-10">
@@ -56,8 +56,8 @@ const Hero = () => {
             >
               Място, където вашите четириноги приятели получават{'\u00A0'}
               <span className="text-luxury-purple font-semibold whitespace-nowrap">най-добрата грижа</span>, 
-              <span className="text-soft-pink font-semibold"> любов</span> и 
-              <span className="text-gentle-rose font-semibold"> внимание</span>
+              <span className="text-luxury-purple font-semibold"> любов</span> и 
+              <span className="text-luxury-purple font-semibold"> внимание</span>
             </motion.p>
 
             <motion.div

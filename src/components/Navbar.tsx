@@ -91,10 +91,14 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <button
+            type="button"
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-soft-pink/20 transition-colors"
+            aria-label={isOpen ? 'Затвори менюто' : 'Отвори менюто'}
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </div>
 
@@ -107,6 +111,7 @@ const Navbar = () => {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
               className="lg:hidden bg-white/95 backdrop-blur-md rounded-lg shadow-lg mt-2 overflow-hidden"
+              id="mobile-nav"
             >
               <div className="px-4 py-6 space-y-4">
                 {navItems.map((item, index) => (

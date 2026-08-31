@@ -749,12 +749,15 @@ const ChatBot = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(true)}
+        aria-label="Отвори чат асистента"
+        aria-expanded={isOpen}
         className="fixed bottom-6 right-6 w-16 h-16 sm:w-16 sm:h-16 bg-gradient-to-br from-soft-pink to-luxury-purple rounded-full shadow-2xl flex items-center justify-center z-40 hover:shadow-3xl transition-all duration-300 chatbot-button"
       >
         <motion.div
           animate={{ rotate: [0, 10, -10, 0] }}
           transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
           className="text-3xl"
+          aria-hidden="true"
         >
           🐕
         </motion.div>
@@ -788,10 +791,12 @@ const ChatBot = () => {
                 </div>
               </div>
               <button
+                type="button"
                 onClick={() => setIsOpen(false)}
+                aria-label="Затвори чата"
                 className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
               >
-                <X className="w-4 h-4" />
+                <X className="w-4 h-4" aria-hidden="true" />
               </button>
             </div>
 
@@ -851,7 +856,9 @@ const ChatBot = () => {
                   
                   {/* Поле за търсене */}
                   <div className="mb-3 relative">
+                    <label htmlFor="chatbot-search" className="sr-only">Търсене на въпрос</label>
                     <input
+                      id="chatbot-search"
                       type="text"
                       placeholder="Търсете въпрос..."
                       value={searchQuery}
@@ -860,17 +867,19 @@ const ChatBot = () => {
                     />
                     {searchQuery && (
                       <button
+                        type="button"
                         onClick={() => setSearchQuery('')}
-                        className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                        aria-label="Изчисти търсенето"
+                        className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800"
                       >
-                        <X size={14} />
+                        <X size={14} aria-hidden="true" />
                       </button>
                     )}
                   </div>
 
                   {/* Първи ред - най-важните въпроси (винаги видими) */}
                   <div className="space-y-2 mb-3">
-                    <p className="text-xs text-gray-400 font-medium">Популярни въпроси:</p>
+                    <p className="text-xs text-gray-600 font-medium">Популярни въпроси:</p>
                     {topQuestions.map((question) => (
                       <button
                         key={question.id}
@@ -884,7 +893,7 @@ const ChatBot = () => {
 
                   {/* Филтриран списък с всички въпроси */}
                   <div className="max-h-32 overflow-y-auto space-y-1">
-                    <p className="text-xs text-gray-400 font-medium">
+                    <p className="text-xs text-gray-600 font-medium">
                       {searchQuery ? `Резултати за "${searchQuery}":` : "Всички въпроси:"}
                     </p>
                     {(searchQuery ? filteredQuestions : otherQuestions).map((question) => (
@@ -897,7 +906,7 @@ const ChatBot = () => {
                       </button>
                     ))}
                     {searchQuery && filteredQuestions.length === 0 && (
-                      <p className="text-xs text-gray-400 text-center py-2">
+                      <p className="text-xs text-gray-600 text-center py-2">
                         Няма намерени въпроси за "{searchQuery}"
                       </p>
                     )}
@@ -909,7 +918,9 @@ const ChatBot = () => {
             {/* Input */}
             <div className="p-4 border-t border-gray-200">
               <div className="flex space-x-2">
+                <label htmlFor="chatbot-input" className="sr-only">Напишете въпрос</label>
                 <input
+                  id="chatbot-input"
                   type="text"
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
@@ -918,11 +929,13 @@ const ChatBot = () => {
                   className="flex-1 p-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-soft-pink focus:border-transparent"
                 />
                 <button
+                  type="button"
                   onClick={handleSendMessage}
                   disabled={!inputText.trim()}
+                  aria-label="Изпрати съобщение"
                   className="w-10 h-10 bg-gradient-to-r from-soft-pink to-luxury-purple rounded-lg flex items-center justify-center text-white hover:opacity-80 disabled:opacity-50 transition-opacity"
                 >
-                  <Send className="w-4 h-4" />
+                  <Send className="w-4 h-4" aria-hidden="true" />
                 </button>
               </div>
             </div>

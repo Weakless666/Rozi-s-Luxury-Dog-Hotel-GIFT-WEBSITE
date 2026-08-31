@@ -126,9 +126,10 @@ const GalleryGrid = ({ activeCategory }: GalleryGridProps) => {
               <button
                 type="button"
                 onClick={closeModal}
+                aria-label="Затвори изображението"
                 className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
               >
-                <X className="w-6 h-6 text-white" />
+                <X className="w-6 h-6 text-white" aria-hidden="true" />
               </button>
 
               <img

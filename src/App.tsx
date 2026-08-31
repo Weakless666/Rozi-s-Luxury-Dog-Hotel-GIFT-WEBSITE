@@ -22,12 +22,16 @@ function App() {
   return (
     <Router>
       <SeoManager />
+      <a href="#main-content" className="skip-link">
+        Skip to main content / Към основното съдържание
+      </a>
       <div className="min-h-screen bg-gradient-to-br from-warm-white via-soft-lavender to-light-peach">
         <Navbar />
-        <main>
+        <main id="main-content">
           <Suspense fallback={
-            <div className="flex items-center justify-center min-h-[60vh]">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+            <div className="flex items-center justify-center min-h-[60vh]" role="status" aria-live="polite">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-luxury-purple" aria-hidden="true"></div>
+              <span className="sr-only">Зареждане...</span>
             </div>
           }>
             <Routes>
