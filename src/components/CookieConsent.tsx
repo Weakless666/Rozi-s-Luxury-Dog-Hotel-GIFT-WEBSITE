@@ -70,6 +70,9 @@ const CookieConsent = ({ onAccept, onReject, onCustomize }: CookieConsentProps) 
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 100 }}
+        id="cookie-consent"
+        role="dialog"
+        aria-label="Cookie consent banner"
         className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl"
       >
         <div className="container mx-auto px-4 py-6">
@@ -82,9 +85,9 @@ const CookieConsent = ({ onAccept, onReject, onCustomize }: CookieConsentProps) 
                     <Cookie className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800">Бисквитки и поверителност</h3>
+                    <h3 className="text-lg font-semibold text-gray-800">Cookie Consent / Бисквитки и поверителност</h3>
                     <p className="text-sm text-gray-600">
-                      Използваме бисквитки за подобряване на вашето изживяване
+                      We use cookies to improve your experience / Използваме бисквитки за подобряване на вашето изживяване
                     </p>
                   </div>
                 </div>
@@ -93,7 +96,12 @@ const CookieConsent = ({ onAccept, onReject, onCustomize }: CookieConsentProps) 
                   <p className="text-gray-700 text-sm leading-relaxed">
                     Нашият уебсайт използва бисквитки за да ви предостави най-доброто изживяване. 
                     Някои са необходими за функционирането на сайта, други ни помагат да го подобрим. 
-                    Можете да изберете кои да приемете.
+                    Можете да изберете кои да приемете.{' '}
+                    <a href="/privacy-policy" className="underline text-luxury-purple">Privacy Policy</a>
+                    {', '}
+                    <a href="/terms-of-service" className="underline text-luxury-purple">Terms of Service</a>
+                    {', '}
+                    <a href="/cookie-policy" className="underline text-luxury-purple">Cookie Policy</a>.
                   </p>
                 </div>
 
@@ -102,7 +110,7 @@ const CookieConsent = ({ onAccept, onReject, onCustomize }: CookieConsentProps) 
                     onClick={handleReject}
                     className="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors text-sm font-medium"
                   >
-                    Отхвърли всички
+                    Reject cookies / Отхвърли всички
                   </button>
                   <button
                     onClick={handleCustomize}
@@ -115,7 +123,7 @@ const CookieConsent = ({ onAccept, onReject, onCustomize }: CookieConsentProps) 
                     onClick={handleAccept}
                     className="px-6 py-2 bg-gradient-to-r from-soft-pink to-luxury-purple text-white rounded-lg hover:shadow-lg transition-all text-sm font-medium"
                   >
-                    Приеми всички
+                    Accept cookies / Приеми всички
                   </button>
                 </div>
               </div>

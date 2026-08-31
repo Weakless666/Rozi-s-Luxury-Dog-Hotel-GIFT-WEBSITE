@@ -11,8 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' ws: wss: https://va.vercel-scripts.com https://vitals.vercel-insights.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' ws: wss: https://va.vercel-scripts.com https://vitals.vercel-insights.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
     />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>Луксозен хотел за кучета Сапарева баня | Rozi's</title>
     <meta name="description" content="Луксозен хотел за кучета в Сапарева баня – настаняване, дневна ясла, транспорт и 24/7 грижа. Вашият хотел за кучета – Rozi's Luxury Dog Hotel." />
     <meta name="keywords" content="хотел за кучета, хотел за кучета Сапарева баня, настаняване на кучета, дневна ясла за кучета, грижа за кучета, луксозен хотел за кучета, кучешки хотел, Сапарева баня, Кюстендил, България" />
@@ -175,11 +177,72 @@
       </p>
       <p>
         <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/cookie-policy">Cookie Policy</a>
       </p>
     </div>
+
+    <aside
+      id="cookie-consent-banner"
+      role="dialog"
+      aria-label="Cookie consent"
+      style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#fff;border-top:1px solid #e5e7eb;box-shadow:0 -4px 24px rgba(0,0,0,.12);padding:1.25rem;"
+    >
+      <div style="max-width:56rem;margin:0 auto;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;">
+        <div style="flex:1;min-width:16rem;">
+          <strong style="display:block;margin-bottom:.35rem;">Cookie Consent / Съгласие за бисквитки</strong>
+          <p style="margin:0;font-size:.9rem;color:#374151;line-height:1.45;">
+            We use cookies to improve your experience. See our
+            <a href="/privacy-policy">Privacy Policy</a>,
+            <a href="/terms-of-service">Terms of Service</a>, and
+            <a href="/cookie-policy">Cookie Policy</a>.
+          </p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:.5rem;">
+          <button type="button" id="cookie-reject" style="padding:.5rem 1rem;border:1px solid #d1d5db;background:#fff;border-radius:.5rem;cursor:pointer;">
+            Reject cookies
+          </button>
+          <button type="button" id="cookie-accept" style="padding:.5rem 1.25rem;border:none;background:#7c3aed;color:#fff;border-radius:.5rem;cursor:pointer;">
+            Accept cookies
+          </button>
+        </div>
+      </div>
+    </aside>
+
     <div id="root"></div>
     <script defer>
       document.getElementById('font-css').media = 'all'
+      ;(function () {
+        var banner = document.getElementById('cookie-consent-banner')
+        if (!banner) return
+        try {
+          if (localStorage.getItem('cookieConsent')) {
+            banner.style.display = 'none'
+            return
+          }
+        } catch (e) {}
+        function save(value) {
+          try {
+            localStorage.setItem('cookieConsent', value)
+            localStorage.setItem(
+              'cookiePreferences',
+              JSON.stringify({
+                necessary: true,
+                functional: value === 'accepted',
+                analytics: value === 'accepted',
+                marketing: value === 'accepted'
+              })
+            )
+          } catch (err) {}
+          banner.style.display = 'none'
+        }
+        document.getElementById('cookie-accept')?.addEventListener('click', function () {
+          save('accepted')
+        })
+        document.getElementById('cookie-reject')?.addEventListener('click', function () {
+          save('rejected')
+        })
+      })()
     </script>
     <script type="module" defer src="/src/main.tsx"></script>
   </body>

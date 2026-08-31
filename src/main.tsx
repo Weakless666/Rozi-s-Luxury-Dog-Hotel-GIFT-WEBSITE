@@ -4,6 +4,7 @@ import App from './App.tsx'
 import './index.css'
 
 document.getElementById('static-seo')?.remove()
+document.getElementById('cookie-consent-banner')?.remove()
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

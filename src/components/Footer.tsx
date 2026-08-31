@@ -144,10 +144,10 @@ const Footer = () => {
                   Политика за поверителност / Privacy Policy
                 </Link>
                 <Link to="/terms-of-service" className="hover:text-white transition-colors">
-                  Условия за ползване
+                  Условия за ползване / Terms of Service
                 </Link>
                 <Link to="/cookie-policy" className="hover:text-white transition-colors">
-                  Политика за бисквитки
+                  Политика за бисквитки / Cookie Policy
                 </Link>
               </div>
             </div>
