@@ -37,7 +37,7 @@ const HeroSection = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-4xl md:text-5xl lg:text-6xl font-handwriting font-bold mb-6"
           >
-            <span className="text-gradient">За нас</span>
+            <span className="text-gradient">За хотела за кучета в Сапарева баня</span>
           </motion.h1>
 
           <motion.p

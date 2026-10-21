@@ -17,7 +17,7 @@ const GalleryHero = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-4xl md:text-5xl lg:text-6xl font-handwriting font-bold mb-6"
           >
-            <span className="text-gradient">Щастливи моменти</span>
+            <span className="text-gradient">Галерия на хотела за кучета</span>
           </motion.h1>
 
           <motion.p

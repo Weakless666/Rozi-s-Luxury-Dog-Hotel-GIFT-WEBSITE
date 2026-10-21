@@ -148,9 +148,12 @@ const Hero = () => {
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
                 <img
                   src="/images/hero.png"
-                  alt="Гости в Rozi's Luxury Dog Hotel"
+                  alt="Хотел за кучета в Сапарева баня – Rozi's Luxury Dog Hotel"
                   className="w-full h-full object-cover"
-                  loading="lazy"
+                  width={1200}
+                  height={800}
+                  fetchPriority="high"
+                  decoding="async"
                 />
               </div>
 

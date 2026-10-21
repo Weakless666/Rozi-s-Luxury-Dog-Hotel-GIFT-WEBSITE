@@ -37,7 +37,7 @@ const ContactHero = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-4xl md:text-5xl lg:text-6xl font-handwriting font-bold mb-6"
           >
-            <span className="text-gradient">Свържете се</span> с нас
+            <span className="text-gradient">Контакти</span> – хотел за кучета Сапарева баня
           </motion.h1>
 
           <motion.p

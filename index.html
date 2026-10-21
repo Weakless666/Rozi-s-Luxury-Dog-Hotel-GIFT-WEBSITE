@@ -15,8 +15,8 @@
     />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <title>Луксозен хотел за кучета Сапарева баня | Rozi's</title>
-    <meta name="description" content="Луксозен хотел за кучета в Сапарева баня – настаняване, дневна ясла, транспорт и 24/7 грижа. Вашият хотел за кучета – Rozi's Luxury Dog Hotel." />
+    <title>Хотел за кучета Сапарева баня | Rozi's</title>
+    <meta name="description" content="Хотел за кучета в Сапарева баня от 55€/нощ. Дневна ясла 25€ и транспорт от София 30€. 24/7 грижа. Обадете се: 0882 739 396." />
     <meta name="keywords" content="хотел за кучета, хотел за кучета Сапарева баня, настаняване на кучета, дневна ясла за кучета, грижа за кучета, луксозен хотел за кучета, кучешки хотел, Сапарева баня, Кюстендил, България" />
     <meta name="author" content="Rozi's Luxury Dog Hotel" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -26,8 +26,8 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.rozi-dog-hotel.eu/" />
-    <meta property="og:title" content="Луксозен хотел за кучета Сапарева баня | Rozi's" />
-    <meta property="og:description" content="Луксозен хотел за кучета в Сапарева баня – настаняване, дневна ясла и 24/7 грижа. Вашият хотел за кучета." />
+    <meta property="og:title" content="Хотел за кучета Сапарева баня | Rozi's" />
+    <meta property="og:description" content="Хотел за кучета в Сапарева баня от 55€/нощ. Дневна ясла 25€ и транспорт от София 30€. 24/7 грижа." />
     <meta property="og:image" content="https://www.rozi-dog-hotel.eu/images/hero.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -36,10 +36,11 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://www.rozi-dog-hotel.eu/" />
-    <meta name="twitter:title" content="Луксозен хотел за кучета Сапарева баня | Rozi's" />
-    <meta name="twitter:description" content="Луксозен хотел за кучета в Сапарева баня – настаняване, дневна ясла и 24/7 грижа." />
+    <meta name="twitter:title" content="Хотел за кучета Сапарева баня | Rozi's" />
+    <meta name="twitter:description" content="Хотел за кучета в Сапарева баня от 55€/нощ. Дневна ясла 25€ и транспорт от София 30€." />
     <meta name="twitter:image" content="https://www.rozi-dog-hotel.eu/images/hero.png" />
 
+    <link rel="preload" as="image" href="/images/hero.png" fetchpriority="high" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <style>
       #static-seo {
@@ -64,7 +65,7 @@
       media="print"
     >
 
-    <script type="application/ld+json" defer>
+    <script type="application/ld+json" id="local-business-schema">
     {
       "@context": "https://schema.org",
       "@type": ["LocalBusiness", "PetBoarding"],
@@ -102,10 +103,12 @@
         "closes": "20:00"
       },
       "priceRange": "€€",
-      "areaServed": {
-        "@type": "City",
-        "name": "Сапарева баня"
-      },
+      "areaServed": [
+        { "@type": "City", "name": "Сапарева баня" },
+        { "@type": "City", "name": "Кюстендил" },
+        { "@type": "City", "name": "Дупница" },
+        { "@type": "AdministrativeArea", "name": "София" }
+      ],
       "sameAs": [
         "https://www.instagram.com/rozis_luxury_dog_hotel/",
         "https://www.facebook.com/profile.php?id=100058613121575"
@@ -118,50 +121,80 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Луксозно настаняване",
-              "description": "Хотел за кучета – нощувка с 24/7 грижа"
-            }
+              "name": "Хотел за кучета – нощувка",
+              "description": "Луксозно настаняване с 24/7 грижа в Сапарева баня"
+            },
+            "price": "55",
+            "priceCurrency": "EUR"
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Дневна ясла",
+              "name": "Дневна ясла за кучета",
               "description": "Дневна грижа за кучета без нощувка"
-            }
+            },
+            "price": "25",
+            "priceCurrency": "EUR"
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Транспорт",
-              "description": "Транспорт за кучета – София и София област"
-            }
+              "name": "Транспорт на кучета от София",
+              "description": "Транспорт за кучета – София и София област, една посока"
+            },
+            "price": "30",
+            "priceCurrency": "EUR"
           }
         ]
       }
     }
     </script>
 
-    <script type="application/ld+json" defer>
+    <script type="application/ld+json" id="faq-schema">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Имате ли луксозен хотел за кучета в Сапарева баня?",
+          "name": "Колко струва хотел за кучета в Сапарева баня?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Да, Rozi's Luxury Dog Hotel е луксозен хотел за кучета в Сапарева баня с настаняване, дневна ясла и 24/7 грижа."
+            "text": "Нощувката в Rozi's Luxury Dog Hotel е 55€. В цената са включени настаняване, хранения и 24/7 грижа."
           }
         },
         {
           "@type": "Question",
-          "name": "Къде мога да намеря хотел за кучета в Сапарева баня?",
+          "name": "Имате ли дневна ясла за кучета?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Rozi's Luxury Dog Hotel е хотел за кучета на ул. Германея 60, Сапарева баня. Предлагаме луксозно настаняване от 55€ на нощ."
+            "text": "Да. Дневната ясла е 25€ за ден без нощувка – грижа, игри и разходки в Сапарева баня."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Правите ли транспорт на кучета от София?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Транспортът е 30€ в една посока за София и София област."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Къде се намира хотелът за кучета?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ул. Германея 60, 2650 Сапарева баня, област Кюстендил. Телефон: +359 882 739 396."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как да резервирам място за куче?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Обадете се на +359 882 739 396 или пишете в Instagram @rozis_luxury_dog_hotel. Препоръчваме резервация 3–5 дни предварително."
           }
         }
       ]
@@ -170,15 +203,19 @@
   </head>
   <body>
     <div id="static-seo">
-      <h1>Луксозен хотел за кучета в Сапарева баня</h1>
+      <h1 id="seo-h1">Хотел за кучета в Сапарева баня</h1>
+      <p id="seo-intro">Луксозен хотел за кучета в Сапарева баня – настаняване от 55€/нощ, дневна ясла 25€ и транспорт от София 30€. ул. Германея 60.</p>
       <p>
-        <a href="/contact">Contact us</a>
-        <a href="tel:+359882739396">Book now</a>
+        <a href="/services">Цени на хотел за кучета</a>
+        <a href="/gallery">Галерия</a>
+        <a href="/about">За нас</a>
+        <a href="/contact">Резервация</a>
+        <a href="tel:+359882739396">Обадете се</a>
       </p>
       <p>
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms-of-service">Terms of Service</a>
-        <a href="/cookie-policy">Cookie Policy</a>
+        <a href="/privacy-policy">Политика за поверителност</a>
+        <a href="/terms-of-service">Общи условия</a>
+        <a href="/cookie-policy">Политика за бисквитки</a>
       </p>
     </div>
 

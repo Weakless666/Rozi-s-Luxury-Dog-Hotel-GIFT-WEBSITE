@@ -4,6 +4,7 @@ import ServicesPreview from '../components/sections/ServicesPreview'
 import GalleryPreview from '../components/sections/GalleryPreview'
 import PricingPreview from '../components/sections/PricingPreview'
 import Testimonials from '../components/sections/Testimonials'
+import FaqSection from '../components/sections/FaqSection'
 import CTA from '../components/sections/CTA'
 
 const Home = () => {
@@ -21,8 +22,7 @@ const Home = () => {
       
       {/* Testimonials */}
       <Testimonials />
-      
-      {/* Call to Action */}
+      <FaqSection />
       <CTA />
     </div>
   )
