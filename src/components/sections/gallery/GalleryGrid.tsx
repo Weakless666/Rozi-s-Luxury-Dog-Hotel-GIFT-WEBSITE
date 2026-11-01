@@ -74,9 +74,10 @@ const GalleryGrid = ({ activeCategory }: GalleryGridProps) => {
                   <div className="relative overflow-hidden" style={{ height: '300px' }}>
                     <img
                       src={image.imageUrl}
-                      alt={image.title}
+                      alt={`${image.title} – хотел за кучета в Сапарева баня`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       loading="lazy"
+                      decoding="async"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement
                         target.style.display = 'none'

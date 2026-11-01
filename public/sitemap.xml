@@ -1,56 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.rozi-dog-hotel.eu/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/hero.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/og-image.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.rozi-dog-hotel.eu/about</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.rozi-dog-hotel.eu/services</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.rozi-dog-hotel.eu/gallery</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/yard-01.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/yard-02.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/yard-03.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/yard-04.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/yard-05.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/yard-06.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/yard-07.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/food-01.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/food-02.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/food-03.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/food-04.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/food-05.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-01.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-02.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-03.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-04.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-05.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-06.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-07.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-08.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-09.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-10.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-11.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-12.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-13.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-14.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-15.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-16.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.rozi-dog-hotel.eu/images/inside-17.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.rozi-dog-hotel.eu/contact</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.rozi-dog-hotel.eu/adopt</loc>
-    <lastmod>2026-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.rozi-dog-hotel.eu/privacy-policy</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.rozi-dog-hotel.eu/terms-of-service</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.rozi-dog-hotel.eu/cookie-policy</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

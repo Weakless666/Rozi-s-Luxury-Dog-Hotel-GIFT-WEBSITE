@@ -20,7 +20,11 @@ export interface PageSeo {
   keywords?: string
   h1: string
   intro: string
+  robots?: string
 }
+
+export const DEFAULT_ROBOTS = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+export const NOINDEX_ROBOTS = 'noindex, follow'
 
 const defaultDescription =
   'Луксозен хотел за кучета в Сапарева баня – настаняване, дневна ясла, транспорт и 24/7 грижа. Вашият хотел за кучета с любов и внимание към всеки гост.'
@@ -73,7 +77,9 @@ export const routeSeo: Record<string, PageSeo> = {
     title: 'Осиновяване на кучета | Rozi\'s Dog Hotel',
     description: 'Осиновяване на кучета чрез Rozi\'s Luxury Dog Hotel в Сапарева баня. В момента няма свободни кучета.',
     h1: 'Осиновете любов',
-    intro: 'Когато имаме кучета за осиновяване, ще ги публикуваме тук. Хотел за кучета в Сапарева баня.'
+    intro: 'Когато имаме кучета за осиновяване, ще ги публикуваме тук. Хотел за кучета в Сапарева баня.',
+    // Страницата е празна, докато няма кучета за осиновяване – не я индексираме
+    robots: NOINDEX_ROBOTS
   },
   '/privacy-policy': {
     title: 'Политика за поверителност | Rozi\'s',
@@ -118,12 +124,19 @@ export const faqs = [
   }
 ]
 
+export const notFoundSeo: PageSeo = {
+  title: `Страницата не е намерена | ${SITE_NAME}`,
+  description: defaultDescription,
+  keywords: DEFAULT_KEYWORDS,
+  h1: 'Страницата не е намерена',
+  intro: defaultDescription,
+  robots: NOINDEX_ROBOTS
+}
+
+export function normalizePath(pathname: string): string {
+  return pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname
+}
+
 export function getPageSeo(pathname: string): PageSeo {
-  return routeSeo[pathname] ?? {
-    title: `Хотел за кучета | ${SITE_NAME}`,
-    description: defaultDescription,
-    keywords: DEFAULT_KEYWORDS,
-    h1: 'Хотел за кучета',
-    intro: defaultDescription
-  }
+  return routeSeo[normalizePath(pathname)] ?? notFoundSeo
 }

@@ -19,7 +19,7 @@
     <meta name="description" content="Хотел за кучета в Сапарева баня от 55€/нощ. Дневна ясла 25€ и транспорт от София 30€. 24/7 грижа. Обадете се: 0882 739 396." />
     <meta name="keywords" content="хотел за кучета, хотел за кучета Сапарева баня, настаняване на кучета, дневна ясла за кучета, грижа за кучета, луксозен хотел за кучета, кучешки хотел, Сапарева баня, Кюстендил, България" />
     <meta name="author" content="Rozi's Luxury Dog Hotel" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="geo.region" content="BG-42" />
     <meta name="geo.placename" content="Сапарева баня" />
     <meta name="language" content="Bulgarian" />
@@ -28,9 +28,12 @@
     <meta property="og:url" content="https://www.rozi-dog-hotel.eu/" />
     <meta property="og:title" content="Хотел за кучета Сапарева баня | Rozi's" />
     <meta property="og:description" content="Хотел за кучета в Сапарева баня от 55€/нощ. Дневна ясла 25€ и транспорт от София 30€. 24/7 грижа." />
-    <meta property="og:image" content="https://www.rozi-dog-hotel.eu/images/hero.png" />
+    <meta property="og:image" content="https://www.rozi-dog-hotel.eu/images/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://www.rozi-dog-hotel.eu/images/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Кученца в двора на хотела за кучета Rozi's в Сапарева баня" />
     <meta property="og:site_name" content="Rozi's Luxury Dog Hotel" />
     <meta property="og:locale" content="bg_BG" />
 
@@ -38,9 +41,13 @@
     <meta name="twitter:url" content="https://www.rozi-dog-hotel.eu/" />
     <meta name="twitter:title" content="Хотел за кучета Сапарева баня | Rozi's" />
     <meta name="twitter:description" content="Хотел за кучета в Сапарева баня от 55€/нощ. Дневна ясла 25€ и транспорт от София 30€." />
-    <meta name="twitter:image" content="https://www.rozi-dog-hotel.eu/images/hero.png" />
+    <meta name="twitter:image" content="https://www.rozi-dog-hotel.eu/images/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Кученца в двора на хотела за кучета Rozi's в Сапарева баня" />
 
-    <link rel="preload" as="image" href="/images/hero.png" fetchpriority="high" />
+    <meta name="theme-color" content="#7c3aed" />
+    <meta name="format-detection" content="telephone=yes" />
+
+    <link rel="preload" as="image" href="/images/hero.jpg" fetchpriority="high" id="hero-preload" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <style>
       #static-seo {
@@ -65,10 +72,24 @@
       media="print"
     >
 
+    <script type="application/ld+json" id="website-schema">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://www.rozi-dog-hotel.eu/#website",
+      "url": "https://www.rozi-dog-hotel.eu/",
+      "name": "Rozi's Luxury Dog Hotel",
+      "alternateName": "Хотел за кучета Сапарева баня",
+      "inLanguage": "bg-BG",
+      "publisher": { "@id": "https://www.rozi-dog-hotel.eu/#business" }
+    }
+    </script>
+
     <script type="application/ld+json" id="local-business-schema">
     {
       "@context": "https://schema.org",
       "@type": ["LocalBusiness", "PetBoarding"],
+      "@id": "https://www.rozi-dog-hotel.eu/#business",
       "name": "Rozi's Luxury Dog Hotel – луксозен хотел за кучета",
       "alternateName": [
         "Луксозен хотел за кучета",
@@ -80,7 +101,14 @@
       "description": "Луксозен хотел за кучета в Сапарева баня – настаняване, дневна ясла, транспорт и 24/7 грижа. Вашият хотел за кучета с любов към всеки гост.",
       "url": "https://www.rozi-dog-hotel.eu/",
       "logo": "https://www.rozi-dog-hotel.eu/images/logo.png",
-      "image": "https://www.rozi-dog-hotel.eu/images/hero.png",
+      "image": [
+        "https://www.rozi-dog-hotel.eu/images/og-image.jpg",
+        "https://www.rozi-dog-hotel.eu/images/hero.jpg",
+        "https://www.rozi-dog-hotel.eu/images/yard-01.jpg",
+        "https://www.rozi-dog-hotel.eu/images/inside-01.jpg"
+      ],
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=ул.+Германея+60,+2650+Сапарева+баня,+България",
+      "currenciesAccepted": "EUR",
       "telephone": "+359882739396",
       "email": "info@rozis-dog-hotel.com",
       "address": {

@@ -56,7 +56,9 @@ const pages = [
     title: "Осиновяване на кучета | Rozi's Dog Hotel",
     description: "Осиновяване на кучета чрез Rozi's Luxury Dog Hotel в Сапарева баня. В момента няма свободни кучета.",
     h1: 'Осиновете любов',
-    intro: 'Когато имаме кучета за осиновяване, ще ги публикуваме тук. Хотел за кучета в Сапарева баня.'
+    intro: 'Когато имаме кучета за осиновяване, ще ги публикуваме тук. Хотел за кучета в Сапарева баня.',
+    label: 'Осиновяване',
+    robots: 'noindex, follow'
   },
   {
     route: '/privacy-policy',
@@ -84,29 +86,78 @@ const pages = [
   }
 ]
 
+const labels = {
+  '/about': 'За нас',
+  '/services': 'Цени',
+  '/gallery': 'Галерия',
+  '/contact': 'Контакти',
+  '/privacy-policy': 'Поверителност',
+  '/terms-of-service': 'Условия',
+  '/cookie-policy': 'Бисквитки'
+}
+
+const notFound = {
+  route: null,
+  file: '404.html',
+  title: "Страницата не е намерена | Rozi's Luxury Dog Hotel",
+  description:
+    'Луксозен хотел за кучета в Сапарева баня – настаняване, дневна ясла, транспорт и 24/7 грижа.',
+  h1: 'Страницата не е намерена',
+  intro: 'Тази страница не съществува. Разгледайте нашия хотел за кучета в Сапарева баня.',
+  robots: 'noindex, follow'
+}
+
 function esc(value) {
   return value.replace(/&/g, '&amp;').replace(/"/g, '&quot;')
 }
 
+function removeRe(html, re) {
+  return html.replace(re, '')
+}
+
+function breadcrumbSchema(page, url) {
+  const items = [{ '@type': 'ListItem', position: 1, name: 'Начало', item: 'https://www.rozi-dog-hotel.eu/' }]
+  if (page.route !== '/') {
+    items.push({ '@type': 'ListItem', position: 2, name: page.label ?? labels[page.route] ?? page.h1, item: url })
+  }
+  const json = JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items })
+  return `<script type="application/ld+json" id="breadcrumb-schema">${json}</script>`
+}
+
 function render(page) {
-  const url = `https://www.rozi-dog-hotel.eu${page.route === '/' ? '/' : page.route}`
+  const url = page.route ? `https://www.rozi-dog-hotel.eu${page.route === '/' ? '/' : page.route}` : null
   let html = template
   html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(page.title)}</title>`)
   html = html.replace(/(<meta name="description" content=")[^"]*(")/, `$1${esc(page.description)}$2`)
-  html = html.replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${url}$2`)
-  html = html.replace(/(<link rel="alternate" hreflang="bg" href=")[^"]*(")/, `$1${url}$2`)
-  html = html.replace(/(<link rel="alternate" hreflang="x-default" href=")[^"]*(")/, `$1${url}$2`)
-  html = html.replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${url}$2`)
+  if (page.robots) {
+    html = html.replace(/(<meta name="robots" content=")[^"]*(")/, `$1${page.robots}$2`)
+  }
   html = html.replace(/(<meta property="og:title" content=")[^"]*(")/, `$1${esc(page.title)}$2`)
   html = html.replace(/(<meta property="og:description" content=")[^"]*(")/, `$1${esc(page.description)}$2`)
-  html = html.replace(/(<meta name="twitter:url" content=")[^"]*(")/, `$1${url}$2`)
   html = html.replace(/(<meta name="twitter:title" content=")[^"]*(")/, `$1${esc(page.title)}$2`)
   html = html.replace(/(<meta name="twitter:description" content=")[^"]*(")/, `$1${esc(page.description)}$2`)
   html = html.replace(/<h1 id="seo-h1">[\s\S]*?<\/h1>/, `<h1 id="seo-h1">${page.h1}</h1>`)
   html = html.replace(/<p id="seo-intro">[\s\S]*?<\/p>/, `<p id="seo-intro">${page.intro}</p>`)
 
+  if (url) {
+    html = html.replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${url}$2`)
+    html = html.replace(/(<link rel="alternate" hreflang="bg" href=")[^"]*(")/, `$1${url}$2`)
+    html = html.replace(/(<link rel="alternate" hreflang="x-default" href=")[^"]*(")/, `$1${url}$2`)
+    html = html.replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${url}$2`)
+    html = html.replace(/(<meta name="twitter:url" content=")[^"]*(")/, `$1${url}$2`)
+    html = html.replace('</head>', `    ${breadcrumbSchema(page, url)}\n  </head>`)
+  } else {
+    // 404: без canonical/hreflang, за да не се сочи към несъществуващ URL
+    html = removeRe(html, /\s*<link rel="canonical"[^>]*>/)
+    html = removeRe(html, /\s*<link rel="alternate" hreflang="[^"]*"[^>]*>/g)
+    html = removeRe(html, /\s*<meta property="og:url"[^>]*>/)
+    html = removeRe(html, /\s*<meta name="twitter:url"[^>]*>/)
+  }
+
   if (page.route !== '/') {
-    html = html.replace(/\s*<script type="application\/ld\+json" id="faq-schema">[\s\S]*?<\/script>/, '')
+    // Hero снимката и FAQ схемата са само за началната страница
+    html = removeRe(html, /\s*<link rel="preload" as="image"[^>]*id="hero-preload"[^>]*>/)
+    html = removeRe(html, /\s*<script type="application\/ld\+json" id="faq-schema">[\s\S]*?<\/script>/)
   }
 
   fs.writeFileSync(path.join(dist, page.file), html)
@@ -118,4 +169,5 @@ if (!fs.existsSync(templatePath)) {
 }
 
 for (const page of pages) render(page)
-console.log(`Prerendered ${pages.length} SEO pages.`)
+render(notFound)
+console.log(`Prerendered ${pages.length} SEO pages + 404.html.`)

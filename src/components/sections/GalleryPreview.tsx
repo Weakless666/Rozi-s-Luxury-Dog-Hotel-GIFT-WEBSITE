@@ -62,9 +62,11 @@ const GalleryPreview = () => {
               <div className="relative overflow-hidden" style={{ height: '300px' }}>
                 <img
                   src={image.imageUrl}
-                  alt={image.title}
+                  alt={`${image.title} – хотел за кучета в Сапарева баня`}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   style={{ minHeight: '300px', backgroundColor: '#f0f0f0' }}
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
                     // Fallback to gradient placeholder if image fails to load
                     const target = e.target as HTMLImageElement;
